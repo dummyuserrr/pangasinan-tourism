@@ -9,4 +9,12 @@ class PagesController extends Controller
     public function index(){
     	return view('index');
     }
+
+    public function theProvince(){
+    	return view('theProvince');
+    }
+
+    public function tourism(){
+    	return view('tourism');
+    }
 }

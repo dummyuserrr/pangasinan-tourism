@@ -3,56 +3,41 @@
 <!-- Header -->
 <header class="masthead">
 	<div class="container">
-		<div class="intro-text">
-			<div class="intro-lead-in">Welcome To Pangasinan!</div>
-			<div class="intro-heading text-uppercase">Welcome Message Here</div>
-			<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+		<div class="intro-text intro-text-small">
+			<div class="intro-heading text-uppercase">The Province</div>
 		</div>
 	</div>
 </header>
 <!-- Services -->
-<section id="services">
+<section id="cities-and-municipalities">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Services</h2>
+				<h2 class="section-heading text-uppercase">Cities and Municipalities</h2>
 				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 			</div>
 		</div>
 		<div class="row text-center">
 			<div class="col-md-4">
-				<span class="fa-stack fa-4x">
-					<i class="fa fa-circle fa-stack-2x text-primary"></i>
-					<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-				</span>
-				<h4 class="service-heading">E-Commerce</h4>
+				<h4 class="service-heading">Alaminos</h4>
 				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
 			</div>
 			<div class="col-md-4">
-				<span class="fa-stack fa-4x">
-					<i class="fa fa-circle fa-stack-2x text-primary"></i>
-					<i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-				</span>
-				<h4 class="service-heading">Responsive Design</h4>
+				<h4 class="service-heading">Dagupan</h4>
 				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
 			</div>
 			<div class="col-md-4">
-				<span class="fa-stack fa-4x">
-					<i class="fa fa-circle fa-stack-2x text-primary"></i>
-					<i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-				</span>
-				<h4 class="service-heading">Web Security</h4>
+				<h4 class="service-heading">Lingayen</h4>
 				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
 			</div>
 		</div>
 	</div>
 </section>
-<!-- Portfolio Grid -->
-<section class="bg-light" id="portfolio">
+<section class="bg-light portfoliooo" id="photo-gallery">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Cities and Municipalities</h2>
+				<h2 class="section-heading text-uppercase">Photo Gallery</h2>
 				<h3 class="section-subheading text-muted">Take a look at these.</h3>
 			</div>
 		</div>
@@ -144,13 +129,108 @@
 		</div>
 	</div>
 </section>
-<!-- About -->
-<section id="about">
+<section class="bg-light portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">About</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+				<h2 class="section-heading text-uppercase">Delicacies</h2>
+				<h3 class="section-subheading text-muted">Take a look at these.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+				</a>
+				<div class="portfolio-caption">
+					<h4>Sample</h4>
+					<p class="text-muted">Illustration</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+				</a>
+				<div class="portfolio-caption">
+					<h4>Sample</h4>
+					<p class="text-muted">Graphic Design</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+				</a>
+				<div class="portfolio-caption">
+					<h4>Sample</h4>
+					<p class="text-muted">Identity</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+				</a>
+				<div class="portfolio-caption">
+					<h4>Sample</h4>
+					<p class="text-muted">Branding</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+				</a>
+				<div class="portfolio-caption">
+					<h4>Sample</h4>
+					<p class="text-muted">Website Design</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+				</a>
+				<div class="portfolio-caption">
+					<h4>Sample</h4>
+					<p class="text-muted">Photography</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="about-pangasinan">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">About Pangasinan</h2>
+				<h3 class="section-subheading text-muted">Learn more about our province.</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -163,7 +243,7 @@
 						<div class="timeline-panel">
 							<div class="timeline-heading">
 								<h4>2009-2011</h4>
-								<h4 class="subheading">Our Humble Beginnings</h4>
+								<h4 class="subheading">Ewan</h4>
 							</div>
 							<div class="timeline-body">
 								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -177,7 +257,7 @@
 						<div class="timeline-panel">
 							<div class="timeline-heading">
 								<h4>March 2011</h4>
-								<h4 class="subheading">An Agency is Born</h4>
+								<h4 class="subheading">Iniwan</h4>
 							</div>
 							<div class="timeline-body">
 								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -191,7 +271,7 @@
 						<div class="timeline-panel">
 							<div class="timeline-heading">
 								<h4>December 2012</h4>
-								<h4 class="subheading">Transition to Full Service</h4>
+								<h4 class="subheading">Nasaktan</h4>
 							</div>
 							<div class="timeline-body">
 								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -205,7 +285,7 @@
 						<div class="timeline-panel">
 							<div class="timeline-heading">
 								<h4>July 2014</h4>
-								<h4 class="subheading">Phase Two Expansion</h4>
+								<h4 class="subheading">Nagsuicide</h4>
 							</div>
 							<div class="timeline-body">
 								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -224,8 +304,8 @@
 		</div>
 	</div>
 </section>
-<!-- Team -->
-<section class="bg-light" id="team">
+<!-- Government -->
+<!-- <section class="bg-light" id="team">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -263,4 +343,5 @@
 		</div>
 	</div>
 </section>
-@stop
+ -->
+ @stop

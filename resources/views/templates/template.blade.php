@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>Pangasinan Tourism</title>
         <!-- Bootstrap core CSS -->
         <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template -->
@@ -14,7 +14,7 @@
         <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-        <link href="/css/agency.min.css" rel="stylesheet">
+        <link href="/css/agency.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <link rel="stylesheet" type="text/less" href="/css/custom.less">
@@ -24,7 +24,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Pangasinan Tourism</a>
+                <a class="navbar-brand js-scroll-trigger" href="/">Pangasinan Tourism</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fa fa-bars"></i>
@@ -34,18 +34,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/the-province">The Province</a>
                             <div class="sub-menu">
-                                <a class="nav-link" href="/the-province/about-pangasinan">About Pangasinan</a>
-                                <a class="nav-link" href="/the-province/cities-and-municipalities">Cities and Municipalities</a>
-                                <a class="nav-link" href="/the-province/delicacies">Delicacies</a>
-                                <a class="nav-link" href="/the-province/photo-gallery">Photo Gallery</a>
+                                <a class="nav-link js-scroll-trigger" href="/the-province#about-pangasinan">About Pangasinan</a>
+                                <a class="nav-link js-scroll-trigger" href="/the-province#cities-and-municipalities">Cities and Municipalities</a>
+                                <a class="nav-link js-scroll-trigger" href="/the-province#delicacies">Delicacies</a>
+                                <a class="nav-link js-scroll-trigger" href="/the-province#photo-gallery">Photo Gallery</a>
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/tourism">Tourism</a>
                              <div class="sub-menu">
-                                <a class="nav-link" href="/tourism/tourist-attractions">Tourist Attractions</a>
-                                <a class="nav-link" href="/tourism/festivals">Festivals</a>
-                                <a class="nav-link" href="/tourism/events">Events</a>
+                                <a class="nav-link js-scroll-trigger" href="/tourism#tourist-attractions">Tourist Attractions</a>
+                                <a class="nav-link js-scroll-trigger" href="/tourism#festivals">Festivals</a>
+                                <a class="nav-link js-scroll-trigger" href="/tourism#events">Events</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -58,6 +58,7 @@
                 </div>
             </div>
         </nav>
+
         <div class="main-container">
             @yield('content')
         </div>
