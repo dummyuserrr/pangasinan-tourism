@@ -1,0 +1,17 @@
+.testborder{border: 1px solid red;}
+.nav-item{
+	position: relative;
+	&:hover{
+		.sub-menu{display: block;}
+	}
+	.sub-menu{
+		padding: 10px;
+		position: absolute;
+		width: 140%;
+		background-color: #212629;
+		color: #fff;
+		display: none;
+		top: 50px;
+		a{font-size: 12px !important;}
+	}
+}
