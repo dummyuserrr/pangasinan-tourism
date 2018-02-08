@@ -17,4 +17,8 @@ class PagesController extends Controller
     public function tourism(){
     	return view('tourism');
     }
+
+    public function findUs(){
+    	return view('findUs');
+    }
 }
