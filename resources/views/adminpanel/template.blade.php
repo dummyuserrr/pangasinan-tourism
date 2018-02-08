@@ -23,27 +23,31 @@
 					<a href="/admin-panel/dashboard" class="option {{ adminSetActive('admin-panel/dashboard*') }}">Dashboard</a>
 					<a href="/admin-panel/users" class="option {{ adminSetActive('admin-panel/users*') }}">Users</a>
 					<a href="/admin-panel/posts" class="option {{ adminSetActive('admin-panel/posts*') }}">Posts</a>
-					<div class="mydropdown {{ adminSetActive2('admin-panel/dashboard*') }}">
-						<span>Homeowners</span>
-						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_homeowners"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
-						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_homeowners"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
-						<div id="dd_homeowners" class="collapse targets {{ adminSetActiveDropdown('admin-panel/dashboard*') }}">
+					<div class="mydropdown {{ adminSetActive2('admin-panel/the-province*') }}">
+						<span>The Province</span>
+						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_province"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_province"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+						<div id="dd_province" class="collapse targets {{ adminSetActiveDropdown('admin-panel/the-province*') }}">
 							<div class="options">
-								<a href="/admin-panel/dashboard" class="option {{ adminSetActive('admin-panel/dashboard*') }}">Dashboard</a>
-								<a href="/admin-panel/users" class="option {{ adminSetActive('admin-panel/users*') }}">Users</a>
+								<a href="/admin-panel/the-province/cities-and-municipalities" class="option {{ adminSetActive('admin-panel/the-province/cities-and-municipalities*') }}">Cities and Municipalities</a>
+								<a href="/admin-panel/the-province/delicacies" class="option {{ adminSetActive('admin-panel/the-province/delicacies*') }}">Delicacies</a>
+								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}">Photo Gallery</a>
 							</div>
 						</div>
 					</div>
-					<div class="mydropdown">
-						<span class="{{ adminSetActive2('admin-panel/roofing-professionals*') }}">Roofing Professionals</span>
-						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_roofingProfessionals"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
-						<div id="dd_roofingProfessionals" class="collapse targets">
+					<div class="mydropdown {{ adminSetActive2('admin-panel/tourism*') }}">
+						<span>Tourism</span>
+						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_tourism"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_tourism"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+						<div id="dd_tourism" class="collapse targets {{ adminSetActiveDropdown('admin-panel/tourism*') }}">
 							<div class="options">
-								<a href="/admin-panel/dashboard" class="option {{ adminSetActive('admin-panel/dashboard*') }}">Dashboard</a>
-								<a href="/admin-panel/users" class="option {{ adminSetActive('admin-panel/users*') }}">Users</a>
+								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}">Tourist Attractions</a>
+								<a href="/admin-panel/tourism/festivals" class="option {{ adminSetActive('admin-panel/tourism/festivals*') }}">Festivals	</a>
+								<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}">Events</a>
 							</div>
 						</div>
 					</div>
+					<a href="/" target="_blank" class="option" style="border-top: 1px solid #fff;"><i class="fa fa-television" aria-hidden="true"></i> Open Website in New Tab</a>
 				</div>
 			</div>
 		</div>
