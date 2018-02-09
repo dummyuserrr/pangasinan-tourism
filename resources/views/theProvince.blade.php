@@ -8,7 +8,6 @@
 		</div>
 	</div>
 </header>
-
 <section id="about-pangasinan">
 	<div class="container">
 		<div class="row">
@@ -122,7 +121,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -132,11 +131,10 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Illustration</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -146,11 +144,10 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Graphic Design</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -160,11 +157,10 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Identity</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -174,11 +170,10 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Branding</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -188,11 +183,10 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Website Design</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -202,7 +196,6 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Photography</p>
 				</div>
 			</div>
 		</div>
@@ -304,44 +297,36 @@
 		</div>
 	</div>
 </section>
-<!-- Government -->
-<!-- <section class="bg-light" id="team">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">The Goverment</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-					<h4>Juan dela Cruz</h4>
-					<p class="text-muted">Tagahila ng kabayo</p>
+<!-- MODALS -->
+<div class="portfolio-modal modal fade" id="delicaciesModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
 				</div>
 			</div>
-			<div class="col-sm-4">
-				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-					<h4>Juan dela Cruz</h4>
-					<p class="text-muted">Tagahila ng kabayo</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<div class="modal-body">
+							<h2 class="text-uppercase">Project Name</h2>
+							<p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+							<img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+							<p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+							<ul class="list-inline">
+								<li>Date: January 2017</li>
+								<li>Client: Threads</li>
+								<li>Category: Illustration</li>
+							</ul>
+							<button class="btn btn-primary" data-dismiss="modal" type="button">
+							<i class="fa fa-times"></i>
+							Close Project</button>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-					<h4>Juan dela Cruz</h4>
-					<p class="text-muted">Tagahila ng kabayo</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-8 mx-auto text-center">
-				<p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
 			</div>
 		</div>
 	</div>
-</section>
- -->
- @stop
+</div>
+@stop
