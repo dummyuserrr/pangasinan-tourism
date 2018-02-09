@@ -22,6 +22,21 @@ class CityMunController extends Controller
     	return back();
     }
 
+    public function patch(CityMun $item, Request $r){
+    	$this->validate($r, [
+    		'name' => 'required',
+    		'description' => 'required',
+    	]);
+
+    	$item->update([
+    		'name' => $r->name,
+    		'description' => $r->description,
+    	]);
+
+    	session()->flash('action', 'updated');
+    	return back();
+    }
+
     public function destroy(CityMun $item){
     	$item->delete();
 

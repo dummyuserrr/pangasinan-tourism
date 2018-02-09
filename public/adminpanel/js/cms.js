@@ -54,6 +54,15 @@ $(document).ready(function(){
 
 // wew
 
+$('.btnViewCityMun').click(function(){
+	var url = $(this).data('url');
+	var name = $(this).data('name');
+	var description = $(this).data('description');
+	$('#editForm').attr('action', url);
+	$('#editForm').find('#name').val(name);
+	$('#editForm').find('#description').val(description);
+});
+
 $('.btndelete').click(function(){
 	var url = $(this).data('url');
 	$('#deleteForm').attr('action', url);
