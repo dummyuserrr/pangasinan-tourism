@@ -17,4 +17,6 @@ Route::middleware('checksession')->group(function () {
 	Route::get('admin-panel/posts', 'AdminPagesController@posts');
 	Route::get('admin-panel/posts/new', 'AdminPagesController@posts_new');
 	Route::get('admin-panel/posts/{post}/edit', 'AdminPagesController@posts_edit');
+	Route::get('admin-panel/the-province/cities-and-municipalities', 'AdminPagesController@citymun');
+	Route::post('admin-panel/the-province/cities-and-municipalities', 'CityMunController@store');
 });

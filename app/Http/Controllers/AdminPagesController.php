@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CityMun;
 
 class AdminPagesController extends Controller
 {
@@ -24,12 +25,6 @@ class AdminPagesController extends Controller
     	return view('adminpanel.users', compact('title', 'fontawesome'));
     }
 
-    public function posts(){
-        $fontawesome = 'fa fa-book';
-        $title = 'Posts';
-    	return view('adminpanel.posts', compact('title', 'fontawesome'));
-    }
-
     public function posts_new(){
         $fontawesome = 'fa fa-book';
         $title = 'New Post';
@@ -40,5 +35,13 @@ class AdminPagesController extends Controller
         $fontawesome = 'fa fa-book';
         $title = 'Edit Post';
         return view('adminpanel.posts_edit', compact('title', 'fontawesome'));
+    }
+
+    public function citymun(){
+        $fontawesome = 'fa fa-book';
+        $title = 'Cities and Municipalities';
+        $cm = new CityMun;
+        $citymuns = $cm->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.citymun', compact('title', 'fontawesome', 'citymuns'));
     }
 }

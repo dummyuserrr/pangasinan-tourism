@@ -65,6 +65,24 @@
 				</div>
 			</div>
 			<div class="main">
+				@if(session()->has('action'))
+				@if(session('action') == 'updated')
+				<div class="alert alert-success alert-dismissable fade in text-center">
+				    <a href="#" class="close text-center" data-dismiss="alert" aria-label="close">&times;</a>
+				    <strong>Success!</strong> Data has been updated.
+				</div>
+				@elseif(session('action') == 'added')
+				<div class="alert alert-success alert-dismissable fade in text-center">
+				    <a href="#" class="close text-center" data-dismiss="alert" aria-label="close">&times;</a>
+				    <strong>Success!</strong> Data has been added.
+				</div>
+				@elseif(session('action') == 'deleted')
+				<div class="alert alert-success alert-dismissable fade in text-center">
+				    <a href="#" class="close text-center" data-dismiss="alert" aria-label="close">&times;</a>
+				    <strong>Success!</strong> Data has been deleted.
+				</div>
+				@endif
+				@endif
 				@yield('content')
 			</div>
 		</div>
