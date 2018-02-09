@@ -51,7 +51,16 @@ $(document).ready(function(){
 		'autocomplete': { 'option1': 'value1', 'option2': 'value2'},
 	});
 });
+
 // wew
+
+$('.btndelete').click(function(){
+	var url = $(this).data('url');
+	$('#deleteForm').attr('action', url);
+});
+$('.initiateDelete').click(function(){
+	$('#deleteForm').submit();
+});
 
 if($(window).width() >= 768){
 	$('.leftnavHider').click(function(){

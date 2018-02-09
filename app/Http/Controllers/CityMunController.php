@@ -21,4 +21,11 @@ class CityMunController extends Controller
     	session()->flash('action', 'added');
     	return back();
     }
+
+    public function destroy(CityMun $item){
+    	$item->delete();
+
+    	session()->flash('action', 'deleted');
+    	return back();
+    }
 }

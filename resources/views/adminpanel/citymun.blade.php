@@ -17,7 +17,7 @@
 				<td>{{ $citymun->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
 					<button type="button" title="View" class="btnview btn btn-warning btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button>
-					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" onclick="setPostToDelete(1)" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/the-province/cities-and-municipalities/{{ $citymun->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
 			@endforeach
@@ -34,7 +34,7 @@
 					<p>Are you sure you want to delete this blog?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" onclick="deleteBlog()">Yes</button>
+					<button type="button" class="btn btn-danger initiateDelete">Yes</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 				</div>
 			</div>
@@ -45,7 +45,6 @@
 <form id="deleteForm" method="post" action="">
 	{{ csrf_field() }}
 	{{ method_field('delete') }}
-	<input type="hidden" name="post" value="" id="postToDelete">
 </form>
 
 <div id="newModal" class="modal fade" role="dialog">
