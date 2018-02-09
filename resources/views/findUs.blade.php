@@ -13,7 +13,7 @@
 </div>
 <script>
 	function initMap() {
-		var uluru = {lat: 16.1760031, lng: 119.8534122};
+		var uluru = {lat: 16.0355673, lng: 120.3281712};
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 10,
 			center: uluru
@@ -25,6 +25,6 @@
 	}
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8&callback=initMap">
-    </script>
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8&callback=initMap">
+</script>
 @stop
