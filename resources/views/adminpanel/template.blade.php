@@ -29,9 +29,9 @@
 						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_province"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 						<div id="dd_province" class="collapse targets {{ adminSetActiveDropdown('admin-panel/the-province*') }}">
 							<div class="options">
-								<a href="/admin-panel/the-province/cities-and-municipalities" class="option {{ adminSetActive('admin-panel/the-province/cities-and-municipalities*') }}">Cities and Municipalities</a>
-								<a href="/admin-panel/the-province/delicacies" class="option {{ adminSetActive('admin-panel/the-province/delicacies*') }}">Delicacies</a>
-								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}">Photo Gallery</a>
+								<a href="/admin-panel/the-province/cities-and-municipalities" class="option {{ adminSetActive('admin-panel/the-province/cities-and-municipalities*') }}"><i class="fa fa-map-marker"></i> Cities and Municipalities</a>
+								<a href="/admin-panel/the-province/delicacies" class="option {{ adminSetActive('admin-panel/the-province/delicacies*') }}"><i class="fa fa-map-marker"></i> Delicacies</a>
+								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}"><i class="fa fa-map-marker"></i> Photo Gallery</a>
 							</div>
 						</div>
 					</div>

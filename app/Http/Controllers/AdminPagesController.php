@@ -38,7 +38,7 @@ class AdminPagesController extends Controller
     }
 
     public function citymun(){
-        $fontawesome = 'fa fa-book';
+        $fontawesome = 'fa fa-map-marker';
         $title = 'Cities and Municipalities';
         $cm = new CityMun;
         $citymuns = $cm->orderBy('created_at', 'desc')->get();

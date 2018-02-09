@@ -2,17 +2,17 @@
 @section('content')
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newModal"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
 <div class="white_container">
-	<table class="table table-striped">
+	<table class="table table-striped" id="table">
 		<thead>
 			<tr>
-				<th>Name</th>
-				<th>Created At</th>
+				<th onclick="w3.sortHTML('#table','.item', 'td:nth-child(1)')">Name  <i class="fa fa-sort" aria-hidden="true"></i></th>
+				<th onclick="w3.sortHTML('#table','.item', 'td:nth-child(2)')">Created At <i class="fa fa-sort" aria-hidden="true"></i></th>
 				<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>
 			@foreach($citymuns as $citymun)
-			<tr>
+			<tr class="item">
 				<td>{{ $citymun->name }}</td>
 				<td>{{ $citymun->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
