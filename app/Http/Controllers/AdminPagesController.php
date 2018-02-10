@@ -44,4 +44,12 @@ class AdminPagesController extends Controller
         $citymuns = $cm->orderBy('created_at', 'desc')->get();
         return view('adminpanel.citymun', compact('title', 'fontawesome', 'citymuns'));
     }
+
+    public function delicacies(){
+        $fontawesome = 'fa fa-map-marker';
+        $title = 'Cities and Municipalities';
+        $cm = new Delicacy;
+        $citymuns = $cm->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.delicacies', compact('title', 'fontawesome', 'citymuns'));
+    }
 }
