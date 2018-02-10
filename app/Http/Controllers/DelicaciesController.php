@@ -30,6 +30,13 @@ class DelicaciesController extends Controller
     	}
 
     	session()->flash('action', 'added');
+    	return redirect('/admin-panel/the-province/delicacies');
+    }
+
+    public function destroy(Delicacy $item){
+    	$item->images()->delete();
+    	$item->delete();
+    	session()->flash('action', 'deleted');
     	return back();
     }
 }

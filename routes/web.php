@@ -28,4 +28,5 @@ Route::middleware('checksession')->group(function () {
 	Route::get('admin-panel/the-province/delicacies', 'AdminPagesController@delicacies');
 	Route::get('admin-panel/the-province/delicacies/new', 'AdminPagesController@delicacies_new');
 	Route::post('admin-panel/the-province/delicacies/new', 'DelicaciesController@store');
+	Route::delete('admin-panel/the-province/delicacies/{item}/delete', 'DelicaciesController@destroy');
 });
