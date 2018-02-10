@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CityMun;
+use App\Delicacy;
 
 class PagesController extends Controller
 {
@@ -13,7 +15,11 @@ class PagesController extends Controller
 
     public function theProvince(){
         $title = 'The Province - Pangasinan Tourism';
-    	return view('theProvince', compact('title'));
+        $cm = new CityMun;
+        $d = new Delicacy;
+        $citymuns = $cm->orderBy('created_at', 'desc')->get();
+        $delicacies = $d->orderBy('created_at', 'desc')->get();
+    	return view('theProvince', compact('title', 'citymuns', 'delicacies'));
     }
 
     public function tourism(){

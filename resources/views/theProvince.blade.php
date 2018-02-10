@@ -92,22 +92,16 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Cities and Municipalities</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+				<!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
 			</div>
 		</div>
 		<div class="row text-center">
+			@foreach($citymuns as $cm)
 			<div class="col-md-4">
-				<h4 class="service-heading">Alaminos</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+				<h4 class="service-heading">{{ $cm->name }}</h4>
+				<p class="text-muted">{{ $cm->description }}</p>
 			</div>
-			<div class="col-md-4">
-				<h4 class="service-heading">Dagupan</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-			</div>
-			<div class="col-md-4">
-				<h4 class="service-heading">Lingayen</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -128,71 +122,6 @@
 						</div>
 					</div>
 					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
@@ -224,76 +153,6 @@
 					<p class="text-muted">Illustration</p>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#galleryModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Graphic Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#galleryModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Identity</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#galleryModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Branding</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#galleryModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#galleryModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Photography</p>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
@@ -318,76 +177,6 @@
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
 					<p class="text-muted">Illustration</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#videoModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-youtube-play fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Graphic Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#videoModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-youtube-play fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Identity</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#videoModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-youtube-play fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Branding</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#videoModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-youtube-play fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#videoModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-youtube-play fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Photography</p>
 				</div>
 			</div>
 		</div>
