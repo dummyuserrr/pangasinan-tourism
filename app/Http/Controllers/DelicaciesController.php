@@ -46,12 +46,14 @@ class DelicaciesController extends Controller
             'description' => $r->description,
         ]);
 
-        foreach($r->image as $i){
-            $image = $i->store('/uploads/images');
-            $di = new DelicacyImage;
-            $di->path = $image;
-            $di->delicacy_id = $item->id;
-            $di->save();
+        if($r->image){
+            foreach($r->image as $i){
+                $image = $i->store('/uploads/images');
+                $di = new DelicacyImage;
+                $di->path = $image;
+                $di->delicacy_id = $item->id;
+                $di->save();
+            }
         }
 
         session()->flash('action', 'updated');
