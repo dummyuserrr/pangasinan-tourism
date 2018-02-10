@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CityMun;
+use App\Delicacy;
 
 class AdminPagesController extends Controller
 {
@@ -46,10 +47,10 @@ class AdminPagesController extends Controller
     }
 
     public function delicacies(){
-        $fontawesome = 'fa fa-map-marker';
-        $title = 'Cities and Municipalities';
-        $cm = new Delicacy;
-        $citymuns = $cm->orderBy('created_at', 'desc')->get();
-        return view('adminpanel.delicacies', compact('title', 'fontawesome', 'citymuns'));
+        $fontawesome = 'fa fa-spoon';
+        $title = 'Delicacies';
+        $d = new Delicacy;
+        $delicacies = $d->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.delicacies', compact('title', 'fontawesome', 'delicacies'));
     }
 }
