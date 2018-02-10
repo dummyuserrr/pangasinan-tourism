@@ -141,6 +141,8 @@ $('#logoutLink').click(function(){
 $('.cmsImageBox').click(function(){
 	var myImage = $(this).find('img').attr('src');
 	$('#imageModal').find('img').attr('src', myImage);
+	var url = $(this).data('url');
+	$('#deleteForm').attr('action', url);
 });
 
 function redirect(target){

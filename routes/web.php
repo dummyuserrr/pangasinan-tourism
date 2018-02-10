@@ -30,4 +30,6 @@ Route::middleware('checksession')->group(function () {
 	Route::post('admin-panel/the-province/delicacies/new', 'DelicaciesController@store');
 	Route::delete('admin-panel/the-province/delicacies/{item}/delete', 'DelicaciesController@destroy');
 	Route::get('admin-panel/the-province/delicacies/{item}', 'AdminPagesController@delicacies_view');
+	Route::patch('admin-panel/the-province/delicacies/{item}/update', 'DelicaciesController@patch');
+	Route::delete('admin-panel/the-province/delicacies/{item}/delete-image', 'DelicaciesController@image_destroy');
 });

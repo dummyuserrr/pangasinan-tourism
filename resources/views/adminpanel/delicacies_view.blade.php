@@ -2,18 +2,18 @@
 @section('content')
 <button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/posts')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
 <div class="white_container">
-	<form method="post" action="/admin-panel/the-province/delicacies/{{ $delicacy->id }}/update">
+	<form method="post" action="/admin-panel/the-province/delicacies/{{ $delicacy->id }}/update" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		{{ method_field('patch') }}
 		<div class="row">
 			<div class="col-lg-8">
 				<div class="form-group">
 					<label for="name">Name: <span class="req">*</span></label>
-					<input type="text" class="form-control" id="name" name="name">
+					<input type="text" class="form-control" id="name" name="name" value="{{ $delicacy->name }}">
 				</div>
 				<div class="form-group">
 					<label for="content">Description:</label>
-					<textarea type="text" class="form-control" rows="5" name="description"></textarea>
+					<textarea type="text" class="form-control" rows="5" name="description">{{ $delicacy->description }}</textarea>
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
@@ -22,7 +22,7 @@
 					<label for="otherDetails">Images:</label>
 					<div class="thumbnails">
 						@foreach($delicacy->images as $image)
-						<div class="box cmsImageBox" title="Click to view or delete image" style="background-image: url('/{{ $image->path }}');" data-toggle="modal" data-target="#imageModal" >
+						<div class="box cmsImageBox" title="Click to view or delete image" style="background-image: url('/{{ $image->path }}');" data-toggle="modal" data-target="#imageModal" data-url="/admin-panel/the-province/delicacies/{{ $image->id }}/delete-image">
 							<img src="/{{ $image->path }}">
 						</div>
 						@endforeach
@@ -30,8 +30,7 @@
 				</div>
 				<div class="form-group">
 					<label for="title">Image:</label>
-					<input type="file" class="form-control postImage">
-					<img src="none" class="img-responsive postimgpreview" alt="Image Preview Here">
+					<input type="file" name="image[]" multiple class="form-control postImage">
 				</div>
 			</div>
 		</div>
@@ -44,10 +43,16 @@
 				<img src="/">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" onclick="deleteThis()"><i class="fa fa-trash"></i> Delete this Image</button>
+				@if($delicacy->images->count() > 1)
+				<button type="button" class="btn btn-danger initiateDelete"><i class="fa fa-trash"></i> Delete this Image</button>
+				@endif
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
 </div>
+<form id="deleteForm" method="post" action="">
+	{{ csrf_field() }}
+	{{ method_field('delete') }}
+</form>
 @stop
