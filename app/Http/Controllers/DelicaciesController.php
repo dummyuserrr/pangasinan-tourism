@@ -13,7 +13,7 @@ class DelicaciesController extends Controller
     		'name' => 'required',
     		'description' => 'required',
     		'image' => 'sometimes',
-            'image.*' => 'mimes:jpeg,bmp,png|max:2048',
+            'image.*' => 'mimes:jpeg,bmp,png|max:7048',
     	]);
 
     	$d = new Delicacy;
@@ -22,7 +22,7 @@ class DelicaciesController extends Controller
     	$d->save();
 
     	foreach($r->image as $i){
-    		$image = $i->file('image')->store('/uploads/images');
+    		$image = $i->store('/uploads/images');
     		$di = new DelicacyImage;
     		$di->path = $image;
     		$di->delicacies_id = $d->id;

@@ -18,8 +18,7 @@
 			<div class="col-lg-4">
 				<div class="form-group">
 					<label for="title">Images:</label>
-					<input type="file" name="image" multiple required class="form-control postImage">
-					<img src="none" class="img-responsive postimgpreview" alt="Image Preview Here">
+					<input type="file" name="image[]" multiple required class="form-control postImage">
 				</div>
 			</div>
 		</div>
