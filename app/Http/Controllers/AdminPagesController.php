@@ -59,4 +59,11 @@ class AdminPagesController extends Controller
         $title = 'New Delicacy';
         return view('adminpanel.delicacies_new', compact('title', 'fontawesome'));
     }
+
+    public function delicacies_view(Delicacy $item){
+        $fontawesome = 'fa fa-spoon';
+        $title = 'View Delicacy';
+        $delicacy = $item;
+        return view('adminpanel.delicacies_view', compact('title', 'fontawesome', 'delicacy'));
+    }
 }

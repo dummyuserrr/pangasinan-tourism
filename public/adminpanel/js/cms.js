@@ -28,6 +28,10 @@ $(document).ready(function(){
 		position: 'top',
 		arrow: true,
 	});
+	tippy('.btn-warning', {
+		position: 'top',
+		arrow: true,
+	});
 	tippy('.cmsImageBox', {
 		position: 'top',
 		arrow: true,

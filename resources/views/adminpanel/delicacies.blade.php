@@ -16,7 +16,7 @@
 				<td>{{ $delicacy->name }}</td>
 				<td>{{ $delicacy->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
-					<button type="button" title="View" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/the-province/delicacies/{{ $delicacy->id }}')"><i class="fa fa-eye" aria-hidden="true"></i></button>
+					<button type="button" title="View or Edit" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/the-province/delicacies/{{ $delicacy->id }}')"><i class="fa fa-eye" aria-hidden="true"></i></button>
 					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/the-province/delicacies/{{ $delicacy->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
