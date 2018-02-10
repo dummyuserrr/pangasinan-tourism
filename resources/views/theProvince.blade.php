@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </header>
-<section id="about-pangasinan">
+<!-- <section id="about-pangasinan">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -86,13 +86,12 @@
 			</div>
 		</div>
 	</div>
-</section>
-<section id="cities-and-municipalities">
+</section> -->
+<!-- <section id="cities-and-municipalities">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Cities and Municipalities</h2>
-				<!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
 			</div>
 		</div>
 		<div class="row text-center">
@@ -104,7 +103,7 @@
 			@endforeach
 		</div>
 	</div>
-</section>
+</section> -->
 <section class="bg-light portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
@@ -114,19 +113,21 @@
 			</div>
 		</div>
 		<div class="row">
+			@foreach($delicacies as $d)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
+				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/the-province/{{ $d->id }}/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+					<div class="img-preview" style="background-image: url('/{{ $d->images()->first()->path }}')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>Sample</h4>
+					<h4>{{ $d->name }}</h4>
 				</div>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -140,17 +141,16 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#galleryModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+					<div class="img-preview" style="background-image: url('/{{ $d->images()->first()->path }}')"></div>
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Illustration</p>
 				</div>
 			</div>
 		</div>
@@ -166,23 +166,21 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#videoModal">
+				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
-							<i class="fa fa-youtube-play fa-3x"></i>
+							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+					<div class="img-preview" style="background-image: url('/{{ $d->images()->first()->path }}')"></div>
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>
-					<p class="text-muted">Illustration</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<!-- MODALS -->
 <div class="portfolio-modal modal fade" id="delicaciesModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -194,14 +192,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 mx-auto">
-						<div class="modal-body">
-							<h3 class="text-uppercase">Project Name</h3>
-							<div class="multiple_images">
-								<div class="box"><img src="/img/portfolio/01-full.jpg"></div>
-								<div class="box"><img src="/img/portfolio/01-full.jpg"></div>
-								<div class="box"><img src="/img/portfolio/01-full.jpg"></div>
-							</div>
-							<p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+						<div class="modal-body delicacy-modal">
+							
 						</div>
 					</div>
 				</div>

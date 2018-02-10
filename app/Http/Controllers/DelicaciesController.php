@@ -70,4 +70,9 @@ class DelicaciesController extends Controller
         session()->flash('action', 'deleted');
         return back();
     }
+
+    public function fetch(Delicacy $item){
+        $delicacy = $item;
+        return view('includes.delicacies-modal', compact('delicacy'));
+    }
 }
