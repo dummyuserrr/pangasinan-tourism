@@ -1,7 +1,7 @@
 @extends('adminpanel.template')
 @section('content')
 <div class="white_container">
-	<form method="post" action="/admin-panel/the-province/delicacies/" enctype="multipart/form-data">
+	<form method="post" action="/admin-panel/the-province/delicacies/new" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="row">
 			<div class="col-lg-8">
@@ -11,14 +11,14 @@
 				</div>
 				<div class="form-group">
 					<label for="content">Description:</label>
-					<textarea type="text" class="form-control" name="description"></textarea>
+					<textarea type="text" class="form-control" rows="5" name="description"></textarea>
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
 			<div class="col-lg-4">
 				<div class="form-group">
 					<label for="title">Images:</label>
-					<input type="file" name="image" required class="form-control postImage">
+					<input type="file" name="image" multiple required class="form-control postImage">
 					<img src="none" class="img-responsive postimgpreview" alt="Image Preview Here">
 				</div>
 			</div>

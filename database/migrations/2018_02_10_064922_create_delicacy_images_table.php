@@ -15,6 +15,8 @@ class CreateDelicacyImagesTable extends Migration
     {
         Schema::create('delicacy_images', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('delicacies_id')->unsigned();
+            $table->text('path');
             $table->timestamps();
         });
     }
