@@ -53,4 +53,10 @@ class AdminPagesController extends Controller
         $delicacies = $d->orderBy('created_at', 'desc')->get();
         return view('adminpanel.delicacies', compact('title', 'fontawesome', 'delicacies'));
     }
+
+    public function delicacies_new(){
+        $fontawesome = 'fa fa-spoon';
+        $title = 'New Delicacy';
+        return view('adminpanel.delicacies_new', compact('title', 'fontawesome'));
+    }
 }

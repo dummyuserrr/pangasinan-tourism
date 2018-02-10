@@ -1,6 +1,6 @@
 @extends('adminpanel.template')
 @section('content')
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newModal"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
+<button type="button" class="btn btn-primary" onclick="redirect('/admin-panel/the-province/delicacies/new')"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
 <div class="white_container">
 	<table class="table table-striped" id="table">
 		<thead>
