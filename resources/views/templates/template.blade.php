@@ -32,16 +32,17 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/the-province">The Province</a>
+                            <a class="nav-link {{ adminSetActive('the-province*') }}" href="/the-province">The Province</a>
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/the-province#about-pangasinan">About Pangasinan</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#cities-and-municipalities">Cities and Municipalities</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#delicacies">Delicacies</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#photo-gallery">Photo Gallery</a>
+                                <a class="nav-link js-scroll-trigger" href="/the-province#videos">Videos</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tourism">Tourism</a>
+                            <a class="nav-link {{ adminSetActive('tourism*') }}" href="/tourism">Tourism</a>
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/tourism#tourist-attractions">Tourist Attractions</a>
                                 <a class="nav-link js-scroll-trigger" href="/tourism#festivals">Festivals</a>
@@ -49,7 +50,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/find-us">Find Us</a>
+                            <a class="nav-link {{ adminSetActive('find-us*') }}" href="/find-us">Find Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
