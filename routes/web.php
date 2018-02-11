@@ -5,6 +5,7 @@ Route::get('the-province', 'PagesController@theProvince');
 Route::get('tourism', 'PagesController@tourism');
 Route::get('find-us', 'PagesController@findUs');
 Route::post('the-province/{item}/fetch', 'DelicaciesController@fetch');
+Route::post('contact-us', 'PagesController@contactUsSubmit');
 // adminpanel
 
 Route::get('admin-panel/auth/login', 'AdminPagesController@login')->middleware('checksessionreversed');

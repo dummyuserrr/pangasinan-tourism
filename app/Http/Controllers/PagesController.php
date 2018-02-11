@@ -34,4 +34,15 @@ class PagesController extends Controller
         $title = 'Find Us - Pangasinan Tourism';
     	return view('findUs', compact('title'));
     }
+
+    public function contactUsSubmit(Request $r){
+        $this->validate($r, [
+            'name' => 'required',
+            'phone' => 'required',
+            'message' => 'required',
+            'email' => 'email|required',
+        ]);
+
+        return $r;
+    }
 }

@@ -19,10 +19,11 @@ $(function() {
       }
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-      $.ajax({
-        url: "././mail/contact_me.php",
+      var request = $.ajax({
+        url: "/contact-us",
         type: "POST",
         data: {
+          "_token": $('meta[name="csrf-token"]').attr('content'),
           name: name,
           phone: phone,
           email: email,
@@ -40,6 +41,7 @@ $(function() {
             .append('</div>');
           //clear all fields
           $('#contactForm').trigger("reset");
+          alert(request.responseText);
         },
         error: function() {
           // Fail message
