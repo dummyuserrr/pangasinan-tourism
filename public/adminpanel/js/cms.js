@@ -67,6 +67,17 @@ $('.btnViewCityMun').click(function(){
 	$('#editForm').find('#description').val(description);
 });
 
+$('.btnViewGalleryPhoto').click(function(){
+	var url = $(this).data('url');
+	var name = $(this).data('name');
+	var image = $(this).data('image');
+	var description = $(this).data('description');
+	$('#editForm').attr('action', url);
+	$('#editForm').find('#name').val(name);
+	$('#editForm').find('.postimgpreview_edit').attr('src', image);
+	$('#editForm').find('#description').val(description);
+});
+
 $('.btndelete').click(function(){
 	var url = $(this).data('url');
 	$('#deleteForm').attr('action', url);

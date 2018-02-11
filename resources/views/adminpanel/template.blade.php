@@ -31,7 +31,7 @@
 							<div class="options">
 								<a href="/admin-panel/the-province/cities-and-municipalities" class="option {{ adminSetActive('admin-panel/the-province/cities-and-municipalities*') }}"><i class="fa fa-map-marker"></i> Cities and Municipalities</a>
 								<a href="/admin-panel/the-province/delicacies" class="option {{ adminSetActive('admin-panel/the-province/delicacies*') }}"><i class="fa fa-spoon"></i> Delicacies</a>
-								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}"><i class="fa fa-map-marker"></i> Photo Gallery</a>
+								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}"><i class="fa fa-picture-o"></i> Photo Gallery</a>
 								<a href="/admin-panel/the-province/videos" class="option {{ adminSetActive('admin-panel/the-province/videos*') }}"><i class="fa fa-map-marker"></i> Videos</a>
 							</div>
 						</div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CityMun;
 use App\Delicacy;
+use App\GalleryPhoto;
 
 class AdminPagesController extends Controller
 {
@@ -65,5 +66,13 @@ class AdminPagesController extends Controller
         $title = 'View Delicacy';
         $delicacy = $item;
         return view('adminpanel.delicacies_view', compact('title', 'fontawesome', 'delicacy'));
+    }
+
+    public function photoGallery(){
+        $fontawesome = 'fa fa-picture-o';
+        $title = 'Photo Gallery';
+        $gp = new GalleryPhoto;
+        $photos = $gp->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.photoGallery', compact('title', 'fontawesome', 'photos'));
     }
 }

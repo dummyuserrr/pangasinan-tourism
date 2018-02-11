@@ -31,7 +31,7 @@
 					<h4 class="modal-title">Confirmation</h4>
 				</div>
 				<div class="modal-body">
-					<p>Are you sure you want to delete this blog?</p>
+					<p>Are you sure you want to delete this item?</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger initiateDelete">Yes</button>

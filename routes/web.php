@@ -32,4 +32,10 @@ Route::middleware('checksession')->group(function () {
 	Route::get('admin-panel/the-province/delicacies/{item}', 'AdminPagesController@delicacies_view');
 	Route::patch('admin-panel/the-province/delicacies/{item}/update', 'DelicaciesController@patch');
 	Route::delete('admin-panel/the-province/delicacies/{item}/delete-image', 'DelicaciesController@image_destroy');
+
+	// photo gallery
+	Route::get('admin-panel/the-province/photo-gallery', 'AdminPagesController@photoGallery');
+	Route::post('admin-panel/the-province/photo-gallery', 'GalleryPhotosController@store');
+	Route::delete('admin-panel/the-province/photo-gallery/{item}/delete', 'GalleryPhotosController@destroy');
+	Route::patch('admin-panel/the-province/photo-gallery/{item}/update', 'GalleryPhotosController@patch');
 });
