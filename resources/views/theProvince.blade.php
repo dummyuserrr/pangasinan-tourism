@@ -104,7 +104,7 @@
 		</div>
 	</div>
 </section> -->
-<section class="bg-light portfoliooo" id="delicacies">
+<!-- <section class="bg-light portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -130,7 +130,7 @@
 			@endforeach
 		</div>
 	</div>
-</section>
+</section> -->
 <section class="bg-light portfoliooo" id="photo-gallery">
 	<div class="container">
 		<div class="row">
@@ -140,19 +140,21 @@
 			</div>
 		</div>
 		<div class="row">
+			@foreach($photos as $photo)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
+				<a class="portfolio-link galleryPhotoPreview" data-toggle="modal" href="#photoGalleryModal" data-name="{{ $photo->name }}" data-image="/{{ $photo->image }}" data-description="{{ $photo->description }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $d->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/{{ $photo->image }}')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>Sample</h4>
+					<h4>{{ $photo->name }}</h4>
 				</div>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -201,7 +203,7 @@
 		</div>
 	</div>
 </div>
-<div class="portfolio-modal modal fade" id="galleryModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="photoGalleryModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="close-modal" data-dismiss="modal">

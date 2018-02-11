@@ -8,6 +8,15 @@ $(document).ready(function(){
 
 // wew
 
+$('.galleryPhotoPreview').click(function(){
+    var name = $(this).data('name');
+    var description = $(this).data('description');
+    var image = $(this).data('image');
+    $('#photoGalleryModal').find('h3').html(name);
+    $('#photoGalleryModal').find('p').html(description);
+    $('#photoGalleryModal').find('img').attr('src', image);
+});
+
 $('.delicacy-viewer').click(function(){
 	var url	= $(this).data('url');
 	var request = $.ajax({
