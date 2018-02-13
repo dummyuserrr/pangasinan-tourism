@@ -174,7 +174,7 @@
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $d->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/sed')"></div>
 				</a>
 				<div class="portfolio-caption">
 					<h4>Sample</h4>

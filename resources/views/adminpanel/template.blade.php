@@ -22,7 +22,6 @@
 				<div class="options">
 					<a href="/admin-panel/dashboard" class="option {{ adminSetActive('admin-panel/dashboard*') }}">Dashboard</a>
 					<a href="/admin-panel/users" class="option {{ adminSetActive('admin-panel/users*') }}">Users</a>
-					<a href="/admin-panel/posts" class="option {{ adminSetActive('admin-panel/posts*') }}">Posts</a>
 					<div class="mydropdown {{ adminSetActive2('admin-panel/the-province*') }}">
 						<span>The Province</span>
 						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_province"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
