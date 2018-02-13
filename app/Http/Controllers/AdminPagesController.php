@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CityMun;
 use App\Delicacy;
 use App\GalleryPhoto;
+use App\Video;
 
 class AdminPagesController extends Controller
 {
@@ -74,5 +75,13 @@ class AdminPagesController extends Controller
         $gp = new GalleryPhoto;
         $photos = $gp->orderBy('created_at', 'desc')->get();
         return view('adminpanel.photoGallery', compact('title', 'fontawesome', 'photos'));
+    }
+
+    public function videos(){
+        $fontawesome = 'fa fa-youtube-play';
+        $title = 'Videos';
+        $v = new Video;
+        $videos = $v->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.videos', compact('title', 'fontawesome', 'videos'));
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CityMun;
 use App\Delicacy;
 use App\GalleryPhoto;
+use App\Video;
 
 class PagesController extends Controller
 {
@@ -19,10 +20,12 @@ class PagesController extends Controller
         $cm = new CityMun;
         $d = new Delicacy;
         $gp = new GalleryPhoto;
+        $v = new Video;
         $citymuns = $cm->orderBy('created_at', 'desc')->get();
         $delicacies = $d->orderBy('created_at', 'desc')->get();
         $photos = $gp->orderBy('created_at', 'desc')->get();
-    	return view('theProvince', compact('title', 'citymuns', 'delicacies', 'photos'));
+        $videos = $v->orderBy('created_at', 'desc')->get();
+    	return view('theProvince', compact('title', 'citymuns', 'delicacies', 'photos', 'videos'));
     }
 
     public function tourism(){

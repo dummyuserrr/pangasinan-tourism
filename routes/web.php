@@ -39,4 +39,8 @@ Route::middleware('checksession')->group(function () {
 	Route::post('admin-panel/the-province/photo-gallery', 'GalleryPhotosController@store');
 	Route::delete('admin-panel/the-province/photo-gallery/{item}/delete', 'GalleryPhotosController@destroy');
 	Route::patch('admin-panel/the-province/photo-gallery/{item}/update', 'GalleryPhotosController@patch');
+
+	// videos
+	Route::get('admin-panel/the-province/videos', 'AdminPagesController@videos');
+	Route::post('admin-panel/the-province/videos', 'VideosController@store');
 });
