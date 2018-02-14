@@ -47,6 +47,7 @@
 							</div>
 						</div>
 					</div>
+					<a href="/admin-panel/contact-us-messages" class="option {{ adminSetActive('admin-panel/contact-us-messages*') }}">"Contact Us" Messages</a>
 					<a href="/" target="_blank" class="option" style="border-top: 1px solid #fff;"><i class="fa fa-television" aria-hidden="true"></i> Open Website in New Tab</a>
 				</div>
 			</div>

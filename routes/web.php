@@ -43,4 +43,7 @@ Route::middleware('checksession')->group(function () {
 	// videos
 	Route::get('admin-panel/the-province/videos', 'AdminPagesController@videos');
 	Route::post('admin-panel/the-province/videos', 'VideosController@store');
+
+	// contact us messages
+	Route::get('admin-panel/contact-us-messages', 'AdminPagesController@contactUsMessages');
 });

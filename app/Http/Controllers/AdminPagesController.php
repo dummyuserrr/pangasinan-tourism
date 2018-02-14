@@ -7,6 +7,7 @@ use App\CityMun;
 use App\Delicacy;
 use App\GalleryPhoto;
 use App\Video;
+use App\ContactUsMessage;
 
 class AdminPagesController extends Controller
 {
@@ -83,5 +84,13 @@ class AdminPagesController extends Controller
         $v = new Video;
         $videos = $v->orderBy('created_at', 'desc')->get();
         return view('adminpanel.videos', compact('title', 'fontawesome', 'videos'));
+    }
+
+    public function contactUsMessages(){
+        $fontawesome = 'fa fa-phone';
+        $title = 'Contact Us Messages';
+        $cum = new ContactUsMessage;
+        $cums = $cum->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.contactUsMessages', compact('fontawesome', 'title', 'cums'));
     }
 }
