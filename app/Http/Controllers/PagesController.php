@@ -7,6 +7,7 @@ use App\CityMun;
 use App\Delicacy;
 use App\GalleryPhoto;
 use App\Video;
+use App\ContactUsMessage;
 
 class PagesController extends Controller
 {
@@ -46,6 +47,13 @@ class PagesController extends Controller
             'email' => 'email|required',
         ]);
 
-        return $r;
+        $cum = new ContactUsMessage;
+        $cum->name = $r->name;
+        $cum->number = $r->phone;
+        $cum->message = $r->message;
+        $cum->email = $r->email;
+        $cum->save();
+
+        return 1;
     }
 }

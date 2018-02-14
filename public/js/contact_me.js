@@ -41,7 +41,6 @@ $(function() {
             .append('</div>');
           //clear all fields
           $('#contactForm').trigger("reset");
-          alert(request.responseText);
         },
         error: function() {
           // Fail message
