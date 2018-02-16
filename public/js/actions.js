@@ -8,6 +8,18 @@ $(document).ready(function(){
 
 // wew
 
+$('.viewVideo').click(function(){
+    var youtubeid = $(this).data('youtubeid');
+    var title = $(this).data('title');
+    var url = "https://www.youtube.com/embed/"+youtubeid+"?rel=0&enablejsapi=1";
+    $('#videoModal').find('h3').html(title);
+    $('#videoModal').find('iframe').attr('src', url);
+});
+
+$('#videoModal').on('hidden.bs.modal', function(){
+    $('#videoModal').find('iframe').attr('src', '');
+});
+
 $('.galleryPhotoPreview').click(function(){
     var name = $(this).data('name');
     var description = $(this).data('description');

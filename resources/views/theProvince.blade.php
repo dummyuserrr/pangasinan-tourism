@@ -131,7 +131,7 @@
 		</div>
 	</div>
 </section> -->
-<section class="bg-light portfoliooo" id="photo-gallery">
+<!-- <section class="bg-light portfoliooo" id="photo-gallery">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -157,7 +157,7 @@
 			@endforeach
 		</div>
 	</div>
-</section>
+</section> -->
 <section class="bg-light portfoliooo" id="videos">
 	<div class="container">
 		<div class="row">
@@ -167,19 +167,21 @@
 			</div>
 		</div>
 		<div class="row">
+			@foreach($videos as $video)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#delicaciesModal">
+				<a class="portfolio-link viewVideo" data-toggle="modal" data-target="#videoModal" href="javascript:void(0);" data-youtubeid="{{ $video->youtubeid }}" data-title="{{ $video->title }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/sed')"></div>
+					<div class="img-preview" style="background-image: url('http://img.youtube.com/vi/{{ $video->youtubeid }}/0.jpg')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>Sample</h4>
+					<h4>{{ $video->title }}</h4>
 				</div>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -237,7 +239,8 @@
 				<div class="row">
 					<div class="col-lg-12 mx-auto">
 						<div class="modal-body">
-							<h3 class="text-uppercase">Video Name</h3>
+							<h3 class="text-uppercase"></h3>
+							<iframe width="100%" height="500px" src="https://www.youtube.com/embed/none?rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
