@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </header>
-<!-- <section id="about-pangasinan">
+<section id="about-pangasinan">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -86,8 +86,8 @@
 			</div>
 		</div>
 	</div>
-</section> -->
-<!-- <section id="cities-and-municipalities">
+</section>
+<section id="cities-and-municipalities">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -103,8 +103,8 @@
 			@endforeach
 		</div>
 	</div>
-</section> -->
-<!-- <section class="bg-light portfoliooo" id="delicacies">
+</section>
+<section class="bg-light portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -130,8 +130,8 @@
 			@endforeach
 		</div>
 	</div>
-</section> -->
-<!-- <section class="bg-light portfoliooo" id="photo-gallery">
+</section>
+<section class="bg-light portfoliooo" id="photo-gallery">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -157,7 +157,7 @@
 			@endforeach
 		</div>
 	</div>
-</section> -->
+</section>
 <section class="bg-light portfoliooo" id="videos">
 	<div class="container">
 		<div class="row">
