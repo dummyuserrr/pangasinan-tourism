@@ -94,6 +94,10 @@ $('.btndelete').click(function(){
 $('.initiateDelete').click(function(){
 	$('#deleteForm').submit();
 });
+$('.btnViewVideo').click(function(){
+	youtubeid = $(this).data('youtubeid');
+	$('#viewVideoModal').find('iframe').attr('src', 'https://www.youtube.com/embed/'+youtubeid+'?rel=0&enablejsapi=1')
+});
 
 if($(window).width() >= 768){
 	$('.leftnavHider').click(function(){
