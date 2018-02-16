@@ -43,6 +43,8 @@ Route::middleware('checksession')->group(function () {
 	// videos
 	Route::get('admin-panel/the-province/videos', 'AdminPagesController@videos');
 	Route::post('admin-panel/the-province/videos', 'VideosController@store');
+	Route::patch('admin-panel/the-province/videos/{item}/update', 'VideosController@patch');
+	Route::delete('admin-panel/the-province/videos/{item}/delete', 'VideosController@destroy');
 
 	// contact us messages
 	Route::get('admin-panel/contact-us-messages', 'AdminPagesController@contactUsMessages');

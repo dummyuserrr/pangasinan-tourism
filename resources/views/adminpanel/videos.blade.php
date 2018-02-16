@@ -19,7 +19,7 @@
 				<td> {{ $video->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
 					<button type="button" title="View" class="btnViewVideo btn btn-warning btn-sm" data-target="#viewVideoModal" data-toggle="modal" data-youtubeid="{{ $video->youtubeid }}"><i class="fa fa-eye" aria-hidden="true"></i></button>
-					<button type="button" title="Edit" class="btnEditVideo btn btn-success btn-sm" data-target="#editModal" data-toggle="modal" data-id="{{ $video->id }}" data-youtubeid="{{ $video->youtubeid }}" data-title="{{ $video->title }}" data-year="{{ $video->year }}" data-eventid="{{ $video->event_id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+					<button type="button" title="Edit" class="btnEditVideo btn btn-success btn-sm" data-target="#editModal" data-toggle="modal" data-id="{{ $video->id }}" data-youtubeid="{{ $video->youtubeid }}" data-title="{{ $video->title }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/the-province/videos/{{ $video->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
@@ -45,7 +45,7 @@
 	</div>
 </div>
 
-<form id="formDelete" method="post" action="">
+<form id="deleteForm" method="post" action="">
 	{{ csrf_field() }}
 	{{ method_field('delete') }}
 </form>

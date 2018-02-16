@@ -58,6 +58,15 @@ $(document).ready(function(){
 
 // wew
 
+$('.btnEditVideo').click(function(){
+	id = $(this).data('id');
+	youtubeid = $(this).data('youtubeid');
+	title = $(this).data('title');
+	$('#editModal').find('#title').val(title);
+	$('#editModal').find('#youtubeLink2').val('https://www.youtube.com/watch?v='+youtubeid);
+	$('#editModal').find('form').attr('action', '/admin-panel/the-province/videos/'+id+'/update');
+});
+
 $('.btnViewCityMun').click(function(){
 	var url = $(this).data('url');
 	var name = $(this).data('name');
