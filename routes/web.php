@@ -19,6 +19,7 @@ Route::middleware('checksession')->group(function () {
 	// users	
 	Route::get('admin-panel/users', 'AdminPagesController@users');
 	Route::post('admin-panel/users', 'UserController@store');
+	Route::delete('admin-panel/users/{item}/delete', 'UserController@destroy');
 
 	Route::get('admin-panel/posts', 'AdminPagesController@posts');
 	Route::get('admin-panel/posts/new', 'AdminPagesController@posts_new');

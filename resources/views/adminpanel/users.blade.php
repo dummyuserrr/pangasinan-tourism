@@ -21,7 +21,7 @@
 				<td>{{ $user->created_at->format('M d, Y - h:i:s A') }}</td>
 				<td>{{ $user->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
-					<button type="button" title="Edit" class="btnEditUser btn btn-success btn-sm" data-target="#editModal" data-toggle="modal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+					<button type="button" title="Edit" class="btnEditUser btn btn-success btn-sm" data-target="#editModal" data-toggle="modal" data-username="{{ $user->username }}" data-url="/admin-panel/users/{{ $user->id }}/update"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/users/{{ $user->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
@@ -96,11 +96,15 @@
 					{{ method_field('patch') }}
 					<div class="form-group">
 						<label for="username">Username: </label>
-						<input type="text" class="form-control" name="username" id="username">
+						<input type="text" class="form-control" id="username" disabled>
 					</div>
 					<div class="form-group">
 						<label for="password">Password: </label>
 						<input type="text" class="form-control" name="password" id="password">
+					</div>
+					<div class="form-group">
+						<label for="password2">Retype Password: </label>
+						<input type="text" class="form-control" name="password2" id="password2">
 					</div>
 				</div>
 				<div class="modal-footer">

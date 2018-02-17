@@ -32,6 +32,10 @@ $(document).ready(function(){
 		position: 'top',
 		arrow: true,
 	});
+	tippy('.btn', {
+		position: 'top',
+		arrow: true,
+	});
 	tippy('.cmsImageBox', {
 		position: 'top',
 		arrow: true,
@@ -57,6 +61,13 @@ $(document).ready(function(){
 });
 
 // wew
+
+$('.btnEditUser').click(function(){
+	var username = $(this).data('username');
+	var url = $(this).data('url');
+	$('#editModal').find('form').attr('action', url);
+	$('#editModal').find('#username').val(username);
+});
 
 $('.btnEditVideo').click(function(){
 	id = $(this).data('id');

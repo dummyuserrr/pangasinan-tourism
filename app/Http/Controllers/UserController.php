@@ -49,4 +49,10 @@ class UserController extends Controller
         session()->flash('action', 'added');
         return redirect('/admin-panel/users');
     }
+
+    public function destroy(User $item){
+        $item->delete();
+        session()->flash('action', 'deleted');
+        return back();
+    }
 }
