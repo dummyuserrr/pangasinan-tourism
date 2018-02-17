@@ -55,4 +55,20 @@ class UserController extends Controller
         session()->flash('action', 'deleted');
         return back();
     }
+
+    public function patch(User $item, Request $r){
+        $this->validate($r, [
+            'password' => 'sometimes',
+            'password2' => 'sometimes|same:password',
+        ]);
+
+        $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
+
+        $item->update([
+            'password' => $password,
+        ]); 
+
+        session()->flash('action', 'updated');
+        return back();
+    }
 }

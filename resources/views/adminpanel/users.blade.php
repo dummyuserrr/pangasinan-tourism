@@ -68,11 +68,11 @@
 					</div>
 					<div class="form-group">
 						<label for="password">Password: </label>
-						<input type="text" class="form-control" name="password" id="password">
+						<input type="password" class="form-control" name="password" id="password">
 					</div>
 					<div class="form-group">
 						<label for="password2">Retype Password: </label>
-						<input type="text" class="form-control" name="password2" id="password2">
+						<input type="password" class="form-control" name="password2" id="password2">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -100,11 +100,11 @@
 					</div>
 					<div class="form-group">
 						<label for="password">Password: </label>
-						<input type="text" class="form-control" name="password" id="password">
+						<input required type="password" class="form-control" name="password" id="password">
 					</div>
 					<div class="form-group">
 						<label for="password2">Retype Password: </label>
-						<input type="text" class="form-control" name="password2" id="password2">
+						<input required type="password" class="form-control" name="password2" id="password2">
 					</div>
 				</div>
 				<div class="modal-footer">
