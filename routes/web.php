@@ -11,10 +11,15 @@ Route::post('contact-us', 'PagesController@contactUsSubmit');
 Route::get('admin-panel/auth/login', 'AdminPagesController@login')->middleware('checksessionreversed');
 Route::post('admin-panel/auth/login', 'UserController@login')->middleware('checksessionreversed');
 Route::middleware('checksession')->group(function () {
+
 	Route::post('admin-panel/logout', 'UserController@logout');
 		Route::get('admin-panel', 'AdminPagesController@index');
 	Route::get('admin-panel/dashboard', 'AdminPagesController@index');
+
+	// users	
 	Route::get('admin-panel/users', 'AdminPagesController@users');
+	Route::post('admin-panel/users', 'UserController@store');
+
 	Route::get('admin-panel/posts', 'AdminPagesController@posts');
 	Route::get('admin-panel/posts/new', 'AdminPagesController@posts_new');
 	Route::get('admin-panel/posts/{post}/edit', 'AdminPagesController@posts_edit');

@@ -15,6 +15,7 @@ class UserController extends Controller
             session()->put('status', 1);
             session()->put('id', $user->id);
             session()->put('username', $user->username);
+            session()->put('role', $user->role);
     		return redirect('/admin-panel/dashboard');
     	}else{
     		session()->flush();
@@ -29,5 +30,23 @@ class UserController extends Controller
         session()->flash('alertmessage', 'Logout Successful');
         session()->flash('alertclass', 'success');
         return redirect('/admin-panel/auth/login');
+    }
+
+    public function store(Request $r){
+        $this->validate($r, [
+            'username' => 'required|unique:users',
+            'password' => 'required',
+            'password2' => 'same:password',
+        ]);
+
+        $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
+
+        $u = new User;
+        $u->username = $r->username;
+        $u->password = $password;
+        $u->save();
+
+        session()->flash('action', 'added');
+        return redirect('/admin-panel/users');
     }
 }

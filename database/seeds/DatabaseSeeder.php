@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'username' => 'admin',
             'password' => $password,
+            'role' => 'superadmin',
             'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
     }
 }

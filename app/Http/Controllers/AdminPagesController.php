@@ -7,6 +7,7 @@ use App\CityMun;
 use App\Delicacy;
 use App\GalleryPhoto;
 use App\Video;
+use App\User;
 use App\ContactUsMessage;
 
 class AdminPagesController extends Controller
@@ -26,7 +27,9 @@ class AdminPagesController extends Controller
     public function users(){
         $fontawesome = 'fa fa-users';
         $title = 'Users';
-    	return view('adminpanel.users', compact('title', 'fontawesome'));
+        $u = new User;
+        $users = $u->where('role', '!=', 'superadmin')->where('id', '!=', session('id'))->orderBy('created_at', 'desc')->get();
+    	return view('adminpanel.users', compact('title', 'fontawesome', 'users'));
     }
 
     public function posts_new(){
