@@ -23,5 +23,6 @@
 			@endforeach
 		</tbody>
 	</table>
+	{{ $cums->links() }}
 </div>
 @stop

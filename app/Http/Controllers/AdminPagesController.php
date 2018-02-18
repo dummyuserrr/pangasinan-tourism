@@ -93,7 +93,7 @@ class AdminPagesController extends Controller
         $fontawesome = 'fa fa-phone';
         $title = 'Contact Us Messages';
         $cum = new ContactUsMessage;
-        $cums = $cum->orderBy('created_at', 'desc')->get();
+        $cums = $cum->orderBy('created_at', 'desc')->paginate(10);
         return view('adminpanel.contactUsMessages', compact('fontawesome', 'title', 'cums'));
     }
 }
