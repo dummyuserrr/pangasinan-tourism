@@ -154,7 +154,7 @@
 				<img class="image_view" src="/{{ $photos->first()->image }}">
 				<div class="photoGallery_container owl-carousel owl-theme">
 					@foreach($photos as $photo)
-						<div class="image_selector" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}"></div>
+						<div class="image_selector" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}"><div class="overlayer"></div></div>
 					@endforeach
 				</div>
 			</div>
