@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </header>
-<section id="about-pangasinan">
+<!-- <section id="about-pangasinan">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -86,21 +86,29 @@
 			</div>
 		</div>
 	</div>
-</section>
-<section id="cities-and-municipalities">
+</section> -->
+<section class="bg-light portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Cities and Municipalities</h2>
+				<h2 class="section-heading text-uppercase">Delicacies</h2>
+				<h3 class="section-subheading text-muted">Because food is life.</h3>
 			</div>
 		</div>
-		<div class="row text-center">
-			@foreach($citymuns as $cm)
-			<div class="col-md-4">
-				<h4 class="service-heading">{{ $cm->name }}</h4>
-				<p class="text-muted">{{ $cm->description }}</p>
+		<div class="row">
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/the-province/1/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/img/about/2.jpg')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4>WEw</h4>
+				</div>
 			</div>
-			@endforeach
 		</div>
 	</div>
 </section>
