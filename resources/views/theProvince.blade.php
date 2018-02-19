@@ -86,18 +86,18 @@
 			</div>
 		</div>
 	</div>
-</section> -->
+</section>
 <section class="bg-light portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Delicacies</h2>
-				<h3 class="section-subheading text-muted">Because food is life.</h3>
+				<h2 class="section-heading text-uppercase">Cities and Municipalities</h2>
+				<h3 class="section-subheading text-muted">Learn more about our places.</h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/the-province/1/fetch">
+				<a class="portfolio-link" data-toggle="modal" href="#citymunModal" data-url="/the-province/1/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -138,7 +138,7 @@
 			@endforeach
 		</div>
 	</div>
-</section>
+</section> -->
 <section class="bg-light portfoliooo" id="photo-gallery">
 	<div class="container">
 		<div class="row">
@@ -148,21 +148,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($photos as $photo)
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link galleryPhotoPreview" data-toggle="modal" href="#photoGalleryModal" data-name="{{ $photo->name }}" data-image="/{{ $photo->image }}" data-description="{{ $photo->description }}">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
+			<div class="pgc">
+				<button class="gallery_photo_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+				<button class="gallery_photo_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				<div class="photoGallery_container owl-carousel owl-theme">
+					@foreach($photos as $photo)
+					<div class="item text-center">
+						<h3>{{ $photo->name }}</h3>
+						<img src="/{{ $photo->image }}">
+						<p>
+							{{ $photo->description }}
+						</p>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $photo->image }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $photo->name }}</h4>
+					@endforeach
 				</div>
 			</div>
-			@endforeach
 		</div>
 	</div>
 </section>
@@ -206,28 +206,6 @@
 					<div class="col-lg-12 mx-auto">
 						<div class="modal-body delicacy-modal">
 							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="portfolio-modal modal fade" id="photoGalleryModal" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 mx-auto">
-						<div class="modal-body">
-							<h3 class="text-uppercase">Project Name</h3>
-							<img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-							<p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
 						</div>
 					</div>
 				</div>

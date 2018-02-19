@@ -4,6 +4,22 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    var pgc = $('.photoGallery_container').owlCarousel({
+        margin: 10,
+        loop: false,
+        items: 1,
+        autoplay: false,
+        dots: true,
+        autoplayHoverPause: true,
+        autoHeight: true,
+    });
+    $('.gallery_photo_left').click(function(){
+        pgc.trigger('prev.owl.carousel');
+    });
+    $('.gallery_photo_right').click(function(){
+        pgc.trigger('next.owl.carousel');
+    });
 });
 
 // wew

@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ $title }}</title>
+        <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
         <!-- Bootstrap core CSS -->
         <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template -->
@@ -138,6 +140,7 @@
         <!-- Modal 1 -->
         <!-- Bootstrap core JavaScript -->
         <script src="/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
         <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Plugin JavaScript -->
         <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
