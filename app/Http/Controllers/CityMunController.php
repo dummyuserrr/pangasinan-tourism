@@ -37,12 +37,24 @@ class CityMunController extends Controller
     	$this->validate($r, [
     		'name' => 'required',
     		'description' => 'required',
+            'images' => 'sometimes',
+            'images.*' => 'sometimes|mimes:jpeg,bmp,png,jpg|max:7000',
     	]);
 
     	$item->update([
     		'name' => $r->name,
     		'description' => $r->description,
     	]);
+
+        if($r->images){
+            foreach($r->images as $i){
+                $image = $i->store('/uploads/images');
+                $cmi = new CityMunImage;
+                $cmi->path = $image;
+                $cmi->city_mun_id = $item->id;
+                $cmi->save();
+            }
+        }
 
     	session()->flash('action', 'updated');
     	return back();

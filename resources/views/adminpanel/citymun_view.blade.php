@@ -2,8 +2,9 @@
 @section('content')
 <button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/the-province/cities-and-municipalities')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
 <div class="white_container">
-	<form method="post" action="/admin-panel/the-province/cities-and-municipalities/new" enctype="multipart/form-data">
+	<form method="post" action="/admin-panel/the-province/cities-and-municipalities/{{ $cm->id }}/update" enctype="multipart/form-data">
 		{{ csrf_field() }}
+		{{ method_field('patch') }}
 		<div class="row">
 			<div class="col-lg-8">
 				<div class="form-group">
@@ -28,8 +29,8 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="images">Images: (You can upload multiple)</label>
-					<input type="file" class="form-control" name="images[]" required multiple>
+					<label for="images">Images: (Optional | You can upload multiple)</label>
+					<input type="file" class="form-control" name="images[]" multiple>
 				</div>
 			</div>
 		</div>
