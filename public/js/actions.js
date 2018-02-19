@@ -8,10 +8,9 @@ $(document).ready(function(){
     var pgc = $('.photoGallery_container').owlCarousel({
         margin: 10,
         loop: false,
-        items: 1,
+        items: 6,
         autoplay: false,
         dots: true,
-        autoplayHoverPause: true,
         autoHeight: true,
     });
     $('.gallery_photo_left').click(function(){
@@ -23,6 +22,13 @@ $(document).ready(function(){
 });
 
 // wew
+
+$('.image_selector').click(function(){
+    $('.image_selector').removeClass('image_selector_active');
+    $(this).addClass('image_selector_active');
+    var path = $(this).data('path');
+    $('.image_view').attr('src', path);
+});
 
 $('.viewVideo').click(function(){
     var youtubeid = $(this).data('youtubeid');

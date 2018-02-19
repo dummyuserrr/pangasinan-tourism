@@ -151,15 +151,10 @@
 			<div class="pgc">
 				<button class="gallery_photo_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
 				<button class="gallery_photo_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				<img class="image_view" src="/{{ $photos->first()->image }}">
 				<div class="photoGallery_container owl-carousel owl-theme">
 					@foreach($photos as $photo)
-					<div class="item text-center">
-						<h3>{{ $photo->name }}</h3>
-						<img src="/{{ $photo->image }}">
-						<p>
-							{{ $photo->description }}
-						</p>
-					</div>
+						<div class="image_selector" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}"></div>
 					@endforeach
 				</div>
 			</div>
@@ -180,7 +175,7 @@
 				<a class="portfolio-link viewVideo" data-toggle="modal" data-target="#videoModal" href="javascript:void(0);" data-youtubeid="{{ $video->youtubeid }}" data-title="{{ $video->title }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
+							<i class="fa fa-youtube-play fa-3x"></i>
 						</div>
 					</div>
 					<div class="img-preview" style="background-image: url('http://img.youtube.com/vi/{{ $video->youtubeid }}/0.jpg')"></div>
