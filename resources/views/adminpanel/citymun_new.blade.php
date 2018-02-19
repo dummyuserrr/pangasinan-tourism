@@ -17,14 +17,7 @@
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
 			<div class="col-lg-4">
-				<!-- <div class="form-group">
-					<label for="otherDetails">Images:</label>
-					<div class="thumbnails">
-						<div class="box cmsImageBox" title="Click to view or delete image" style="background-image: url('/img/Homeowners/Projects/Esmeralda North Davao.png');" data-toggle="modal" data-target="#imageModal" >
-							<img src="/img/Homeowners/Projects/Esmeralda North Davao.png">
-						</div>
-					</div>
-				</div> -->
+				
 				<div class="form-group">
 					<label for="images">Images: (You can upload multiple)</label>
 					<input type="file" class="form-control" name="images[]" required multiple>
@@ -33,17 +26,4 @@
 		</div>
 	</form>
 </div>
-<!-- <div id="imageModal" class="modal fade" role="dialog">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-body text-center">
-				<img src="/">
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" onclick="deleteThis()"><i class="fa fa-trash"></i> Delete this Image</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div> -->
 @stop

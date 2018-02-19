@@ -29,6 +29,8 @@ Route::middleware('checksession')->group(function () {
 	// cities and municipalities
 	Route::get('admin-panel/the-province/cities-and-municipalities', 'AdminPagesController@citymun');
 	Route::get('admin-panel/the-province/cities-and-municipalities/new', 'AdminPagesController@citymun_new');
+	Route::get('admin-panel/the-province/cities-and-municipalities/{item}', 'AdminPagesController@citymun_view');
+	Route::delete('admin-panel/the-province/cities-and-municipalities/image/{item}/delete', 'CityMunController@destroy_image');
 	Route::post('admin-panel/the-province/cities-and-municipalities/new', 'CityMunController@store');
 	Route::delete('admin-panel/the-province/cities-and-municipalities/{item}/delete', 'CityMunController@destroy');
 	Route::patch('admin-panel/the-province/cities-and-municipalities/{item}/update', 'CityMunController@patch');

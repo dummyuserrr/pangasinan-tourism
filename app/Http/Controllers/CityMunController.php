@@ -13,7 +13,7 @@ class CityMunController extends Controller
     		'name' => 'required',
             'description' => 'required',
     		'images' => 'required',
-            'images.*' => 'mimes:jpeg,bmp,png|max:7000',
+            'images.*' => 'mimes:jpeg,bmp,png,jpg|max:7000',
     	]);
 
     	$c = new CityMun;
@@ -22,10 +22,10 @@ class CityMunController extends Controller
     	$c->save();
 
         foreach($r->images as $i){
-            $image = $i->store('/uploads/cities-and-municipalities');
+            $image = $i->store('/uploads/images');
             $cmi = new CityMunImage;
             $cmi->path = $image;
-            $cmi->citymun_id = $c->id;
+            $cmi->city_mun_id = $c->id;
             $cmi->save();
         }
 
@@ -49,9 +49,17 @@ class CityMunController extends Controller
     }
 
     public function destroy(CityMun $item){
+        $item->images()->delete();
     	$item->delete();
 
     	session()->flash('action', 'deleted');
     	return back();
+    }
+
+    public function destroy_image(CityMunImage $item){
+        $item->delete();
+
+        session()->flash('action', 'deleted');
+        return back();
     }
 }

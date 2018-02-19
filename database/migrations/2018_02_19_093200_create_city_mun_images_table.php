@@ -15,7 +15,7 @@ class CreateCityMunImagesTable extends Migration
     {
         Schema::create('city_mun_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('citymun_id')->unsigned();
+            $table->integer('city_mun_id')->unsigned();
             $table->text('path');
             $table->timestamps();
         });

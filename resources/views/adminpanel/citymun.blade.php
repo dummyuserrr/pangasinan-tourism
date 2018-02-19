@@ -16,7 +16,7 @@
 				<td>{{ $citymun->name }}</td>
 				<td>{{ $citymun->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
-					<button type="button" title="View" class="btnViewCityMun btn btn-warning btn-sm" data-name="{{ $citymun->name }}" data-description="{{ $citymun->description }}" data-url="/admin-panel/the-province/cities-and-municipalities/{{ $citymun->id }}/update" data-toggle="modal" data-target="#editModal"><i class="fa fa-eye" aria-hidden="true"></i></button>
+					<button type="button" title="View" class="btn btn-warning btn-sm" onclick="redirect('/admin-panel/the-province/cities-and-municipalities/{{ $citymun->id }}')"><i class="fa fa-eye" aria-hidden="true"></i></button>
 					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/the-province/cities-and-municipalities/{{ $citymun->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
