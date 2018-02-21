@@ -4,9 +4,31 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    var pgc = $('.photoGallery_container').owlCarousel({
+        margin: 10,
+        loop: false,
+        items: 6,
+        autoplay: false,
+        dots: true,
+        autoHeight: true,
+    });
+    $('.gallery_photo_left').click(function(){
+        pgc.trigger('prev.owl.carousel');
+    });
+    $('.gallery_photo_right').click(function(){
+        pgc.trigger('next.owl.carousel');
+    });
 });
 
 // wew
+
+$('.image_selector').click(function(){
+    $('.image_selector').removeClass('image_selector_active');
+    $(this).addClass('image_selector_active');
+    var path = $(this).data('path');
+    $('.image_view').attr('src', path);
+});
 
 $('.viewVideo').click(function(){
     var youtubeid = $(this).data('youtubeid');

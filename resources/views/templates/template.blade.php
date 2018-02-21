@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ $title }}</title>
+        <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
         <!-- Bootstrap core CSS -->
         <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template -->
@@ -138,6 +140,7 @@
         <!-- Modal 1 -->
         <!-- Bootstrap core JavaScript -->
         <script src="/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
         <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Plugin JavaScript -->
         <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -146,6 +149,19 @@
         <script src="/js/contact_me.js"></script>
         <!-- Custom scripts for this template -->
         <script src="/js/agency.min.js"></script>
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript"> 
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5a8aafe9d7591465c707cab2/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
         <script src="/js/actions.js"></script>
     </body>
 </html>

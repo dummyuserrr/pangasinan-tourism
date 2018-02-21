@@ -52,6 +52,19 @@ class AdminPagesController extends Controller
         return view('adminpanel.citymun', compact('title', 'fontawesome', 'citymuns'));
     }
 
+    public function citymun_new(){
+        $fontawesome = 'fa fa-map-marker';
+        $title = 'Cities and Municipalities';
+        return view('adminpanel.citymun_new', compact('title', 'fontawesome'));
+    }
+
+    public function citymun_view(CityMun $item){
+        $fontawesome = 'fa fa-map-marker';
+        $title = 'Cities and Municipalities';
+        $cm = $item;
+        return view('adminpanel.citymun_view', compact('title', 'fontawesome', 'cm'));
+    }
+
     public function delicacies(){
         $fontawesome = 'fa fa-spoon';
         $title = 'Delicacies';

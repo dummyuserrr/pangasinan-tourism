@@ -87,24 +87,32 @@
 		</div>
 	</div>
 </section>
-<section id="cities-and-municipalities">
+<section class="bg-light portfoliooo" id="cities-and-municipalities">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Cities and Municipalities</h2>
+				<h3 class="section-subheading text-muted">Learn more about our places.</h3>
 			</div>
 		</div>
-		<div class="row text-center">
-			@foreach($citymuns as $cm)
-			<div class="col-md-4">
-				<h4 class="service-heading">{{ $cm->name }}</h4>
-				<p class="text-muted">{{ $cm->description }}</p>
+		<div class="row">
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link" data-toggle="modal" href="#citymunModal" data-url="/the-province/1/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/img/about/2.jpg')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4>WEw</h4>
+				</div>
 			</div>
-			@endforeach
 		</div>
 	</div>
 </section>
-<section class="bg-light portfoliooo" id="delicacies">
+<section class="portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -140,25 +148,20 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($photos as $photo)
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link galleryPhotoPreview" data-toggle="modal" href="#photoGalleryModal" data-name="{{ $photo->name }}" data-image="/{{ $photo->image }}" data-description="{{ $photo->description }}">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $photo->image }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $photo->name }}</h4>
+			<div class="pgc">
+				<button class="gallery_photo_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+				<button class="gallery_photo_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				<img class="image_view" src="/{{ $photos->first()->image }}">
+				<div class="photoGallery_container owl-carousel owl-theme">
+					@foreach($photos as $photo)
+						<div class="image_selector" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}"><div class="overlayer"></div></div>
+					@endforeach
 				</div>
 			</div>
-			@endforeach
 		</div>
 	</div>
 </section>
-<section class="bg-light portfoliooo" id="videos">
+<section class="portfoliooo" id="videos">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -172,7 +175,7 @@
 				<a class="portfolio-link viewVideo" data-toggle="modal" data-target="#videoModal" href="javascript:void(0);" data-youtubeid="{{ $video->youtubeid }}" data-title="{{ $video->title }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
+							<i class="fa fa-youtube-play fa-3x"></i>
 						</div>
 					</div>
 					<div class="img-preview" style="background-image: url('http://img.youtube.com/vi/{{ $video->youtubeid }}/0.jpg')"></div>
@@ -198,28 +201,6 @@
 					<div class="col-lg-12 mx-auto">
 						<div class="modal-body delicacy-modal">
 							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="portfolio-modal modal fade" id="photoGalleryModal" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 mx-auto">
-						<div class="modal-body">
-							<h3 class="text-uppercase">Project Name</h3>
-							<img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-							<p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
 						</div>
 					</div>
 				</div>
