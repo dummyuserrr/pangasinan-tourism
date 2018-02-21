@@ -25,11 +25,11 @@
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>2009-2011</h4>
-								<h4 class="subheading">Ewan</h4>
+								<h5></h5>
+								<h4 class="subheading">HISTORY</h4>
 							</div>
 							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+								<p class="text-muted">Pangasinan, derived its name from the word “panag asinan”, which means “where salt is made”, owing to the rich and fine salt beds which were the prior source of livelihood of the province’s coastal towns.</p>
 							</div>
 						</div>
 					</li>
@@ -39,11 +39,11 @@
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>March 2011</h4>
-								<h4 class="subheading">Iniwan</h4>
+								<h6>Useful Facts!</h6>
+								<h4 class="subheading">ENTRY POINTS</h4>
 							</div>
 							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+								<p class="text-muted">From Manila:  via North Luzon Expressway (NLEX), exiting thru Luisita and entering thru Bayambang or Mangatarem towns; via Tarlac-Pangasinan-La union Expressway (TPLEX), exiting / entering thru Rosales town or thru Urdaneta City; From Zambales – via Infanta; From Baguio – via Sison or San Fabian; From Nueva Ecija – via Umingan or Rosales</p>
 							</div>
 						</div>
 					</li>
@@ -53,11 +53,11 @@
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>December 2012</h4>
-								<h4 class="subheading">Nasaktan</h4>
+								<h6>Useful Facts!</h6>
+								<h4 class="subheading">TRAVELING TIME</h4>
 							</div>
 							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+								<p class="text-muted">Manila to Pangasinan: 4 – 5 hours by bus or 3 – 4 hours by private vehicle From Clark, Pampanga: 2.5 – 3 hours. From Baguio City: 1.5 to 2 hours.From Subic: 4 hours.</p>
 							</div>
 						</div>
 					</li>
@@ -67,11 +67,11 @@
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>July 2014</h4>
-								<h4 class="subheading">Nagsuicide</h4>
+								<h6>Useful facts</h6>
+								<h4 class="subheading">NATIONAL TRANSPORT CARRIERS</h4>
 							</div>
 							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+								<p class="text-muted">Victory Liner, Five Star, Solid North ply major routes to most Pangasinan towns thru Pasay, Cubao Caloocan Stations. Dagupan City is usually the central hub for transport to both Eastern and Western parts of Pangasinan.  Buses, jeeps and tricycles are very common. Tour guides and Provincial Buses are available to make your visit memorable.</p>
 							</div>
 						</div>
 					</li>
@@ -109,7 +109,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Delicacies</h2>
-				<h3 class="section-subheading text-muted">Because food is life.</h3>
+				<h3 class="section-subheading text-muted">Because everybody knows food is life.</h3>
 			</div>
 		</div>
 		<div class="row">
