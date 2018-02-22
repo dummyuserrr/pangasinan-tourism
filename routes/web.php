@@ -60,6 +60,15 @@ Route::middleware('checksession')->group(function () {
 	Route::patch('admin-panel/the-province/videos/{item}/update', 'VideosController@patch');
 	Route::delete('admin-panel/the-province/videos/{item}/delete', 'VideosController@destroy');
 
+	// tourist attractions
+	Route::get('admin-panel/tourism/tourist-attractions', 'AdminPagesController@touristAttractions');
+	Route::get('admin-panel/tourism/tourist-attractions/new', 'AdminPagesController@touristAttractions_new');
+	Route::post('admin-panel/tourism/tourist-attractions/new', 'TouristAttractionsController@store');
+	Route::delete('admin-panel/tourism/tourist-attractions/{item}/delete', 'TouristAttractionsController@destroy');
+	Route::get('admin-panel/tourism/tourist-attractions/{item}', 'AdminPagesController@touristAttractions_view');
+	Route::patch('admin-panel/tourism/tourist-attractions/{item}/update', 'TouristAttractionsController@patch');
+	Route::delete('admin-panel/tourism/tourist-attractions/{item}/delete-image', 'TouristAttractionsController@image_destroy');
+
 	// contact us messages
 	Route::get('admin-panel/contact-us-messages', 'AdminPagesController@contactUsMessages');
 	Route::delete('admin-panel/contact-us-messages/{item}/delete', 'ContactUsMessagesController@destroy');

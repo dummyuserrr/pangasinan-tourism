@@ -9,6 +9,7 @@ use App\GalleryPhoto;
 use App\Video;
 use App\User;
 use App\ContactUsMessage;
+use App\TouristAttraction;
 
 class AdminPagesController extends Controller
 {
@@ -108,5 +109,13 @@ class AdminPagesController extends Controller
         $cum = new ContactUsMessage;
         $cums = $cum->orderBy('created_at', 'desc')->paginate(10);
         return view('adminpanel.contactUsMessages', compact('fontawesome', 'title', 'cums'));
+    }
+
+    public function touristAttractions(){
+        $fontawesome = 'fa fa-spoon';
+        $title = 'Tourist Attractions';
+        $d = new Delicacy;
+        $delicacies = $d->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.touristAttractions', compact('title', 'fontawesome', 'delicacies'));
     }
 }
