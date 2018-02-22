@@ -59,4 +59,5 @@ Route::middleware('checksession')->group(function () {
 
 	// contact us messages
 	Route::get('admin-panel/contact-us-messages', 'AdminPagesController@contactUsMessages');
+	Route::delete('admin-panel/contact-us-messages/{item}/delete', 'ContactUsMessagesController@destroy');
 });
