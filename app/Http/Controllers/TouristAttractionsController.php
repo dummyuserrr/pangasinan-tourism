@@ -33,7 +33,7 @@ class TouristAttractionsController extends Controller
     	return redirect('/admin-panel/tourism/tourist-attractions');
     }
 
-    public function patch(Delicacy $item, Request $r){
+    public function patch(TouristAttraction $item, Request $r){
         $this->validate($r, [
             'name' => 'required',
             'description' => 'required',
@@ -49,7 +49,7 @@ class TouristAttractionsController extends Controller
         if($r->image){
             foreach($r->image as $i){
                 $image = $i->store('/uploads/images');
-                $di = new DelicacyImage;
+                $di = new TouristAttractionImage;
                 $di->path = $image;
                 $di->delicacy_id = $item->id;
                 $di->save();
@@ -67,7 +67,7 @@ class TouristAttractionsController extends Controller
     	return back();
     }
 
-    public function image_destroy(DelicacyImage $item){
+    public function image_destroy(TouristAttractionImage $item){
         $item->delete();
         session()->flash('action', 'deleted');
         return back();

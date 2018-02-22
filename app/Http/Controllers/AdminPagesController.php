@@ -125,4 +125,11 @@ class AdminPagesController extends Controller
         $title = 'Tourist Attractions';
         return view('adminpanel.touristAttractions_new', compact('title', 'fontawesome', 'touristAttractions'));
     }
+
+    public function touristAttractions_view(TouristAttraction $item){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Tourist Attractions';
+        $ta = $item;
+        return view('adminpanel.touristAttractions_view', compact('title', 'fontawesome', 'ta'));
+    }
 }
