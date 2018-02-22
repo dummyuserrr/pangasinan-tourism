@@ -41,7 +41,7 @@
 						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_tourism"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 						<div id="dd_tourism" class="collapse targets {{ adminSetActiveDropdown('admin-panel/tourism*') }}">
 							<div class="options">
-								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}">Tourist Attractions</a>
+								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}"><i class="fa fa-ship" aria-hidden="true"></i> Tourist Attractions</a>
 								<a href="/admin-panel/tourism/festivals" class="option {{ adminSetActive('admin-panel/tourism/festivals*') }}">Festivals	</a>
 								<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}">Events</a>
 							</div>

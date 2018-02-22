@@ -10,6 +10,7 @@ use App\Video;
 use App\User;
 use App\ContactUsMessage;
 use App\TouristAttraction;
+use App\TouristAttractionImage;
 
 class AdminPagesController extends Controller
 {
@@ -112,10 +113,16 @@ class AdminPagesController extends Controller
     }
 
     public function touristAttractions(){
-        $fontawesome = 'fa fa-spoon';
+        $fontawesome = 'fa fa-ship';
         $title = 'Tourist Attractions';
-        $d = new Delicacy;
-        $delicacies = $d->orderBy('created_at', 'desc')->get();
-        return view('adminpanel.touristAttractions', compact('title', 'fontawesome', 'delicacies'));
+        $ta = new TouristAttraction;
+        $touristAttractions = $ta->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.touristAttractions', compact('title', 'fontawesome', 'touristAttractions'));
+    }
+
+    public function touristAttractions_new(){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Tourist Attractions';
+        return view('adminpanel.touristAttractions_new', compact('title', 'fontawesome', 'touristAttractions'));
     }
 }

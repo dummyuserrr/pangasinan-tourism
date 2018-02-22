@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Delicacy extends Model
 {
-	protected $guarded = [];
+	protected $guarded = ['id'];
 
     public function images(){
     	return $this->hasMany(DelicacyImage::class);

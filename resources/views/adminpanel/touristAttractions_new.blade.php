@@ -1,8 +1,8 @@
 @extends('adminpanel.template')
 @section('content')
-<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/the-province/delicacies')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
+<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/tourism/tourist-attractions')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
 <div class="white_container">
-	<form method="post" action="/admin-panel/the-province/delicacies/new" enctype="multipart/form-data">
+	<form method="post" action="/admin-panel/tourism/tourist-attractions/new" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="row">
 			<div class="col-lg-8">
