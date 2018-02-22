@@ -4,7 +4,8 @@ Route::get('/', 'PagesController@index');
 Route::get('the-province', 'PagesController@theProvince');
 Route::get('tourism', 'PagesController@tourism');
 Route::get('find-us', 'PagesController@findUs');
-Route::post('the-province/{item}/fetch', 'DelicaciesController@fetch');
+Route::post('the-province/delicacies/{item}/fetch', 'DelicaciesController@fetch');
+Route::post('the-province/cities-and-municipalities/{item}/fetch', 'CityMunController@fetch');
 Route::post('contact-us', 'PagesController@contactUsSubmit');
 // adminpanel
 

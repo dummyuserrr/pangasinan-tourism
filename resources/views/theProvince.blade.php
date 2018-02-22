@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </header>
-<section id="about-pangasinan">
+<!-- <section id="about-pangasinan">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -86,7 +86,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 <section class="bg-light portfoliooo" id="cities-and-municipalities">
 	<div class="container">
 		<div class="row">
@@ -96,19 +96,21 @@
 			</div>
 		</div>
 		<div class="row">
+			@foreach($citymuns as $citymun)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#citymunModal" data-url="/the-province/1/fetch">
+				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/{{ $citymun->id }}/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/img/about/2.jpg')"></div>
+					<div class="img-preview" style="background-image: url('/{{ $citymun->images()->first()->path }}')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>WEw</h4>
+					<h4>{{ $citymun->name }}</h4>
 				</div>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -123,7 +125,7 @@
 		<div class="row">
 			@foreach($delicacies as $d)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/the-province/{{ $d->id }}/fetch">
+				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/the-province/delicacies/{{ $d->id }}/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -222,6 +224,26 @@
 						<div class="modal-body">
 							<h3 class="text-uppercase"></h3>
 							<iframe width="100%" height="500px" src="https://www.youtube.com/embed/none?rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="portfolio-modal modal fade" id="citymunModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 mx-auto">
+						<div class="modal-body citymun-modal">
+							
 						</div>
 					</div>
 				</div>

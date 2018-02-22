@@ -82,6 +82,37 @@ $('.delicacy-viewer').click(function(){
     });
 });
 
+$('.citymun-viewer').click(function(){
+    var url = $(this).data('url');
+    var request = $.ajax({
+        url: url,
+        type: "POST",           
+        data: {
+            "_token": $('meta[name="csrf-token"]').attr('content'),
+        },
+        contentType: false,       
+        cache: false,      
+        processData:false,       
+        beforeSend: function(data){
+            showLoading();
+            $('.citymun-modal').html('');
+        },
+        success: function(data){
+            setTimeout(function(){
+                $('.citymun-modal').html(request.responseText);
+                hideLoading();
+            }, 500);
+        },
+        error: function(data){
+            var errors = "";
+            for(datos in data.responseJSON){
+                errors += data.responseJSON[datos]+'\n';
+            }
+            alert(errors);
+        }
+    });
+});
+
 function showLoading(){
     $('.loadingModal').fadeIn();
 }

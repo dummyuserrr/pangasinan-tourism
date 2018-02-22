@@ -74,4 +74,9 @@ class CityMunController extends Controller
         session()->flash('action', 'deleted');
         return back();
     }
+
+    public function fetch(CityMun $item){
+        $citymun = $item;
+        return view('includes.citymun-modal', compact('citymun'));
+    }
 }
