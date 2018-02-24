@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </header>
-<!-- <section id="about-pangasinan">
+<section id="about-pangasinan">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -86,7 +86,7 @@
 			</div>
 		</div>
 	</div>
-</section> -->
+</section>
 <section class="bg-light portfoliooo" id="cities-and-municipalities">
 	<div class="container">
 		<div class="row">
