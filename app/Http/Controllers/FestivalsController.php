@@ -67,7 +67,7 @@ class FestivalsController extends Controller
     	return back();
     }
 
-    public function image_destroy(EventImage $item){
+    public function image_destroy(FestivalImage $item){
         $item->delete();
         session()->flash('action', 'deleted');
         return back();

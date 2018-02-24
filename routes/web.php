@@ -61,7 +61,7 @@ Route::middleware('checksession')->group(function () {
 	Route::delete('admin-panel/the-province/videos/{item}/delete', 'VideosController@destroy');
 
 	// tourist attractions
-	Route::get('admin-panel/tourism/tourist-attractions', 'AdminPagesController@touristAttractions');
+	Route::get('admin-panel/tourism/tourist-attractions', 'AdminPagesController@`');
 	Route::get('admin-panel/tourism/tourist-attractions/new', 'AdminPagesController@touristAttractions_new');
 	Route::post('admin-panel/tourism/tourist-attractions/new', 'TouristAttractionsController@store');
 	Route::delete('admin-panel/tourism/tourist-attractions/{item}/delete', 'TouristAttractionsController@destroy');
@@ -74,7 +74,7 @@ Route::middleware('checksession')->group(function () {
 	Route::get('admin-panel/tourism/festivals/new', 'AdminPagesController@festivals_new');
 	Route::post('admin-panel/tourism/festivals/new', 'FestivalsController@store');
 	Route::delete('admin-panel/tourism/festivals/{item}/delete', 'FestivalsController@destroy');
-	Route::get('admin-panel/tourism/festivals/{item}', 'AdminPagesController@touristAttractions_view');
+	Route::get('admin-panel/tourism/festivals/{item}', 'AdminPagesController@festivals_view');
 	Route::patch('admin-panel/tourism/festivals/{item}/update', 'FestivalsController@patch');
 	Route::delete('admin-panel/tourism/festivals/{item}/delete-image', 'FestivalsController@image_destroy');
 

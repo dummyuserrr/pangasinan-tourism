@@ -18,90 +18,21 @@
 			</div>
 		</div>
 		<div class="row">
+			@foreach($touristAttractions as $ta)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/tourist-attractions/{{ $ta->id }}/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+					<div class="img-preview" style="background-image: url('/{{ $ta->images()->first()->path }}')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Illustration</p>
+					<h4>{{ $ta->name }}</h4>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Graphic Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Identity</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Branding</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Photography</p>
-				</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -114,90 +45,21 @@
 			</div>
 		</div>
 		<div class="row">
+			@foreach($festivals as $festival)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/festivals/{{ $festival->id }}/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+					<div class="img-preview" style="background-image: url('/{{ $festival->images()->first()->path }}')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Illustration</p>
+					<h4>{{ $festival->name }}</h4>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Graphic Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Identity</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Branding</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Photography</p>
-				</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -210,131 +72,42 @@
 			</div>
 		</div>
 		<div class="row">
+			@foreach($events as $event)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/events/{{ $event->id }}/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+					<div class="img-preview" style="background-image: url('/{{ $event->images()->first()->path }}')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Illustration</p>
+					<h4>{{ $event->name }}</h4>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Graphic Design</p>
+			@endforeach
+		</div>
+	</div>
+</section>
+<div class="portfolio-modal modal fade" id="tourismModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 mx-auto">
+						<div class="modal-body tourism-modal">
+							
 						</div>
 					</div>
-					<img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Identity</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Branding</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link" data-toggle="modal" href="#imageModal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Sample</h4>
-					<p class="text-muted">Photography</p>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>
-<!-- Government -->
-<!-- <section class="bg-light" id="team">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">The Goverment</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-					<h4>Juan dela Cruz</h4>
-					<p class="text-muted">Tagahila ng kabayo</p>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-					<h4>Juan dela Cruz</h4>
-					<p class="text-muted">Tagahila ng kabayo</p>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-					<h4>Juan dela Cruz</h4>
-					<p class="text-muted">Tagahila ng kabayo</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-8 mx-auto text-center">
-				<p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-			</div>
-		</div>
-	</div>
-</section>
- -->
+</div>
  @stop
