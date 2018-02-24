@@ -136,7 +136,7 @@ class AdminPagesController extends Controller
     }
 
     public function festivals(){
-        $fontawesome = 'fa fa-ship';
+        $fontawesome = 'fa fa-asterisk';
         $title = 'Festivals';
         $f = new Festival;
         $festivals = $f->orderBy('created_at', 'desc')->get();
@@ -144,15 +144,15 @@ class AdminPagesController extends Controller
     }
 
     public function festivals_new(){
-        $fontawesome = 'fa fa-ship';
-        $title = 'Tourist Attractions';
-        return view('adminpanel.festivals_new', compact('title', 'fontawesome', 'touristAttractions'));
+        $fontawesome = 'fa fa-asterisk';
+        $title = 'Add New Festival';
+        return view('adminpanel.festivals_new', compact('title', 'fontawesome'));
     }
 
     public function festivals_view(Festival $item){
-        $fontawesome = 'fa fa-ship';
-        $title = 'Tourist Attractions';
-        $ta = $item;
-        return view('adminpanel.festivals_view', compact('title', 'fontawesome', 'ta'));
+        $fontawesome = 'fa fa-asterisk';
+        $title = 'View Festival';
+        $festival = $item;
+        return view('adminpanel.festivals_view', compact('title', 'fontawesome', 'festival'));
     }
 }

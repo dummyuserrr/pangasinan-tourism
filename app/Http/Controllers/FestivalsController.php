@@ -23,9 +23,9 @@ class FestivalsController extends Controller
 
     	foreach($r->image as $i){
     		$image = $i->store('/uploads/images');
-    		$di = new TouristAttractionImage;
+    		$di = new FestivalImage;
     		$di->path = $image;
-    		$di->tourist_attraction_id = $d->id;
+    		$di->festival_id = $d->id;
     		$di->save();
     	}
 
@@ -33,7 +33,7 @@ class FestivalsController extends Controller
     	return redirect('/admin-panel/tourism/tourist-attractions');
     }
 
-    public function patch(TouristAttraction $item, Request $r){
+    public function patch(Festival $item, Request $r){
         $this->validate($r, [
             'name' => 'required',
             'description' => 'required',
@@ -49,9 +49,9 @@ class FestivalsController extends Controller
         if($r->image){
             foreach($r->image as $i){
                 $image = $i->store('/uploads/images');
-                $di = new TouristAttractionImage;
+                $di = new FestivalImage;
                 $di->path = $image;
-                $di->delicacy_id = $item->id;
+                $di->festival_id = $item->id;
                 $di->save();
             }
         }
@@ -60,7 +60,7 @@ class FestivalsController extends Controller
         return back();
     }
 
-    public function destroy(TouristAttraction $item){
+    public function destroy(Festival $item){
     	$item->images()->delete();
     	$item->delete();
     	session()->flash('action', 'deleted');
@@ -73,8 +73,8 @@ class FestivalsController extends Controller
         return back();
     }
 
-    public function fetch(TouristAttraction $item){
-        $delicacy = $item;
-        return view('includes.delicacies-modal', compact('delicacy'));
+    public function fetch(Festival $item){
+        $festival = $item;
+        return view('includes.festivals-modal', compact('festival'));
     }
 }
