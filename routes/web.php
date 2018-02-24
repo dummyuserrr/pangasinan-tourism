@@ -4,7 +4,8 @@ Route::get('/', 'PagesController@index');
 Route::get('the-province', 'PagesController@theProvince');
 Route::get('tourism', 'PagesController@tourism');
 Route::get('find-us', 'PagesController@findUs');
-Route::post('the-province/{item}/fetch', 'DelicaciesController@fetch');
+Route::post('the-province/delicacies/{item}/fetch', 'DelicaciesController@fetch');
+Route::post('the-province/cities-and-municipalities/{item}/fetch', 'CityMunController@fetch');
 Route::post('contact-us', 'PagesController@contactUsSubmit');
 // adminpanel
 
@@ -21,6 +22,9 @@ Route::middleware('checksession')->group(function () {
 	Route::post('admin-panel/users', 'UserController@store');
 	Route::delete('admin-panel/users/{item}/delete', 'UserController@destroy');
 	Route::patch('admin-panel/users/{item}/update', 'UserController@patch');
+	Route::patch('admin-panel/account-settings', 'AdminPagesController@accountSettings');
+
+	Route::patch('account-settings', 'UserController@patch_me');
 
 	Route::get('admin-panel/posts', 'AdminPagesController@posts');
 	Route::get('admin-panel/posts/new', 'AdminPagesController@posts_new');
@@ -28,7 +32,10 @@ Route::middleware('checksession')->group(function () {
 
 	// cities and municipalities
 	Route::get('admin-panel/the-province/cities-and-municipalities', 'AdminPagesController@citymun');
-	Route::post('admin-panel/the-province/cities-and-municipalities', 'CityMunController@store');
+	Route::get('admin-panel/the-province/cities-and-municipalities/new', 'AdminPagesController@citymun_new');
+	Route::get('admin-panel/the-province/cities-and-municipalities/{item}', 'AdminPagesController@citymun_view');
+	Route::delete('admin-panel/the-province/cities-and-municipalities/image/{item}/delete', 'CityMunController@destroy_image');
+	Route::post('admin-panel/the-province/cities-and-municipalities/new', 'CityMunController@store');
 	Route::delete('admin-panel/the-province/cities-and-municipalities/{item}/delete', 'CityMunController@destroy');
 	Route::patch('admin-panel/the-province/cities-and-municipalities/{item}/update', 'CityMunController@patch');
 
@@ -53,6 +60,16 @@ Route::middleware('checksession')->group(function () {
 	Route::patch('admin-panel/the-province/videos/{item}/update', 'VideosController@patch');
 	Route::delete('admin-panel/the-province/videos/{item}/delete', 'VideosController@destroy');
 
+	// tourist attractions
+	Route::get('admin-panel/tourism/tourist-attractions', 'AdminPagesController@touristAttractions');
+	Route::get('admin-panel/tourism/tourist-attractions/new', 'AdminPagesController@touristAttractions_new');
+	Route::post('admin-panel/tourism/tourist-attractions/new', 'TouristAttractionsController@store');
+	Route::delete('admin-panel/tourism/tourist-attractions/{item}/delete', 'TouristAttractionsController@destroy');
+	Route::get('admin-panel/tourism/tourist-attractions/{item}', 'AdminPagesController@touristAttractions_view');
+	Route::patch('admin-panel/tourism/tourist-attractions/{item}/update', 'TouristAttractionsController@patch');
+	Route::delete('admin-panel/tourism/tourist-attractions/{item}/delete-image', 'TouristAttractionsController@image_destroy');
+
 	// contact us messages
 	Route::get('admin-panel/contact-us-messages', 'AdminPagesController@contactUsMessages');
+	Route::delete('admin-panel/contact-us-messages/{item}/delete', 'ContactUsMessagesController@destroy');
 });

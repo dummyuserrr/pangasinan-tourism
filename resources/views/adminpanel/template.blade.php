@@ -41,7 +41,7 @@
 						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_tourism"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 						<div id="dd_tourism" class="collapse targets {{ adminSetActiveDropdown('admin-panel/tourism*') }}">
 							<div class="options">
-								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}">Tourist Attractions</a>
+								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}"><i class="fa fa-ship" aria-hidden="true"></i> Tourist Attractions</a>
 								<a href="/admin-panel/tourism/festivals" class="option {{ adminSetActive('admin-panel/tourism/festivals*') }}">Festivals	</a>
 								<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}">Events</a>
 							</div>
@@ -60,7 +60,7 @@
 					<button class="btn_userbutton"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
 					<div class="menu" id="usermenu">
 						<img src="/adminpanel/img/dropdown_top_arrow.png" class="arrow">
-						<a href="javascript:void(0);"><i class="fa fa-wrench" aria-hidden="true"></i> Account Settings </a>
+						<a href="javascript:void(0);" data-target="#accountSettingsModal" data-toggle="modal"><i class="fa fa-wrench" aria-hidden="true"></i> Account Settings </a>
 						<a href="javascript:void(0);" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout </a>
 					</div>
 				</div>
@@ -91,6 +91,38 @@
 		<form id="logoutForm" method="post" action="/admin-panel/logout">
 			{{ csrf_field() }}
 		</form>
+		<div id="accountSettingsModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Account Settings</h4>
+					</div>
+					<div class="modal-body">
+						<form method="post" action="/account-settings">
+							{{ csrf_field() }}
+							{{ method_field('patch') }}
+							<div class="form-group">
+								<label for="username">Username: </label>
+								<input type="text" class="form-control" id="username" disabled>
+							</div>
+							<div class="form-group">
+								<label for="password">Password: </label>
+								<input required type="password" class="form-control" name="password" id="password">
+							</div>
+							<div class="form-group">
+								<label for="password2">Retype Password: </label>
+								<input required type="password" class="form-control" name="password2" id="password2">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary" id="btnLinkSave">Save</button>
+						</form>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		@endif
 		<div class="loading_modal">
 			<div class="loading_container">

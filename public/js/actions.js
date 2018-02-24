@@ -4,9 +4,31 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    var pgc = $('.photoGallery_container').owlCarousel({
+        margin: 10,
+        loop: false,
+        items: 6,
+        autoplay: false,
+        dots: true,
+        autoHeight: true,
+    });
+    $('.gallery_photo_left').click(function(){
+        pgc.trigger('prev.owl.carousel');
+    });
+    $('.gallery_photo_right').click(function(){
+        pgc.trigger('next.owl.carousel');
+    });
 });
 
 // wew
+
+$('.image_selector').click(function(){
+    $('.image_selector').removeClass('image_selector_active');
+    $(this).addClass('image_selector_active');
+    var path = $(this).data('path');
+    $('.image_view').attr('src', path);
+});
 
 $('.viewVideo').click(function(){
     var youtubeid = $(this).data('youtubeid');
@@ -48,6 +70,37 @@ $('.delicacy-viewer').click(function(){
             setTimeout(function(){
             	$('.delicacy-modal').html(request.responseText);
             	hideLoading();
+            }, 500);
+        },
+        error: function(data){
+            var errors = "";
+            for(datos in data.responseJSON){
+                errors += data.responseJSON[datos]+'\n';
+            }
+            alert(errors);
+        }
+    });
+});
+
+$('.citymun-viewer').click(function(){
+    var url = $(this).data('url');
+    var request = $.ajax({
+        url: url,
+        type: "POST",           
+        data: {
+            "_token": $('meta[name="csrf-token"]').attr('content'),
+        },
+        contentType: false,       
+        cache: false,      
+        processData:false,       
+        beforeSend: function(data){
+            showLoading();
+            $('.citymun-modal').html('');
+        },
+        success: function(data){
+            setTimeout(function(){
+                $('.citymun-modal').html(request.responseText);
+                hideLoading();
             }, 500);
         },
         error: function(data){

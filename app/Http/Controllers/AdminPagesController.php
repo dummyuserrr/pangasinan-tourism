@@ -9,6 +9,8 @@ use App\GalleryPhoto;
 use App\Video;
 use App\User;
 use App\ContactUsMessage;
+use App\TouristAttraction;
+use App\TouristAttractionImage;
 
 class AdminPagesController extends Controller
 {
@@ -50,6 +52,19 @@ class AdminPagesController extends Controller
         $cm = new CityMun;
         $citymuns = $cm->orderBy('created_at', 'desc')->get();
         return view('adminpanel.citymun', compact('title', 'fontawesome', 'citymuns'));
+    }
+
+    public function citymun_new(){
+        $fontawesome = 'fa fa-map-marker';
+        $title = 'Cities and Municipalities';
+        return view('adminpanel.citymun_new', compact('title', 'fontawesome'));
+    }
+
+    public function citymun_view(CityMun $item){
+        $fontawesome = 'fa fa-map-marker';
+        $title = 'Cities and Municipalities';
+        $cm = $item;
+        return view('adminpanel.citymun_view', compact('title', 'fontawesome', 'cm'));
     }
 
     public function delicacies(){
@@ -95,5 +110,26 @@ class AdminPagesController extends Controller
         $cum = new ContactUsMessage;
         $cums = $cum->orderBy('created_at', 'desc')->paginate(10);
         return view('adminpanel.contactUsMessages', compact('fontawesome', 'title', 'cums'));
+    }
+
+    public function touristAttractions(){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Tourist Attractions';
+        $ta = new TouristAttraction;
+        $touristAttractions = $ta->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.touristAttractions', compact('title', 'fontawesome', 'touristAttractions'));
+    }
+
+    public function touristAttractions_new(){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Tourist Attractions';
+        return view('adminpanel.touristAttractions_new', compact('title', 'fontawesome', 'touristAttractions'));
+    }
+
+    public function touristAttractions_view(TouristAttraction $item){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Tourist Attractions';
+        $ta = $item;
+        return view('adminpanel.touristAttractions_view', compact('title', 'fontawesome', 'ta'));
     }
 }
