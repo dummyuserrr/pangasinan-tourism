@@ -155,4 +155,25 @@ class AdminPagesController extends Controller
         $festival = $item;
         return view('adminpanel.festivals_view', compact('title', 'fontawesome', 'festival'));
     }
+
+    public function events(){
+        $fontawesome = 'fa fa-calendar-check-o';
+        $title = 'Festivals';
+        $f = new Festival;
+        $festivals = $f->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.festivals', compact('title', 'fontawesome', 'festivals'));
+    }
+
+    public function events_new(){
+        $fontawesome = 'fa fa-calendar-check-o';
+        $title = 'Add New Festival';
+        return view('adminpanel.festivals_new', compact('title', 'fontawesome'));
+    }
+
+    public function events_view(Festival $item){
+        $fontawesome = 'fa fa-calendar-check-o';
+        $title = 'View Festival';
+        $festival = $item;
+        return view('adminpanel.festivals_view', compact('title', 'fontawesome', 'festival'));
+    }
 }
