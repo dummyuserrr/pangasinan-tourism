@@ -6,6 +6,9 @@ Route::get('tourism', 'PagesController@tourism');
 Route::get('find-us', 'PagesController@findUs');
 Route::post('the-province/delicacies/{item}/fetch', 'DelicaciesController@fetch');
 Route::post('the-province/cities-and-municipalities/{item}/fetch', 'CityMunController@fetch');
+Route::post('tourism/tourist-attractions/{item}/fetch', 'TouristAttractionsController@fetch');
+Route::post('tourism/festivals/{item}/fetch', 'FestivalsController@fetch');
+Route::post('tourism/events/{item}/fetch', 'EventsController@fetch');
 Route::post('contact-us', 'PagesController@contactUsSubmit');
 // adminpanel
 

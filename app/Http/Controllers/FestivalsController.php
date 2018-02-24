@@ -74,7 +74,6 @@ class FestivalsController extends Controller
     }
 
     public function fetch(Festival $item){
-        $festival = $item;
-        return view('includes.festivals-modal', compact('festival'));
+        return view('includes.tourism-modal', compact('item'));
     }
 }

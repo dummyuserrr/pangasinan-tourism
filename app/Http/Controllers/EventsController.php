@@ -74,7 +74,6 @@ class EventsController extends Controller
     }
 
     public function fetch(Event $item){
-        $event = $item;
-        return view('includes.events-modal', compact('event'));
+        return view('includes.tourism-modal', compact('item'));
     }
 }

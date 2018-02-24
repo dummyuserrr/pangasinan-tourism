@@ -74,7 +74,6 @@ class TouristAttractionsController extends Controller
     }
 
     public function fetch(TouristAttraction $item){
-        $delicacy = $item;
-        return view('includes.delicacies-modal', compact('delicacy'));
+        return view('includes.tourism-modal', compact('item'));
     }
 }
