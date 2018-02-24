@@ -30,7 +30,7 @@ class FestivalsController extends Controller
     	}
 
     	session()->flash('action', 'added');
-    	return redirect('/admin-panel/tourism/tourist-attractions');
+    	return redirect('/admin-panel/tourism/festivals');
     }
 
     public function patch(Festival $item, Request $r){
@@ -67,7 +67,7 @@ class FestivalsController extends Controller
     	return back();
     }
 
-    public function image_destroy(TouristAttractionImage $item){
+    public function image_destroy(EventImage $item){
         $item->delete();
         session()->flash('action', 'deleted');
         return back();

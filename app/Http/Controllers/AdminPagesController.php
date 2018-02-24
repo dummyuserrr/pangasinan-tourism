@@ -13,6 +13,8 @@ use App\TouristAttraction;
 use App\TouristAttractionImage;
 use App\Festival;
 use App\FestivalImage;
+use App\Event;
+use App\EventImage;
 
 class AdminPagesController extends Controller
 {
@@ -159,21 +161,21 @@ class AdminPagesController extends Controller
     public function events(){
         $fontawesome = 'fa fa-calendar-check-o';
         $title = 'Festivals';
-        $f = new Festival;
-        $festivals = $f->orderBy('created_at', 'desc')->get();
-        return view('adminpanel.festivals', compact('title', 'fontawesome', 'festivals'));
+        $e = new Event;
+        $events = $e->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.events', compact('title', 'fontawesome', 'events'));
     }
 
     public function events_new(){
         $fontawesome = 'fa fa-calendar-check-o';
-        $title = 'Add New Festival';
-        return view('adminpanel.festivals_new', compact('title', 'fontawesome'));
+        $title = 'Add New Event';
+        return view('adminpanel.events_new', compact('title', 'fontawesome'));
     }
 
-    public function events_view(Festival $item){
+    public function events_view(Event $item){
         $fontawesome = 'fa fa-calendar-check-o';
-        $title = 'View Festival';
-        $festival = $item;
-        return view('adminpanel.festivals_view', compact('title', 'fontawesome', 'festival'));
+        $title = 'View Event';
+        $event = $item;
+        return view('adminpanel.events_view', compact('title', 'fontawesome', 'event'));
     }
 }

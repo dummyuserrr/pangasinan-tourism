@@ -78,6 +78,15 @@ Route::middleware('checksession')->group(function () {
 	Route::patch('admin-panel/tourism/festivals/{item}/update', 'FestivalsController@patch');
 	Route::delete('admin-panel/tourism/festivals/{item}/delete-image', 'FestivalsController@image_destroy');
 
+	// events
+	Route::get('admin-panel/tourism/events', 'AdminPagesController@events');
+	Route::get('admin-panel/tourism/events/new', 'AdminPagesController@events_new');
+	Route::post('admin-panel/tourism/events/new', 'EventsController@store');
+	Route::delete('admin-panel/tourism/events/{item}/delete', 'EventsController@destroy');
+	Route::get('admin-panel/tourism/events/{item}', 'AdminPagesController@events_view');
+	Route::patch('admin-panel/tourism/events/{item}/update', 'EventsController@patch');
+	Route::delete('admin-panel/tourism/events/{item}/delete-image', 'EventsController@image_destroy');
+
 	// contact us messages
 	Route::get('admin-panel/contact-us-messages', 'AdminPagesController@contactUsMessages');
 	Route::delete('admin-panel/contact-us-messages/{item}/delete', 'ContactUsMessagesController@destroy');
