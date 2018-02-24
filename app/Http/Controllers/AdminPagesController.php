@@ -11,6 +11,8 @@ use App\User;
 use App\ContactUsMessage;
 use App\TouristAttraction;
 use App\TouristAttractionImage;
+use App\Festival;
+use App\FestivalImage;
 
 class AdminPagesController extends Controller
 {
@@ -131,5 +133,26 @@ class AdminPagesController extends Controller
         $title = 'Tourist Attractions';
         $ta = $item;
         return view('adminpanel.touristAttractions_view', compact('title', 'fontawesome', 'ta'));
+    }
+
+    public function festivals(){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Festivals';
+        $f = new Festival;
+        $festivals = $f->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.festivals', compact('title', 'fontawesome', 'festivals'));
+    }
+
+    public function festivals_new(){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Tourist Attractions';
+        return view('adminpanel.festivals_new', compact('title', 'fontawesome', 'touristAttractions'));
+    }
+
+    public function festivals_view(Festival $item){
+        $fontawesome = 'fa fa-ship';
+        $title = 'Tourist Attractions';
+        $ta = $item;
+        return view('adminpanel.festivals_view', compact('title', 'fontawesome', 'ta'));
     }
 }
