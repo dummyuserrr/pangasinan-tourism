@@ -97,7 +97,7 @@
 		</div>
 		<div class="row">
 			@foreach($citymuns as $citymun)
-			<div class="col-md-4 col-sm-6 portfolio-item">
+			<div class="col-md-3 col-sm-6 portfolio-item">
 				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/{{ $citymun->id }}/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
