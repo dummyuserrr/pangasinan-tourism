@@ -8,6 +8,9 @@ use App\Delicacy;
 use App\GalleryPhoto;
 use App\Video;
 use App\ContactUsMessage;
+use App\TouristAttraction;
+use App\Festival;
+use App\Event;
 
 class PagesController extends Controller
 {
@@ -31,7 +34,13 @@ class PagesController extends Controller
 
     public function tourism(){
         $title = 'Tourism - Pangasinan Tourism';
-    	return view('tourism', compact('title'));
+        $ta = new TouristAttraction;
+        $f = new Festival;
+        $e = new Event;
+        $touristAttractions = $ta->orderBy('created_at', 'desc')->get();
+        $festivals = $f->orderBy('created_at', 'desc')->get();
+        $events = $e->orderBy('created_at', 'desc')->get();
+    	return view('tourism', compact('title', 'touristAttractions', 'festivals', 'events'));
     }
 
     public function findUs(){

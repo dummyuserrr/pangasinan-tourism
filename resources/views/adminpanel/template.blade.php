@@ -42,8 +42,8 @@
 						<div id="dd_tourism" class="collapse targets {{ adminSetActiveDropdown('admin-panel/tourism*') }}">
 							<div class="options">
 								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}"><i class="fa fa-ship" aria-hidden="true"></i> Tourist Attractions</a>
-								<a href="/admin-panel/tourism/festivals" class="option {{ adminSetActive('admin-panel/tourism/festivals*') }}">Festivals	</a>
-								<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}">Events</a>
+								<a href="/admin-panel/tourism/festivals" class="option {{ adminSetActive('admin-panel/tourism/festivals*') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Festivals</a>
+								<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Events</a>
 							</div>
 						</div>
 					</div>
