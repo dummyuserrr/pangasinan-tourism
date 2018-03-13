@@ -11,6 +11,10 @@ use App\User;
 use App\ContactUsMessage;
 use App\TouristAttraction;
 use App\TouristAttractionImage;
+use App\Festival;
+use App\FestivalImage;
+use App\Event;
+use App\EventImage;
 
 class AdminPagesController extends Controller
 {
@@ -131,5 +135,47 @@ class AdminPagesController extends Controller
         $title = 'Tourist Attractions';
         $ta = $item;
         return view('adminpanel.touristAttractions_view', compact('title', 'fontawesome', 'ta'));
+    }
+
+    public function festivals(){
+        $fontawesome = 'fa fa-asterisk';
+        $title = 'Festivals';
+        $f = new Festival;
+        $festivals = $f->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.festivals', compact('title', 'fontawesome', 'festivals'));
+    }
+
+    public function festivals_new(){
+        $fontawesome = 'fa fa-asterisk';
+        $title = 'Add New Festival';
+        return view('adminpanel.festivals_new', compact('title', 'fontawesome'));
+    }
+
+    public function festivals_view(Festival $item){
+        $fontawesome = 'fa fa-asterisk';
+        $title = 'View Festival';
+        $festival = $item;
+        return view('adminpanel.festivals_view', compact('title', 'fontawesome', 'festival'));
+    }
+
+    public function events(){
+        $fontawesome = 'fa fa-calendar-check-o';
+        $title = 'Festivals';
+        $e = new Event;
+        $events = $e->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.events', compact('title', 'fontawesome', 'events'));
+    }
+
+    public function events_new(){
+        $fontawesome = 'fa fa-calendar-check-o';
+        $title = 'Add New Event';
+        return view('adminpanel.events_new', compact('title', 'fontawesome'));
+    }
+
+    public function events_view(Event $item){
+        $fontawesome = 'fa fa-calendar-check-o';
+        $title = 'View Event';
+        $event = $item;
+        return view('adminpanel.events_view', compact('title', 'fontawesome', 'event'));
     }
 }
