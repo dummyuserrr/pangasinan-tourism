@@ -58,7 +58,9 @@ $('.image_selector').click(function(){
     $('.image_selector').removeClass('image_selector_active');
     $(this).addClass('image_selector_active');
     var path = $(this).data('path');
+    var name = $(this).data('name');
     $('.image_view').attr('src', path);
+    $('.photo-description').html(name);
 });
 
 $('.viewVideo').click(function(){

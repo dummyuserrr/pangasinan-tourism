@@ -154,9 +154,10 @@
 				<button class="gallery_photo_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
 				<button class="gallery_photo_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
 				<img class="image_view" src="/{{ $photos->first()->image }}">
+				<h4 class="photo-description">{{ $photos->first()->name }}</h3>
 				<div class="photoGallery_container owl-carousel owl-theme">
 					@foreach($photos as $photo)
-						<div class="image_selector" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}"><div class="overlayer"></div></div>
+						<div class="image_selector @if($loop->first) image_selector_active @endif" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}" data-name="{{ $photo->name }}"><div class="overlayer"></div></div>
 					@endforeach
 				</div>
 			</div>
