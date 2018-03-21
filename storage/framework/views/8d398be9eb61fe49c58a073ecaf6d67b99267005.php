@@ -15,8 +15,8 @@
 				<td><?php echo e($car->name); ?></td>
 				<td><?php echo e($car->updated_at->format('M d, Y - h:i:s A')); ?></td>
 				<td>
-					<button type="button" title="View or Edit" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/tourism/delicacies/<?php echo e($car->id); ?>')"><i class="fa fa-eye" aria-hidden="true"></i></button>
-					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/tourism/delicacies/<?php echo e($car->id); ?>/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					<button type="button" title="View or Edit" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/tourism/cafe-and-restaurants/<?php echo e($car->id); ?>')"><i class="fa fa-eye" aria-hidden="true"></i></button>
+					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/tourism/cafe-and-restaurants/<?php echo e($car->id); ?>/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

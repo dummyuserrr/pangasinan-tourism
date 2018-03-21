@@ -54,11 +54,11 @@ Route::middleware('checksession')->group(function () {
 	// cafe and restaurants
 	Route::get('admin-panel/tourism/cafe-and-restaurants', 'AdminPagesController@cafeAndRestaurants');
 	Route::get('admin-panel/tourism/cafe-and-restaurants/new', 'AdminPagesController@cafeAndRestaurants_new');
-	Route::post('admin-panel/tourism/cafe-and-restaurants/new', 'DelicaciesController@store');
-	Route::delete('admin-panel/tourism/cafe-and-restaurants/{item}/delete', 'DelicaciesController@destroy');
+	Route::post('admin-panel/tourism/cafe-and-restaurants/new', 'CafeAndRestaurantsController@store');
+	Route::delete('admin-panel/tourism/cafe-and-restaurants/{item}/delete', 'CafeAndRestaurantsController@destroy');
 	Route::get('admin-panel/tourism/cafe-and-restaurants/{item}', 'AdminPagesController@cafeAndRestaurants_view');
-	Route::patch('admin-panel/tourism/cafe-and-restaurants/{item}/update', 'DelicaciesController@patch');
-	Route::delete('admin-panel/tourism/cafe-and-restaurants/{item}/delete-image', 'DelicaciesController@image_destroy');
+	Route::patch('admin-panel/tourism/cafe-and-restaurants/{item}/update', 'CafeAndRestaurantsController@patch');
+	Route::delete('admin-panel/tourism/cafe-and-restaurants/{item}/delete-image', 'CafeAndRestaurantsController@image_destroy');
 
 	// photo gallery
 	Route::get('admin-panel/the-province/photo-gallery', 'AdminPagesController@photoGallery');

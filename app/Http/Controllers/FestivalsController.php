@@ -30,7 +30,7 @@ class FestivalsController extends Controller
     	}
 
     	session()->flash('action', 'added');
-    	return redirect('/admin-panel/tourism/festivals');
+    	return redirect('/admin-panel/the-province/festivals');
     }
 
     public function patch(Festival $item, Request $r){
