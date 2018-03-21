@@ -17,6 +17,8 @@ use App\Event;
 use App\EventImage;
 use App\CafeAndRestaurant;
 use App\CafeAndRestaurantImage;
+use App\MostVisited;
+use App\MostVisitedImage;
 
 class AdminPagesController extends Controller
 {
@@ -200,5 +202,26 @@ class AdminPagesController extends Controller
         $title = 'View Cafe & Restaurant';
         $car = $item;
         return view('adminpanel.cafeAndRestaurants_view', compact('title', 'fontawesome', 'car'));
+    }
+
+    public function mostVisited(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'Most Visited';
+        $car = new MostVisited;
+        $cars = $car->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.mostVisited', compact('title', 'fontawesome', 'cars'));
+    }
+
+    public function mostVisited_new(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'New Most Visited';
+        return view('adminpanel.mostVisited_new', compact('title', 'fontawesome'));
+    }
+
+    public function mostVisited_view(MostVisited $item){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'View Most Visited';
+        $car = $item;
+        return view('adminpanel.mostVisited_view', compact('title', 'fontawesome', 'car'));
     }
 }

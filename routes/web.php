@@ -61,6 +61,15 @@ Route::middleware('checksession')->group(function () {
 	Route::patch('admin-panel/tourism/cafe-and-restaurants/{item}/update', 'CafeAndRestaurantsController@patch');
 	Route::delete('admin-panel/tourism/cafe-and-restaurants/{item}/delete-image', 'CafeAndRestaurantsController@image_destroy');
 
+	// most visited
+	Route::get('admin-panel/most-visiteds', 'AdminPagesController@mostVisited');
+	Route::get('admin-panel/most-visiteds/new', 'AdminPagesController@mostVisited_new');
+	Route::post('admin-panel/most-visiteds/new', 'MostVisitedController@store');
+	Route::delete('admin-panel/most-visiteds/{item}/delete', 'MostVisitedController@destroy');
+	Route::get('admin-panel/most-visiteds/{item}', 'AdminPagesController@mostVisited_view');
+	Route::patch('admin-panel/most-visiteds/{item}/update', 'MostVisitedController@patch');
+	Route::delete('admin-panel/most-visiteds/{item}/delete-image', 'MostVisitedController@image_destroy');
+
 	// photo gallery
 	Route::get('admin-panel/the-province/photo-gallery', 'AdminPagesController@photoGallery');
 	Route::post('admin-panel/the-province/photo-gallery', 'GalleryPhotosController@store');
