@@ -35,27 +35,27 @@
 		</div>
 	</div>
 </section>
-<section class="bg-light portfoliooo" id="festivals">
+<section class="portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Festivals</h2>
-				<h3 class="section-subheading text-muted">Take a look at these.</h3>
+				<h2 class="section-heading text-uppercase">Delicacies</h2>
+				<h3 class="section-subheading text-muted">Because everybody knows food is life.</h3>
 			</div>
 		</div>
 		<div class="row">
-			<?php $__currentLoopData = $festivals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $festival): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+			<?php $__currentLoopData = $delicacies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/festivals/<?php echo e($festival->id); ?>/fetch">
+				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/the-province/delicacies/<?php echo e($d->id); ?>/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/<?php echo e($festival->images()->first()->path); ?>')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($d->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4><?php echo e($festival->name); ?></h4>
+					<h4><?php echo e($d->name); ?></h4>
 				</div>
 			</div>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -22,27 +22,25 @@ class PagesController extends Controller
     public function theProvince(){
         $title = 'The Province - Pangasinan Tourism';
         $cm = new CityMun;
-        $d = new Delicacy;
         $gp = new GalleryPhoto;
         $v = new Video;
         $f = new Festival;
         $festivals = $f->orderBy('created_at', 'desc')->get();
         $citymuns = $cm->orderBy('created_at', 'desc')->get();
-        $delicacies = $d->orderBy('created_at', 'desc')->get();
         $photos = $gp->orderBy('created_at', 'desc')->get();
         $videos = $v->orderBy('created_at', 'desc')->get();
-    	return view('theProvince', compact('title', 'citymuns', 'delicacies', 'photos', 'videos', 'festivals'));
+    	return view('theProvince', compact('title', 'citymuns', 'photos', 'videos', 'festivals'));
     }
 
     public function tourism(){
         $title = 'Tourism - Pangasinan Tourism';
         $ta = new TouristAttraction;
-        
+        $d = new Delicacy;
         $e = new Event;
         $touristAttractions = $ta->orderBy('created_at', 'desc')->get();
-        
+        $delicacies = $d->orderBy('created_at', 'desc')->get();
         $events = $e->orderBy('created_at', 'desc')->get();
-    	return view('tourism', compact('title', 'touristAttractions', 'events'));
+    	return view('tourism', compact('title', 'touristAttractions', 'events', 'delicacies'));
     }
 
     public function findUs(){

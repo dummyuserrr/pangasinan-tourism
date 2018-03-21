@@ -141,33 +141,6 @@
 		</div>
 	</div>
 </section>
-<section class="portfoliooo" id="delicacies">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Delicacies</h2>
-				<h3 class="section-subheading text-muted">Because everybody knows food is life.</h3>
-			</div>
-		</div>
-		<div class="row">
-			@foreach($delicacies as $d)
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/the-province/delicacies/{{ $d->id }}/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $d->images()->first()->path }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $d->name }}</h4>
-				</div>
-			</div>
-			@endforeach
-		</div>
-	</div>
-</section>
 <section class="bg-light portfoliooo" id="photo-gallery">
 	<div class="container">
 		<div class="row">

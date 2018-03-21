@@ -38,7 +38,6 @@
                                 <a class="nav-link js-scroll-trigger" href="/the-province#about-pangasinan">About Pangasinan</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#cities-and-municipalities">Cities and Municipalities</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#festivals">Festivals</a>
-                                <a class="nav-link js-scroll-trigger" href="/the-province#delicacies">Delicacies</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#photo-gallery">Photo Gallery</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#videos">Videos</a>
                             </div>
@@ -47,6 +46,7 @@
                             <a class="nav-link {{ adminSetActive('tourism*') }}" href="/tourism">Tourism</a>
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/tourism#tourist-attractions">Tourist Attractions</a>
+                                <a class="nav-link js-scroll-trigger" href="/tourism#delicacies">Delicacies</a>
                                 <a class="nav-link js-scroll-trigger" href="/tourism#events">Events</a>
                             </div>
                         </li>
