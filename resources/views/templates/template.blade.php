@@ -37,7 +37,7 @@
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/the-province#about-pangasinan">About Pangasinan</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#cities-and-municipalities">Cities and Municipalities</a>
-                                <a class="nav-link js-scroll-trigger" href="/the-province#delicacies">Delicacies</a>
+                                <a class="nav-link js-scroll-trigger" href="/the-province#festivals">Festivals</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#photo-gallery">Photo Gallery</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#videos">Videos</a>
                             </div>
@@ -46,7 +46,8 @@
                             <a class="nav-link {{ adminSetActive('tourism*') }}" href="/tourism">Tourism</a>
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/tourism#tourist-attractions">Tourist Attractions</a>
-                                <a class="nav-link js-scroll-trigger" href="/tourism#festivals">Festivals</a>
+                                <a class="nav-link js-scroll-trigger" href="/tourism#delicacies">Delicacies</a>
+                                <a class="nav-link js-scroll-trigger" href="/tourism#cafe-and-restaurants">Cafe & Restaurants</a>
                                 <a class="nav-link js-scroll-trigger" href="/tourism#events">Events</a>
                             </div>
                         </li>
@@ -144,7 +145,7 @@
         <script src="/js/contact_me.js"></script>
         <!-- Custom scripts for this template -->
         <script src="/js/agency.min.js"></script>
-         <script type="text/javascript"> 
+        <script type="text/javascript"> 
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];

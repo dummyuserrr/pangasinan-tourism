@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-<button type="button" class="btn btn-primary" onclick="redirect('/admin-panel/the-province/delicacies/new')"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
+<button type="button" class="btn btn-primary" onclick="redirect('/admin-panel/tourism/delicacies/new')"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
 <div class="white_container">
 	<table class="table table-striped" id="table">
 		<thead>
@@ -15,8 +15,8 @@
 				<td><?php echo e($delicacy->name); ?></td>
 				<td><?php echo e($delicacy->updated_at->format('M d, Y - h:i:s A')); ?></td>
 				<td>
-					<button type="button" title="View or Edit" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/the-province/delicacies/<?php echo e($delicacy->id); ?>')"><i class="fa fa-eye" aria-hidden="true"></i></button>
-					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/the-province/delicacies/<?php echo e($delicacy->id); ?>/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					<button type="button" title="View or Edit" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/tourism/delicacies/<?php echo e($delicacy->id); ?>')"><i class="fa fa-eye" aria-hidden="true"></i></button>
+					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/tourism/delicacies/<?php echo e($delicacy->id); ?>/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -55,7 +55,7 @@
 				<h4 class="modal-title">Add New City/Municipality</h4>
 			</div>
 			<div class="modal-body">
-				<form method="post" action="/admin-panel/the-province/cities-and-municipalities">
+				<form method="post" action="/admin-panel/tourism/cities-and-municipalities">
 					<?php echo e(csrf_field()); ?>
 
 					<div class="form-group">
@@ -83,7 +83,7 @@
 				<h4 class="modal-title">Edit City/Municipality</h4>
 			</div>
 			<div class="modal-body">
-				<form method="post" action="/admin-panel/the-province/cities-and-municipalities" id="editForm">
+				<form method="post" action="/admin-panel/tourism/cities-and-municipalities" id="editForm">
 					<?php echo e(csrf_field()); ?>
 
 					<?php echo e(method_field('patch')); ?>

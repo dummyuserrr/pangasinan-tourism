@@ -15,6 +15,11 @@ use App\Festival;
 use App\FestivalImage;
 use App\Event;
 use App\EventImage;
+use App\CafeAndRestaurant;
+use App\CafeAndRestaurantImage;
+use App\MostVisited;
+use App\MostVisitedImage;
+use App\UpcomingEvent;
 
 class AdminPagesController extends Controller
 {
@@ -177,5 +182,55 @@ class AdminPagesController extends Controller
         $title = 'View Event';
         $event = $item;
         return view('adminpanel.events_view', compact('title', 'fontawesome', 'event'));
+    }
+
+    public function cafeAndRestaurants(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'Cafe & Restaurants';
+        $car = new CafeAndRestaurant;
+        $cars = $car->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.cafeAndRestaurants', compact('title', 'fontawesome', 'cars'));
+    }
+
+    public function cafeAndRestaurants_new(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'New Cafe & Restaurant';
+        return view('adminpanel.cafeAndRestaurants_new', compact('title', 'fontawesome'));
+    }
+
+    public function cafeAndRestaurants_view(CafeAndRestaurant $item){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'View Cafe & Restaurant';
+        $car = $item;
+        return view('adminpanel.cafeAndRestaurants_view', compact('title', 'fontawesome', 'car'));
+    }
+
+    public function mostVisited(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'Most Visited';
+        $car = new MostVisited;
+        $cars = $car->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.mostVisited', compact('title', 'fontawesome', 'cars'));
+    }
+
+    public function mostVisited_new(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'New Most Visited';
+        return view('adminpanel.mostVisited_new', compact('title', 'fontawesome'));
+    }
+
+    public function mostVisited_view(MostVisited $item){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'View Most Visited';
+        $mv = $item;
+        return view('adminpanel.mostVisited_view', compact('title', 'fontawesome', 'mv'));
+    }
+
+    public function upcomingEvents(){
+        $fontawesome = 'fa fa-youtube-play';
+        $title = 'Upcoming Events';
+        $ue = new UpcomingEvent;
+        $ues = $ue->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.upcomingEvents', compact('title', 'fontawesome', 'ues'));
     }
 }

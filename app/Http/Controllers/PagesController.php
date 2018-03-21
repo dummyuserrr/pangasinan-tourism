@@ -11,36 +11,46 @@ use App\ContactUsMessage;
 use App\TouristAttraction;
 use App\Festival;
 use App\Event;
+use App\CafeAndRestaurant;
+use App\CafeAndRestaurantImage;
+use App\MostVisited;
+use App\UpcomingEvent;
 
 class PagesController extends Controller
 {
     public function index(){
         $title = 'Pangasinan Tourism';
-    	return view('index', compact('title'));
+        $mv = new MostVisited;
+        $ue = new UpcomingEvent;
+        $mvs = $mv->orderBy('created_at', 'desc')->get();
+        $ues = $ue->orderBy('created_at', 'desc')->get();
+    	return view('index', compact('title', 'mvs', 'ues'));
     }
 
     public function theProvince(){
         $title = 'The Province - Pangasinan Tourism';
         $cm = new CityMun;
-        $d = new Delicacy;
         $gp = new GalleryPhoto;
         $v = new Video;
+        $f = new Festival;
+        $festivals = $f->orderBy('created_at', 'desc')->get();
         $citymuns = $cm->orderBy('created_at', 'desc')->get();
-        $delicacies = $d->orderBy('created_at', 'desc')->get();
         $photos = $gp->orderBy('created_at', 'desc')->get();
         $videos = $v->orderBy('created_at', 'desc')->get();
-    	return view('theProvince', compact('title', 'citymuns', 'delicacies', 'photos', 'videos'));
+    	return view('theProvince', compact('title', 'citymuns', 'photos', 'videos', 'festivals'));
     }
 
     public function tourism(){
         $title = 'Tourism - Pangasinan Tourism';
         $ta = new TouristAttraction;
-        $f = new Festival;
+        $d = new Delicacy;
         $e = new Event;
+        $car = new CafeAndRestaurant;
         $touristAttractions = $ta->orderBy('created_at', 'desc')->get();
-        $festivals = $f->orderBy('created_at', 'desc')->get();
+        $delicacies = $d->orderBy('created_at', 'desc')->get();
         $events = $e->orderBy('created_at', 'desc')->get();
-    	return view('tourism', compact('title', 'touristAttractions', 'festivals', 'events'));
+        $cars = $car->orderBy('created_at', 'desc')->get();
+    	return view('tourism', compact('title', 'touristAttractions', 'events', 'delicacies', 'cars'));
     }
 
     public function findUs(){

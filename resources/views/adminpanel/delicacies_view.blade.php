@@ -1,8 +1,8 @@
 @extends('adminpanel.template')
 @section('content')
-<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/the-province/delicacies')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
+<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/tourism/delicacies')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
 <div class="white_container">
-	<form method="post" action="/admin-panel/the-province/delicacies/{{ $delicacy->id }}/update" enctype="multipart/form-data">
+	<form method="post" action="/admin-panel/tourism/delicacies/{{ $delicacy->id }}/update" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		{{ method_field('patch') }}
 		<div class="row">
@@ -22,7 +22,7 @@
 					<label for="otherDetails">Images:</label>
 					<div class="thumbnails">
 						@foreach($delicacy->images as $image)
-						<div class="box cmsImageBox" title="Click to view or delete image" style="background-image: url('/{{ $image->path }}');" data-toggle="modal" data-target="#imageModal" data-url="/admin-panel/the-province/delicacies/{{ $image->id }}/delete-image">
+						<div class="box cmsImageBox" title="Click to view or delete image" style="background-image: url('/{{ $image->path }}');" data-toggle="modal" data-target="#imageModal" data-url="/admin-panel/tourism/delicacies/{{ $image->id }}/delete-image">
 							<img src="/{{ $image->path }}">
 						</div>
 						@endforeach

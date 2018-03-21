@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
-<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/tourism/festivals')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
+<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/the-province/festivals')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
 <div class="white_container">
-	<form method="post" action="/admin-panel/tourism/festivals/new" enctype="multipart/form-data">
+	<form method="post" action="/admin-panel/the-province/festivals/new" enctype="multipart/form-data">
 		<?php echo e(csrf_field()); ?>
 
 		<div class="row">
