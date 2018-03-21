@@ -34,6 +34,18 @@ $(document).ready(function(){
 
 // wew
 
+$('.load-more').click(function () {
+    var me = $(this);
+    setTimeout(function () {
+        me.closest('.row-parent').find('.home-box').not('.home-box-active').addClass('home-box-active');
+        // var $target = me.closest('.row').find('#scroll-point');
+        // $('html, body').animate({
+        //     scrollTop: me.closest('.row-parent').find('#scroll-point').offset().top
+        // }, 300);
+        me.addClass('load-more-disabled')
+    }, 300);
+});
+
 $('.tourism-viewer').click(function(){
     var url = $(this).data('url');
     var request = $.ajax({

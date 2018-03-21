@@ -32,7 +32,7 @@ class MostVisitedController extends Controller
     	}
 
     	session()->flash('action', 'added');
-    	return redirect('/admin-panel/most-visited');
+    	return redirect('/admin-panel/most-visiteds');
     }
 
     public function patch(MostVisited $item, Request $r){
