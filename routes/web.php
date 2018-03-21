@@ -117,4 +117,10 @@ Route::middleware('checksession')->group(function () {
 	// contact us messages
 	Route::get('admin-panel/contact-us-messages', 'AdminPagesController@contactUsMessages');
 	Route::delete('admin-panel/contact-us-messages/{item}/delete', 'ContactUsMessagesController@destroy');
+
+	// upcoming events
+	Route::get('admin-panel/upcoming-events', 'AdminPagesController@upcomingEvents');
+	Route::post('admin-panel/upcoming-events', 'UpcomingEventController@store');
+	Route::patch('admin-panel/upcoming-events/{item}/update', 'UpcomingEventController@patch');
+	Route::delete('admin-panel/upcoming-events/{item}/delete', 'UpcomingEventController@destroy');
 });

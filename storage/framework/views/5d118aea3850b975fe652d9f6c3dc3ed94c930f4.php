@@ -49,6 +49,7 @@
 						</div>
 					</div>
 					<a href="/admin-panel/most-visiteds" class="option <?php echo e(adminSetActive('admin-panel/most-visiteds*')); ?>">Most Visited</a>
+					<a href="/admin-panel/upcoming-events" class="option <?php echo e(adminSetActive('admin-panel/upcoming-events*')); ?>">Upcoming Events</a>
 					<a href="/admin-panel/contact-us-messages" class="option <?php echo e(adminSetActive('admin-panel/contact-us-messages*')); ?>">"Contact Us" Messages</a>
 					<a href="/" target="_blank" class="option" style="border-top: 1px solid #fff;"><i class="fa fa-television" aria-hidden="true"></i> Open Website in New Tab</a>
 				</div>

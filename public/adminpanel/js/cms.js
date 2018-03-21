@@ -62,6 +62,13 @@ $(document).ready(function(){
 
 // wew
 
+$('.btnEditUE').click(function(){
+	var what = $(this).data('what')
+	var where = $(this).data('where')
+	var date = $(this).data('date')
+
+})
+
 $('.btnEditUser').click(function(){
 	var username = $(this).data('username');
 	var url = $(this).data('url');

@@ -19,6 +19,7 @@ use App\CafeAndRestaurant;
 use App\CafeAndRestaurantImage;
 use App\MostVisited;
 use App\MostVisitedImage;
+use App\UpcomingEvent;
 
 class AdminPagesController extends Controller
 {
@@ -223,5 +224,13 @@ class AdminPagesController extends Controller
         $title = 'View Most Visited';
         $mv = $item;
         return view('adminpanel.mostVisited_view', compact('title', 'fontawesome', 'mv'));
+    }
+
+    public function upcomingEvents(){
+        $fontawesome = 'fa fa-youtube-play';
+        $title = 'Upcoming Events';
+        $ue = new UpcomingEvent;
+        $ues = $ue->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.upcomingEvents', compact('title', 'fontawesome', 'ues'));
     }
 }
