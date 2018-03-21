@@ -48,6 +48,16 @@
 							</div>
 						</div>
 					</div>
+					<div class="mydropdown <?php echo e(adminSetActive2('admin-panel/most-visited*')); ?>">
+						<span>Most Visited</span>
+						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_mostVisited"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_mostVisited"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+						<div id="dd_mostVisited" class="collapse targets <?php echo e(adminSetActiveDropdown('admin-panel/most-visited*')); ?>">
+							<div class="options">
+								<a href="/admin-panel/most-visited/place" class="option <?php echo e(adminSetActive('admin-panel/most-visited/place*')); ?>"><i class="fa fa-circle" aria-hidden="true"></i> Place</a>
+							</div>
+						</div>
+					</div>
 					<a href="/admin-panel/contact-us-messages" class="option <?php echo e(adminSetActive('admin-panel/contact-us-messages*')); ?>">"Contact Us" Messages</a>
 					<a href="/" target="_blank" class="option" style="border-top: 1px solid #fff;"><i class="fa fa-television" aria-hidden="true"></i> Open Website in New Tab</a>
 				</div>
