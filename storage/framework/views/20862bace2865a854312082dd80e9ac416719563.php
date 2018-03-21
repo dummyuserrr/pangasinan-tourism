@@ -113,6 +113,33 @@
 		</div>
 	</div>
 </section>
+<section class="bg-light portfoliooo" id="festivals">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Festivals</h2>
+				<h3 class="section-subheading text-muted">Take a look at these.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<?php $__currentLoopData = $festivals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $festival): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/festivals/<?php echo e($festival->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($festival->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($festival->name); ?></h4>
+				</div>
+			</div>
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+		</div>
+	</div>
+</section>
 <section class="portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">

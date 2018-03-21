@@ -114,6 +114,33 @@
 		</div>
 	</div>
 </section>
+<section class="bg-light portfoliooo" id="festivals">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Festivals</h2>
+				<h3 class="section-subheading text-muted">Take a look at these.</h3>
+			</div>
+		</div>
+		<div class="row">
+			@foreach($festivals as $festival)
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/festivals/{{ $festival->id }}/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/{{ $festival->images()->first()->path }}')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4>{{ $festival->name }}</h4>
+				</div>
+			</div>
+			@endforeach
+		</div>
+	</div>
+</section>
 <section class="portfoliooo" id="delicacies">
 	<div class="container">
 		<div class="row">

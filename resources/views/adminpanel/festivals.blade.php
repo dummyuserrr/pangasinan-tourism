@@ -1,6 +1,6 @@
 @extends('adminpanel.template')
 @section('content')
-<button type="button" class="btn btn-primary" onclick="redirect('/admin-panel/tourism/festivals/new')"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
+<button type="button" class="btn btn-primary" onclick="redirect('/admin-panel/the-province/festivals/new')"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
 <div class="white_container">
 	<table class="table table-striped" id="table">
 		<thead>
@@ -16,8 +16,8 @@
 				<td>{{ $festival->name }}</td>
 				<td>{{ $festival->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
-					<button type="button" title="View or Edit" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/tourism/festivals/{{ $festival->id }}')"><i class="fa fa-eye" aria-hidden="true"></i></button>
-					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/tourism/festivals/{{ $festival->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					<button type="button" title="View or Edit" class="btnViewCityMun btn btn-warning btn-sm" onclick="redirect('/admin-panel/the-province/festivals/{{ $festival->id }}')"><i class="fa fa-eye" aria-hidden="true"></i></button>
+					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/the-province/festivals/{{ $festival->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>
 			@endforeach
