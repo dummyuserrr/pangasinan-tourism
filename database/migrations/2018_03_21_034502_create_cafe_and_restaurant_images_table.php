@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCafeAndRestaurantsTable extends Migration
+class CreateCafeAndRestaurantImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCafeAndRestaurantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cafe_and_restaurants', function (Blueprint $table) {
+        Schema::create('cafe_and_restaurant_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('description');
+            $table->integer('cafe_and_restaurant_id')->unsigned();
+            $table->text('path');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateCafeAndRestaurantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cafe_and_restaurants');
+        Schema::dropIfExists('cafe_and_restaurant_images');
     }
 }

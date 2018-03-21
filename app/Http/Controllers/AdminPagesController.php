@@ -15,6 +15,8 @@ use App\Festival;
 use App\FestivalImage;
 use App\Event;
 use App\EventImage;
+use App\CafeAndRestaurant;
+use App\CafeAndRestaurantImage;
 
 class AdminPagesController extends Controller
 {
@@ -177,5 +179,26 @@ class AdminPagesController extends Controller
         $title = 'View Event';
         $event = $item;
         return view('adminpanel.events_view', compact('title', 'fontawesome', 'event'));
+    }
+
+    public function cafeAndRestaurants(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'Cafe & Restaurants';
+        $car = new CafeAndRestaurant;
+        $cars = $car->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.delicacies', compact('title', 'fontawesome', 'cars'));
+    }
+
+    public function cafeAndRestaurants_new(){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'New Cafe & Restaurant';
+        return view('adminpanel.delicacies_new', compact('title', 'fontawesome'));
+    }
+
+    public function cafeAndRestaurants_view(CafeAndRestaurant $item){
+        $fontawesome = 'fa fa-coffee';
+        $title = 'View Cafe & Restaurant';
+        $delicacy = $item;
+        return view('adminpanel.delicacies_view', compact('title', 'fontawesome', 'delicacy'));
     }
 }

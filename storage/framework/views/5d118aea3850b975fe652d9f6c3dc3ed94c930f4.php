@@ -43,6 +43,7 @@
 							<div class="options">
 								<a href="/admin-panel/tourism/tourist-attractions" class="option <?php echo e(adminSetActive('admin-panel/tourism/tourist-attractions*')); ?>"><i class="fa fa-ship" aria-hidden="true"></i> Tourist Attractions</a>
 								<a href="/admin-panel/tourism/delicacies" class="option <?php echo e(adminSetActive('admin-panel/tourism/delicacies*')); ?>"><i class="fa fa-spoon"></i> Delicacies</a>
+								<a href="/admin-panel/tourism/cafe-and-restaurants" class="option <?php echo e(adminSetActive('admin-panel/tourism/cafe-and-restaurants*')); ?>"><i class="fa fa-coffee"></i> Cafe & Restaurants</a>
 								<a href="/admin-panel/tourism/events" class="option <?php echo e(adminSetActive('admin-panel/tourism/events*')); ?>"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Events</a>
 							</div>
 						</div>
