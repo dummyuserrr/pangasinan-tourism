@@ -11,6 +11,8 @@ use App\ContactUsMessage;
 use App\TouristAttraction;
 use App\Festival;
 use App\Event;
+use App\CafeAndRestaurant;
+use App\CafeAndRestaurantImage;
 
 class PagesController extends Controller
 {
@@ -37,10 +39,12 @@ class PagesController extends Controller
         $ta = new TouristAttraction;
         $d = new Delicacy;
         $e = new Event;
+        $car = new CafeAndRestaurant;
         $touristAttractions = $ta->orderBy('created_at', 'desc')->get();
         $delicacies = $d->orderBy('created_at', 'desc')->get();
         $events = $e->orderBy('created_at', 'desc')->get();
-    	return view('tourism', compact('title', 'touristAttractions', 'events', 'delicacies'));
+        $cars = $car->orderBy('created_at', 'desc')->get();
+    	return view('tourism', compact('title', 'touristAttractions', 'events', 'delicacies', 'cars'));
     }
 
     public function findUs(){

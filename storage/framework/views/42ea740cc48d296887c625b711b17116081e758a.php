@@ -47,6 +47,7 @@
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/tourism#tourist-attractions">Tourist Attractions</a>
                                 <a class="nav-link js-scroll-trigger" href="/tourism#delicacies">Delicacies</a>
+                                <a class="nav-link js-scroll-trigger" href="/tourism#cafe-and-restaurants">Cafe & Restaurants</a>
                                 <a class="nav-link js-scroll-trigger" href="/tourism#events">Events</a>
                             </div>
                         </li>

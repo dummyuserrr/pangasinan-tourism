@@ -62,6 +62,33 @@
 		</div>
 	</div>
 </section>
+<section class="portfoliooo" id="cafe-and-restaurants">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Cafe & Restaurants</h2>
+				<h3 class="section-subheading text-muted">Because everybody knows food is life. Forever.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<?php $__currentLoopData = $cars; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $car): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/tourism/cafe-and-restaurants/<?php echo e($car->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($car->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($car->name); ?></h4>
+				</div>
+			</div>
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+		</div>
+	</div>
+</section>
 <section class="bg-light portfoliooo" id="events">
 	<div class="container">
 		<div class="row">

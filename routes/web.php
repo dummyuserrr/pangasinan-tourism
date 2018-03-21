@@ -5,6 +5,7 @@ Route::get('the-province', 'PagesController@theProvince');
 Route::get('tourism', 'PagesController@tourism');
 Route::get('find-us', 'PagesController@findUs');
 Route::post('tourism/delicacies/{item}/fetch', 'DelicaciesController@fetch');
+Route::post('tourism/cafe-and-restaurants/{item}/fetch', 'CafeAndRestaurantsController@fetch');
 Route::post('the-province/cities-and-municipalities/{item}/fetch', 'CityMunController@fetch');
 Route::post('tourism/tourist-attractions/{item}/fetch', 'TouristAttractionsController@fetch');
 Route::post('the-province/festivals/{item}/fetch', 'FestivalsController@fetch');
