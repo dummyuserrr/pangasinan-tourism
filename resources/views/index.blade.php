@@ -10,7 +10,7 @@
 		</div>
 	</div>
 </header>
-<section class="portfoliooo" id="delicacies">
+<section class="portfoliooo">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -19,81 +19,17 @@
 		</div>
 	</div>
 </section>
+
 <section class="portfoliooo" id="delicacies">
 	<div class="container row-parent">
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Most Visited Places</h2>
-				<h3 class="section-subheading text-muted">Insert description here.</h3>
+				<h3 class="section-subheading text-muted">Edit this description.</h3>
 			</div>
 		</div>
 		<div class="row">
 			@foreach($mvs->where('category', 'place') as $mv)
-			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
-				</div>
-			</div>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
 				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
 					<div class="portfolio-hover">
@@ -113,6 +49,166 @@
 		<div id="scroll-point"></div>
 	</div>
 </section>
+
+<section class="portfoliooo" id="delicacies">
+	<div class="container row-parent">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Most Visited Cafe</h2>
+				<h3 class="section-subheading text-muted">Edit this description.</h3>
+			</div>
+		</div>
+		<div class="row">
+			@foreach($mvs->where('category', 'cafe') as $mv)
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4>{{ $mv->name }}</h4>
+				</div>
+			</div>
+			@endforeach
+		</div>
+		<button class="load-more">LOAD MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+		<div id="scroll-point"></div>
+	</div>
+</section>
+
+<section class="portfoliooo" id="delicacies">
+	<div class="container row-parent">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Most Visited Beaches</h2>
+				<h3 class="section-subheading text-muted">Edit this description.</h3>
+			</div>
+		</div>
+		<div class="row">
+			@foreach($mvs->where('category', 'beaches') as $mv)
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4>{{ $mv->name }}</h4>
+				</div>
+			</div>
+			@endforeach
+		</div>
+		<button class="load-more">LOAD MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+		<div id="scroll-point"></div>
+	</div>
+</section>
+
+<section class="portfoliooo" id="delicacies">
+	<div class="container row-parent">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Most Popular Delicacies</h2>
+				<h3 class="section-subheading text-muted">Edit this description.</h3>
+			</div>
+		</div>
+		<div class="row">
+			@foreach($mvs->where('category', 'delicacies') as $mv)
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4>{{ $mv->name }}</h4>
+				</div>
+			</div>
+			@endforeach
+		</div>
+		<button class="load-more">LOAD MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+		<div id="scroll-point"></div>
+	</div>
+</section>
+
+<section class="portfoliooo" id="delicacies">
+	<div class="container row-parent">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Most Visited Restaurants</h2>
+				<h3 class="section-subheading text-muted">Edit this description.</h3>
+			</div>
+		</div>
+		<div class="row">
+			@foreach($mvs->where('category', 'restaurant') as $mv)
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4>{{ $mv->name }}</h4>
+				</div>
+			</div>
+			@endforeach
+		</div>
+		<button class="load-more">LOAD MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+		<div id="scroll-point"></div>
+	</div>
+</section>
+
+<section class="portfoliooo" id="delicacies">
+	<div class="container row-parent">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">Upcoming Events</h2>
+				<h3 class="section-subheading text-muted">Edit this description.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<table class="table table-striped">
+			    <thead>
+			        <tr>
+			            <th>WHAT</th>
+			            <th>WHERE</th>
+			            <th>DATE</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr>
+			            <td>John</td>
+			            <td>Doe</td>
+			            <td>john@example.com</td>
+			        </tr>
+			        <tr>
+			            <td>Mary</td>
+			            <td>Moe</td>
+			            <td>mary@example.com</td>
+			        </tr>
+			        <tr>
+			            <td>July</td>
+			            <td>Dooley</td>
+			            <td>july@example.com</td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>
+</section>
+
 <div class="portfolio-modal modal fade" id="delicaciesModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -137,7 +233,19 @@
 	$(document).ready(function () {
         $('.row-parent').each(function(i){
 			$(this).find('.home-box').not('.home-box-active').slice(0, 4).addClass('home-box-active');
+			var boxCount = $(this).find('.home-box').length;
+			if(boxCount <= 4){
+				$(this).closest('.row-parent').find('.load-more').css('display', 'none');
+			}
 		});
     });
+
+    $('.load-more').click(function () {
+	    var me = $(this);
+	    setTimeout(function () {
+	        me.closest('.row-parent').find('.home-box').not('.home-box-active').addClass('home-box-active');
+	        me.addClass('load-more-disabled')
+	    }, 300);
+	});
 </script>
 @stop
