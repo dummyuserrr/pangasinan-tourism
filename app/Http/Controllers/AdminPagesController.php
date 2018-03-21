@@ -186,19 +186,19 @@ class AdminPagesController extends Controller
         $title = 'Cafe & Restaurants';
         $car = new CafeAndRestaurant;
         $cars = $car->orderBy('created_at', 'desc')->get();
-        return view('adminpanel.delicacies', compact('title', 'fontawesome', 'cars'));
+        return view('adminpanel.cafeAndRestaurants', compact('title', 'fontawesome', 'cars'));
     }
 
     public function cafeAndRestaurants_new(){
         $fontawesome = 'fa fa-coffee';
         $title = 'New Cafe & Restaurant';
-        return view('adminpanel.delicacies_new', compact('title', 'fontawesome'));
+        return view('adminpanel.cafeAndRestaurants_new', compact('title', 'fontawesome'));
     }
 
     public function cafeAndRestaurants_view(CafeAndRestaurant $item){
         $fontawesome = 'fa fa-coffee';
         $title = 'View Cafe & Restaurant';
-        $delicacy = $item;
-        return view('adminpanel.delicacies_view', compact('title', 'fontawesome', 'delicacy'));
+        $car = $item;
+        return view('adminpanel.cafeAndRestaurants_view', compact('title', 'fontawesome', 'car'));
     }
 }
