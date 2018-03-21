@@ -66,7 +66,11 @@ $('.btnEditUE').click(function(){
 	var what = $(this).data('what')
 	var where = $(this).data('where')
 	var date = $(this).data('date')
-
+	var id = $(this).data('id')
+	$('#editModal').find('form').attr('action', '/admin-panel/upcoming-events/'+id+'/update');
+	$('#editModal').find('#what').val(what)
+	$('#editModal').find('#where').val(where)
+	$('#editModal').find('#date').val(date)
 })
 
 $('.btnEditUser').click(function(){

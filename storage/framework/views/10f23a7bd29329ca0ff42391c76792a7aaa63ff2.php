@@ -21,7 +21,7 @@
 				<td> <?php echo e($ue->created_at->format('M d, Y - h:i:s A')); ?></td>
 				<td> <?php echo e($ue->updated_at->format('M d, Y - h:i:s A')); ?></td>
 				<td>
-					<button type="button" title="Edit" class="btnEditUE btn btn-success btn-sm" data-target="#editModal" data-toggle="modal"><i class="fa fa-pencil-square-o" aria-hidden="true" data-name="<?php echo e($ue->what); ?>" data-where="<?php echo e($ue->where); ?>" data-date="<?php echo e($ue->date); ?>"></i></button>
+					<button type="button" title="Edit" class="btnEditUE btn btn-success btn-sm" data-target="#editModal" data-toggle="modal" data-what="<?php echo e($ue->what); ?>" data-where="<?php echo e($ue->where); ?>" data-date="<?php echo e($ue->date); ?>" data-id="<?php echo e($ue->id); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/upcoming-events/<?php echo e($ue->id); ?>/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>

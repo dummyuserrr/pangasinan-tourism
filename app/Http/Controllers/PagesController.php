@@ -14,14 +14,17 @@ use App\Event;
 use App\CafeAndRestaurant;
 use App\CafeAndRestaurantImage;
 use App\MostVisited;
+use App\UpcomingEvent;
 
 class PagesController extends Controller
 {
     public function index(){
         $title = 'Pangasinan Tourism';
         $mv = new MostVisited;
+        $ue = new UpcomingEvent;
         $mvs = $mv->orderBy('created_at', 'desc')->get();
-    	return view('index', compact('title', 'mvs'));
+        $ues = $ue->orderBy('created_at', 'desc')->get();
+    	return view('index', compact('title', 'mvs', 'ues'));
     }
 
     public function theProvince(){

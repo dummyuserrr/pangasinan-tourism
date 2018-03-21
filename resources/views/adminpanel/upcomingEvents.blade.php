@@ -22,7 +22,7 @@
 				<td> {{ $ue->created_at->format('M d, Y - h:i:s A') }}</td>
 				<td> {{ $ue->updated_at->format('M d, Y - h:i:s A') }}</td>
 				<td>
-					<button type="button" title="Edit" class="btnEditUE btn btn-success btn-sm" data-target="#editModal" data-toggle="modal"><i class="fa fa-pencil-square-o" aria-hidden="true" data-name="{{ $ue->what }}" data-where="{{ $ue->where }}" data-date="{{ $ue->date }}"></i></button>
+					<button type="button" title="Edit" class="btnEditUE btn btn-success btn-sm" data-target="#editModal" data-toggle="modal" data-what="{{ $ue->what }}" data-where="{{ $ue->where }}" data-date="{{ $ue->date }}" data-id="{{ $ue->id }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 					<button type="button" title="Delete" class="btndelete btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal" data-url="/admin-panel/upcoming-events/{{ $ue->id }}/delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
 				</td>
 			</tr>

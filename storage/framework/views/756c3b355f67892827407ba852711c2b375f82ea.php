@@ -187,11 +187,13 @@
 			        </tr>
 			    </thead>
 			    <tbody>
+			    	<?php $__currentLoopData = $ues; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ue): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			        <tr>
-			            <td>John</td>
-			            <td>Doe</td>
-			            <td>john@example.com</td>
+			            <td><?php echo e($ue->what); ?></td>
+			            <td><?php echo e($ue->where); ?></td>
+			            <td><?php echo e($ue->date); ?></td>
 			        </tr>
+			        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 			    </tbody>
 			</table>
 		</div>

@@ -188,11 +188,13 @@
 			        </tr>
 			    </thead>
 			    <tbody>
+			    	@foreach($ues as $ue)
 			        <tr>
-			            <td>John</td>
-			            <td>Doe</td>
-			            <td>john@example.com</td>
+			            <td>{{ $ue->what }}</td>
+			            <td>{{ $ue->where }}</td>
+			            <td>{{ $ue->date }}</td>
 			        </tr>
+			        @endforeach
 			    </tbody>
 			</table>
 		</div>
