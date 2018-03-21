@@ -12,6 +12,17 @@ $(document).ready(function(){
         autoplay: false,
         dots: true,
         autoHeight: true,
+        responsive : {
+            0 : {
+                items: 3,
+            },
+            480 : {
+                items: 4,
+            },
+            768 : {
+                items: 6,
+            }
+        }
     });
     $('.gallery_photo_left').click(function(){
         pgc.trigger('prev.owl.carousel');
