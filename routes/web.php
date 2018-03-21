@@ -4,7 +4,7 @@ Route::get('/', 'PagesController@index');
 Route::get('the-province', 'PagesController@theProvince');
 Route::get('tourism', 'PagesController@tourism');
 Route::get('find-us', 'PagesController@findUs');
-Route::post('the-province/delicacies/{item}/fetch', 'DelicaciesController@fetch');
+Route::post('tourism/delicacies/{item}/fetch', 'DelicaciesController@fetch');
 Route::post('the-province/cities-and-municipalities/{item}/fetch', 'CityMunController@fetch');
 Route::post('tourism/tourist-attractions/{item}/fetch', 'TouristAttractionsController@fetch');
 Route::post('the-province/festivals/{item}/fetch', 'FestivalsController@fetch');
@@ -43,13 +43,13 @@ Route::middleware('checksession')->group(function () {
 	Route::patch('admin-panel/the-province/cities-and-municipalities/{item}/update', 'CityMunController@patch');
 
 	// delicacies
-	Route::get('admin-panel/the-province/delicacies', 'AdminPagesController@delicacies');
-	Route::get('admin-panel/the-province/delicacies/new', 'AdminPagesController@delicacies_new');
-	Route::post('admin-panel/the-province/delicacies/new', 'DelicaciesController@store');
-	Route::delete('admin-panel/the-province/delicacies/{item}/delete', 'DelicaciesController@destroy');
-	Route::get('admin-panel/the-province/delicacies/{item}', 'AdminPagesController@delicacies_view');
-	Route::patch('admin-panel/the-province/delicacies/{item}/update', 'DelicaciesController@patch');
-	Route::delete('admin-panel/the-province/delicacies/{item}/delete-image', 'DelicaciesController@image_destroy');
+	Route::get('admin-panel/tourism/delicacies', 'AdminPagesController@delicacies');
+	Route::get('admin-panel/tourism/delicacies/new', 'AdminPagesController@delicacies_new');
+	Route::post('admin-panel/tourism/delicacies/new', 'DelicaciesController@store');
+	Route::delete('admin-panel/tourism/delicacies/{item}/delete', 'DelicaciesController@destroy');
+	Route::get('admin-panel/tourism/delicacies/{item}', 'AdminPagesController@delicacies_view');
+	Route::patch('admin-panel/tourism/delicacies/{item}/update', 'DelicaciesController@patch');
+	Route::delete('admin-panel/tourism/delicacies/{item}/delete-image', 'DelicaciesController@image_destroy');
 
 	// photo gallery
 	Route::get('admin-panel/the-province/photo-gallery', 'AdminPagesController@photoGallery');
