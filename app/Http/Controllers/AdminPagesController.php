@@ -221,7 +221,7 @@ class AdminPagesController extends Controller
     public function mostVisited_view(MostVisited $item){
         $fontawesome = 'fa fa-coffee';
         $title = 'View Most Visited';
-        $car = $item;
-        return view('adminpanel.mostVisited_view', compact('title', 'fontawesome', 'car'));
+        $mv = $item;
+        return view('adminpanel.mostVisited_view', compact('title', 'fontawesome', 'mv'));
     }
 }

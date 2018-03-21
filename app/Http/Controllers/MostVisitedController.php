@@ -11,13 +11,15 @@ class MostVisitedController extends Controller
     public function store(Request $r){
     	$this->validate($r, [
     		'name' => 'required',
-    		'description' => 'required',
+            'description' => 'required',
+    		'category' => 'required',
     		'image' => 'sometimes',
             'image.*' => 'mimes:jpeg,bmp,png|max:7048',
     	]);
 
     	$d = new MostVisited;
     	$d->name = $r->name;
+        $d->category = $r->category;
     	$d->description = $r->description;
     	$d->save();
 
@@ -25,18 +27,19 @@ class MostVisitedController extends Controller
     		$image = $i->store('/uploads/images');
     		$di = new MostVisitedImage;
     		$di->path = $image;
-    		$di->delicacy_id = $d->id;
+    		$di->most_visited_id = $d->id;
     		$di->save();
     	}
 
     	session()->flash('action', 'added');
-    	return redirect('/admin-panel/the-province/delicacies');
+    	return redirect('/admin-panel/most-visited');
     }
 
     public function patch(MostVisited $item, Request $r){
         $this->validate($r, [
             'name' => 'required',
             'description' => 'required',
+            'category' => 'required',
             'image' => 'sometimes',
             'image.*' => 'mimes:jpeg,bmp,png|max:7048',
         ]);
@@ -44,6 +47,7 @@ class MostVisitedController extends Controller
         $item->update([
             'name' => $r->name,
             'description' => $r->description,
+            'category' => $r->category
         ]);
 
         if($r->image){
@@ -51,7 +55,7 @@ class MostVisitedController extends Controller
                 $image = $i->store('/uploads/images');
                 $di = new MostVisitedImage;
                 $di->path = $image;
-                $di->delicacy_id = $item->id;
+                $di->most_visited_id = $item->id;
                 $di->save();
             }
         }

@@ -1,9 +1,9 @@
-@extends('adminpanel.template')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/most-visiteds')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
 <div class="white_container">
 	<form method="post" action="/admin-panel/most-visiteds/new" enctype="multipart/form-data">
-		{{ csrf_field() }}
+		<?php echo e(csrf_field()); ?>
+
 		<div class="row">
 			<div class="col-lg-8">
 				<div class="form-group">
@@ -35,4 +35,5 @@
 		</div>
 	</form>
 </div>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('adminpanel.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
