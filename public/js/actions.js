@@ -128,6 +128,8 @@ $('.delicacy-viewer').click(function(){
 
 $('.citymun-viewer').click(function(){
     var url = $(this).data('url');
+    var lat = $(this).data('lat');
+    var long = $(this).data('long');
     var request = $.ajax({
         url: url,
         type: "POST",           
@@ -144,6 +146,7 @@ $('.citymun-viewer').click(function(){
         success: function(data){
             setTimeout(function(){
                 $('.citymun-modal').html(request.responseText);
+                reloadMap(lat, long);
                 hideLoading();
             }, 500);
         },
@@ -155,6 +158,10 @@ $('.citymun-viewer').click(function(){
             alert(errors);
         }
     });
+});
+
+$('.close-modal').click(function(){
+    $('#citymunVid').attr('src', '');
 });
 
 function showLoading(){

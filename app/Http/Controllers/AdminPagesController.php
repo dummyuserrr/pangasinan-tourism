@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CityMun;
+use App\Citymun;
 use App\Delicacy;
 use App\GalleryPhoto;
 use App\Video;
@@ -58,7 +58,7 @@ class AdminPagesController extends Controller
     public function citymun(){
         $fontawesome = 'fa fa-map-marker';
         $title = 'Cities and Municipalities';
-        $cm = new CityMun;
+        $cm = new Citymun;
         $citymuns = $cm->orderBy('created_at', 'desc')->get();
         return view('adminpanel.citymun', compact('title', 'fontawesome', 'citymuns'));
     }
@@ -69,7 +69,7 @@ class AdminPagesController extends Controller
         return view('adminpanel.citymun_new', compact('title', 'fontawesome'));
     }
 
-    public function citymun_view(CityMun $item){
+    public function citymun_view(Citymun $item){
         $fontawesome = 'fa fa-map-marker';
         $title = 'Cities and Municipalities';
         $cm = $item;

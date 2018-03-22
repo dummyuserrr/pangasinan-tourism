@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CityMunImage extends Model
+class CitymunImage extends Model
 {
     public function citymun(){
-    	return $this->belongsTo(CityMun::class);
+    	return $this->belongsTo(Citymun::class);
     }
 }

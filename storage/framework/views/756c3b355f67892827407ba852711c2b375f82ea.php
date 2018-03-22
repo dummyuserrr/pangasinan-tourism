@@ -42,6 +42,84 @@
 					<h4><?php echo e($mv->name); ?></h4>
 				</div>
 			</div>
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($mv->name); ?></h4>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($mv->name); ?></h4>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($mv->name); ?></h4>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($mv->name); ?></h4>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($mv->name); ?></h4>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 portfolio-item home-box">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-eye fa-3x"></i>
+						</div>
+					</div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
+				</a>
+				<div class="portfolio-caption">
+					<h4><?php echo e($mv->name); ?></h4>
+				</div>
+			</div>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 		<button class="load-more">LOAD MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>

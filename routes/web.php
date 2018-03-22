@@ -6,7 +6,7 @@ Route::get('tourism', 'PagesController@tourism');
 Route::get('find-us', 'PagesController@findUs');
 Route::post('tourism/delicacies/{item}/fetch', 'DelicaciesController@fetch');
 Route::post('tourism/cafe-and-restaurants/{item}/fetch', 'CafeAndRestaurantsController@fetch');
-Route::post('the-province/cities-and-municipalities/{item}/fetch', 'CityMunController@fetch');
+Route::post('the-province/cities-and-municipalities/{item}/fetch', 'CitymunController@fetch');
 Route::post('fetch-most-visiteds/{item}/fetch', 'MostVisitedController@fetch');
 Route::post('tourism/tourist-attractions/{item}/fetch', 'TouristAttractionsController@fetch');
 Route::post('the-province/festivals/{item}/fetch', 'FestivalsController@fetch');
@@ -39,10 +39,10 @@ Route::middleware('checksession')->group(function () {
 	Route::get('admin-panel/the-province/cities-and-municipalities', 'AdminPagesController@citymun');
 	Route::get('admin-panel/the-province/cities-and-municipalities/new', 'AdminPagesController@citymun_new');
 	Route::get('admin-panel/the-province/cities-and-municipalities/{item}', 'AdminPagesController@citymun_view');
-	Route::delete('admin-panel/the-province/cities-and-municipalities/image/{item}/delete', 'CityMunController@destroy_image');
-	Route::post('admin-panel/the-province/cities-and-municipalities/new', 'CityMunController@store');
-	Route::delete('admin-panel/the-province/cities-and-municipalities/{item}/delete', 'CityMunController@destroy');
-	Route::patch('admin-panel/the-province/cities-and-municipalities/{item}/update', 'CityMunController@patch');
+	Route::delete('admin-panel/the-province/cities-and-municipalities/image/{item}/delete', 'CitymunController@destroy_image');
+	Route::post('admin-panel/the-province/cities-and-municipalities/new', 'CitymunController@store');
+	Route::delete('admin-panel/the-province/cities-and-municipalities/{item}/delete', 'CitymunController@destroy');
+	Route::patch('admin-panel/the-province/cities-and-municipalities/{item}/update', 'CitymunController@patch');
 
 	// delicacies
 	Route::get('admin-panel/tourism/delicacies', 'AdminPagesController@delicacies');
