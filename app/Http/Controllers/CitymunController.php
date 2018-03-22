@@ -47,15 +47,20 @@ class CitymunController extends Controller
 
     public function patch(Citymun $item, Request $r){
     	$this->validate($r, [
-    		'name' => 'required',
-    		'description' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'youtube_link' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'images' => 'sometimes',
-            'images.*' => 'sometimes|mimes:jpeg,bmp,png,jpg|max:7000',
-    	]);
+            'images.*' => 'mimes:jpeg,bmp,png,jpg|max:7000',
+        ]);
 
     	$item->update([
     		'name' => $r->name,
-    		'description' => $r->description,
+            'description' => $r->description,
+            'lat' => $r->latitude,
+    		'long' => $r->longitude,
     	]);
 
         if($r->images){
@@ -67,6 +72,15 @@ class CitymunController extends Controller
                 $cmi->save();
             }
         }
+
+        // get youtube id
+        $url = $r->youtube_link; 
+        preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+        $youtubeID = $match[1];
+
+        $item->update([
+            'youtubeid' => $youtubeID
+        ]);
 
     	session()->flash('action', 'updated');
     	return back();

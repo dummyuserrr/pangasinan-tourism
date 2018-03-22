@@ -97,7 +97,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $citymuns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $citymun): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item">
-				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/<?php echo e($citymun->id); ?>/fetch">
+				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/<?php echo e($citymun->id); ?>/fetch" data-lat="<?php echo e($citymun->lat); ?>" data-long="<?php echo e($citymun->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
