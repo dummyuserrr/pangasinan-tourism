@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CityMun;
+use App\Citymun;
 use App\Delicacy;
 use App\GalleryPhoto;
 use App\Video;
@@ -29,7 +29,7 @@ class PagesController extends Controller
 
     public function theProvince(){
         $title = 'The Province - Pangasinan Tourism';
-        $cm = new CityMun;
+        $cm = new Citymun;
         $gp = new GalleryPhoto;
         $v = new Video;
         $f = new Festival;

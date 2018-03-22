@@ -9,11 +9,23 @@
 			<div class="col-lg-8">
 				<div class="form-group">
 					<label for="name">Name:</label>
-					<input type="text" name="name" class="form-control" id="name" required value="{{ $cm->name }}">
+					<input value="{{ $cm->name }}" type="text" name="name" class="form-control" id="name" required>
 				</div>
 				<div class="form-group">
 					<label for="description">Description:</label>
 					<textarea type="text" class="form-control" name="description" rows="7" required>{{ $cm->description }}</textarea>
+				</div>
+				<div class="form-group">
+					<label for="youtube_link">Youtube Link:</label>
+					<input value="https://www.youtube.com/watch?v={{ $cm->youtubeid }}" type="text" name="youtube_link" class="form-control" id="youtube_link" required placeholder="https://www.youtube.com/watch?v=g4HU_anlJMo">
+				</div>
+				<div class="form-group">
+					<label for="latitude">Latitude:</label>
+					<input value="{{ $cm->lat }}" type="text" name="latitude" class="form-control" id="latitude" required>
+				</div>
+				<div class="form-group">
+					<label for="longitude">Longitude:</label>
+					<input value="{{ $cm->long }}" type="text" name="longitude" class="form-control" id="longitude" required>
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>

@@ -12,25 +12,37 @@ class CitymunController extends Controller
     	$this->validate($r, [
     		'name' => 'required',
             'description' => 'required',
+            'youtube_link' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
     		'images' => 'required',
             'images.*' => 'mimes:jpeg,bmp,png,jpg|max:7000',
     	]);
 
     	$c = new Citymun;
     	$c->name = $r->name;
-    	$c->description = $r->description;
+        $c->description = $r->description;
+        $c->lat = $r->latitude;
+    	$c->long = $r->longitude;
+
+        // get youtube id
+        $url = $r->youtube_link; 
+        preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);        
+        $youtubeID = $match[1];
+
+        $c->youtubeid = $youtubeID;
     	$c->save();
 
         foreach($r->images as $i){
             $image = $i->store('/uploads/images');
             $cmi = new CitymunImage;
             $cmi->path = $image;
-            $cmi->city_mun_id = $c->id;
+            $cmi->citymun_id = $c->id;
             $cmi->save();
         }
 
     	session()->flash('action', 'added');
-    	return back();
+    	return redirect('/admin-panel/the-province/cities-and-municipalities');
     }
 
     public function patch(Citymun $item, Request $r){
@@ -51,7 +63,7 @@ class CitymunController extends Controller
                 $image = $i->store('/uploads/images');
                 $cmi = new CitymunImage;
                 $cmi->path = $image;
-                $cmi->city_mun_id = $item->id;
+                $cmi->citymun_id = $item->id;
                 $cmi->save();
             }
         }

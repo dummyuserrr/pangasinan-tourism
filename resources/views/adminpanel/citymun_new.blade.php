@@ -14,6 +14,18 @@
 					<label for="description">Description:</label>
 					<textarea type="text" class="form-control" name="description" rows="7" required></textarea>
 				</div>
+				<div class="form-group">
+					<label for="youtube_link">Youtube Link:</label>
+					<input type="text" name="youtube_link" class="form-control" id="youtube_link" required placeholder="https://www.youtube.com/watch?v=g4HU_anlJMo">
+				</div>
+				<div class="form-group">
+					<label for="latitude">Latitude:</label>
+					<input type="text" name="latitude" class="form-control" id="latitude" required>
+				</div>
+				<div class="form-group">
+					<label for="longitude">Longitude:</label>
+					<input type="text" name="longitude" class="form-control" id="longitude" required>
+				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
 			<div class="col-lg-4">
