@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CityMun;
-use App\CityMunImage;
+use App\Citymun;
+use App\CitymunImage;
 
-class CityMunController extends Controller
+class CitymunController extends Controller
 {
     public function store(Request $r){
     	$this->validate($r, [
@@ -16,14 +16,14 @@ class CityMunController extends Controller
             'images.*' => 'mimes:jpeg,bmp,png,jpg|max:7000',
     	]);
 
-    	$c = new CityMun;
+    	$c = new Citymun;
     	$c->name = $r->name;
     	$c->description = $r->description;
     	$c->save();
 
         foreach($r->images as $i){
             $image = $i->store('/uploads/images');
-            $cmi = new CityMunImage;
+            $cmi = new CitymunImage;
             $cmi->path = $image;
             $cmi->city_mun_id = $c->id;
             $cmi->save();
@@ -33,7 +33,7 @@ class CityMunController extends Controller
     	return back();
     }
 
-    public function patch(CityMun $item, Request $r){
+    public function patch(Citymun $item, Request $r){
     	$this->validate($r, [
     		'name' => 'required',
     		'description' => 'required',
@@ -49,7 +49,7 @@ class CityMunController extends Controller
         if($r->images){
             foreach($r->images as $i){
                 $image = $i->store('/uploads/images');
-                $cmi = new CityMunImage;
+                $cmi = new CitymunImage;
                 $cmi->path = $image;
                 $cmi->city_mun_id = $item->id;
                 $cmi->save();
@@ -60,7 +60,7 @@ class CityMunController extends Controller
     	return back();
     }
 
-    public function destroy(CityMun $item){
+    public function destroy(Citymun $item){
         $item->images()->delete();
     	$item->delete();
 
@@ -68,14 +68,14 @@ class CityMunController extends Controller
     	return back();
     }
 
-    public function destroy_image(CityMunImage $item){
+    public function destroy_image(CitymunImage $item){
         $item->delete();
 
         session()->flash('action', 'deleted');
         return back();
     }
 
-    public function fetch(CityMun $item){
+    public function fetch(Citymun $item){
         $citymun = $item;
         return view('includes.citymun-modal', compact('citymun'));
     }
