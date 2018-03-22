@@ -20,7 +20,7 @@
 				<ul class="timeline">
 					<li>
 						<div class="timeline-image">
-							<img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+							<img class="rounded-circle img-fluid" src="img/about/pang.jpg" alt="">
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
@@ -34,7 +34,7 @@
 					</li>
 					<li class="timeline-inverted">
 						<div class="timeline-image">
-							<img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+							<img class="rounded-circle img-fluid" src="img/about/nlex.jpg" alt="">
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
@@ -48,7 +48,7 @@
 					</li>
 					<li>
 						<div class="timeline-image">
-							<img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+							<img class="rounded-circle img-fluid" src="img/about/tri1.jpg" alt="">
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
@@ -62,7 +62,7 @@
 					</li>
 					<li class="timeline-inverted">
 						<div class="timeline-image">
-							<img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
+							<img class="rounded-circle img-fluid" src="img/about/bus1.jpg" alt="">
 						</div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
@@ -156,7 +156,7 @@
 				<h4 class="photo-description"><?php echo e($photos->first()->name); ?></h3>
 				<div class="photoGallery_container owl-carousel owl-theme">
 					<?php $__currentLoopData = $photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $photo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-						<div class="image_selector <?php if($loop->first): ?> image_selector_active <?php endif; ?>" style="background-image: url('/<?php echo e($photo->image); ?>');" data-path="/<?php echo e($photo->image); ?>" data-name="<?php echo e($photo->name); ?>"><div class="overlayer"></div></div>
+					<div class="image_selector <?php if($loop->first): ?> image_selector_active <?php endif; ?>" style="background-image: url('/<?php echo e($photo->image); ?>');" data-path="/<?php echo e($photo->image); ?>" data-name="<?php echo e($photo->name); ?>"><div class="overlayer"></div></div>
 					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				</div>
 			</div>
@@ -211,26 +211,6 @@
 		</div>
 	</div>
 </div>
-<div class="portfolio-modal modal fade" id="citymunModal" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 mx-auto">
-						<div class="modal-body citymun-modal">
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 <div class="portfolio-modal modal fade" id="tourismModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -251,5 +231,65 @@
 		</div>
 	</div>
 </div>
+<div class="portfolio-modal modal fade" id="citymunModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 mx-auto">
+						<div class="modal-body citymun-modal">
+							<div class="row">
+								<div class="col-lg-5"><img src="/img/header-bg.png" style="max-width: 100%;"></div>	
+								<div class="col-lg-7">
+									<h3 class="text-uppercase">citymun->name }}</h3>
+									<p>Lorem ipsum dolor sit amet, ex nobis suscipit liberavisse nec, vis ad quod adipisci, per ut habemus commune invenire. Nam prompta iracundia no, cum audiam aliquam ut, id ponderum appellantur vix. Pri graeco admodum ut, cu mea tractatos percipitur efficiendi, quo ei ipsum antiopam. Cu enim aeque sed, et eum stet epicurei, id omnes meliore salutatus sed. Sumo prima ei eos, mazim vulputate ut mel.</p>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-lg-6"></div>
+								<div class="col-lg-6">
+									<div id="map" class="cmMap"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function initMap() {
+		var uluru = {lat: 16.0355673, lng: 120.3281712};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: uluru
+		});
+		var marker = new google.maps.Marker({
+			position: uluru,
+			map: map
+		});
+	}
+
+	function reloadMap(lat, long) {
+		var target = {lat: lat, lng: long};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: target
+		});
+		var marker = new google.maps.Marker({
+			position: target,
+			map: map
+		});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8&callback=initMap">
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('templates.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
