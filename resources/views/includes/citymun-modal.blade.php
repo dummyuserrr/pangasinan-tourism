@@ -19,7 +19,7 @@
 		<div class="row">
 			@foreach($citymun->images()->orderBy('created_at', 'desc')->get() as $image)
 				@if($loop->first)
-
+				
 				@else
 					<div class="col-lg-4"><img src="/{{ $image->path }}" class="mw100"></div>
 				@endif

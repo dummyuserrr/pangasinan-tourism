@@ -19,7 +19,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $citymun->images()->orderBy('created_at', 'desc')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				<?php if($loop->first): ?>
-
+				
 				<?php else: ?>
 					<div class="col-lg-4"><img src="/<?php echo e($image->path); ?>" class="mw100"></div>
 				<?php endif; ?>
