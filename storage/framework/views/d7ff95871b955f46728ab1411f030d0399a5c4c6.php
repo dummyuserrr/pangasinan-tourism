@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ $title }}</title>
+        <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+        <title><?php echo e($title); ?></title>
         <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
         <link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
         <!-- Bootstrap core CSS -->
@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link {{ adminSetActive('the-province*') }}" href="/the-province">The Province</a>
+                            <a class="nav-link <?php echo e(adminSetActive('the-province*')); ?>" href="/the-province">The Province</a>
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/the-province#about-pangasinan">About Pangasinan</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#cities-and-municipalities">Cities and Municipalities</a>
@@ -43,7 +43,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ adminSetActive('tourism*') }}" href="/tourism">Tourism</a>
+                            <a class="nav-link <?php echo e(adminSetActive('tourism*')); ?>" href="/tourism">Tourism</a>
                             <div class="sub-menu">
                                 <a class="nav-link js-scroll-trigger" href="/tourism#tourist-attractions">Tourist Attractions</a>
                                 <a class="nav-link js-scroll-trigger" href="/tourism#delicacies">Delicacies</a>
@@ -52,7 +52,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ adminSetActive('find-us*') }}" href="/find-us">Find Us</a>
+                            <a class="nav-link <?php echo e(adminSetActive('find-us*')); ?>" href="/find-us">Find Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
@@ -62,7 +62,7 @@
             </div>
         </nav>
         <div class="main-container">
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
         </div>
         <!-- Contact -->
         <section id="contact">
@@ -145,7 +145,7 @@
         <script src="/js/contact_me.js"></script>
         <!-- Custom scripts for this template -->
         <script src="/js/agency.min.js"></script>
-       {{--  <script type="text/javascript"> 
+        <script type="text/javascript"> 
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -155,7 +155,7 @@
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
         })();
-        </script> --}}
+        </script>
         <script src="/js/actions.js"></script>
     </body>
 </html>
