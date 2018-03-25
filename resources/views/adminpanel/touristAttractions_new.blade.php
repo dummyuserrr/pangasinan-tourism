@@ -14,6 +14,14 @@
 					<label for="content">Description:</label>
 					<textarea type="text" class="form-control" rows="5" name="description"></textarea>
 				</div>
+				<div class="form-group longlatform">
+					<label for="latitude">Latitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="latitude" value="0" name="lat">
+				</div>
+				<div class="form-group longlatform">
+					<label for="longitude">Longitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="longitude" value="0" name="long">
+				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
 			<div class="col-lg-4">

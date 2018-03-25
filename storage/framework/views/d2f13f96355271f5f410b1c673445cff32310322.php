@@ -1,9 +1,9 @@
-@extends('adminpanel.template')
-@section('content')
-<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/tourism/cafe-and-restaurants')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
+<?php $__env->startSection('content'); ?>
+<button type="button" class="btn btn-warning" onclick="redirect('/admin-panel/tourism/tourist-attractions')"><i class="fa fa-list" aria-hidden="true"></i> Return to list</button>
 <div class="white_container">
-	<form method="post" action="/admin-panel/tourism/cafe-and-restaurants/new" enctype="multipart/form-data">
-		{{ csrf_field() }}
+	<form method="post" action="/admin-panel/tourism/tourist-attractions/new" enctype="multipart/form-data">
+		<?php echo e(csrf_field()); ?>
+
 		<div class="row">
 			<div class="col-lg-8">
 				<div class="form-group">
@@ -16,11 +16,11 @@
 				</div>
 				<div class="form-group longlatform">
 					<label for="latitude">Latitude: <span class="req">*</span></label>
-					<input type="text" class="form-control" id="latitude" value="0" name="lat">
+					<input type="text" class="form-control" id="latitude" value="0" name="latitude">
 				</div>
 				<div class="form-group longlatform">
 					<label for="longitude">Longitude: <span class="req">*</span></label>
-					<input type="text" class="form-control" id="longitude" value="0" name="long">
+					<input type="text" class="form-control" id="longitude" value="0" name="longitude">
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
@@ -33,4 +33,5 @@
 		</div>
 	</form>
 </div>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('adminpanel.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

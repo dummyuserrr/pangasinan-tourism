@@ -19,7 +19,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $touristAttractions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ta): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/tourist-attractions/<?php echo e($ta->id); ?>/fetch">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/tourist-attractions/<?php echo e($ta->id); ?>/fetch" data-lat="<?php echo e($ta->lat); ?>" data-long="<?php echo e($ta->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -73,7 +73,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $cars; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $car): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/tourism/cafe-and-restaurants/<?php echo e($car->id); ?>/fetch">
+				<a class="portfolio-link car-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/tourism/cafe-and-restaurants/<?php echo e($car->id); ?>/fetch" data-lat="<?php echo e($car->lat); ?>" data-long="<?php echo e($car->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -156,5 +156,21 @@
 		</div>
 	</div>
 </div>
+<script>
+	function reloadMap(lat, long) {
+		var target = {lat: lat, lng: long};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: target
+		});
+		var marker = new google.maps.Marker({
+			position: target,
+			map: map
+		});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8">
+</script>
  <?php $__env->stopSection(); ?>
 <?php echo $__env->make('templates.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

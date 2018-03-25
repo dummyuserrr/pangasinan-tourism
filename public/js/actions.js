@@ -70,6 +70,8 @@ $('.mv-viewer').click(function(){
 
 $('.tourism-viewer').click(function(){
     var url = $(this).data('url');
+    var lat = $(this).data('lat');
+    var long = $(this).data('long');
     var request = $.ajax({
         url: url,
         type: "POST",           
@@ -86,6 +88,7 @@ $('.tourism-viewer').click(function(){
         success: function(data){
             setTimeout(function(){
                 $('.tourism-modal').html(request.responseText);
+                reloadMap(lat, long)
                 hideLoading();
             }, 500);
         },
@@ -148,6 +151,40 @@ $('.delicacy-viewer').click(function(){
             setTimeout(function(){
             	$('.delicacy-modal').html(request.responseText);
             	hideLoading();
+            }, 500);
+        },
+        error: function(data){
+            var errors = "";
+            for(datos in data.responseJSON){
+                errors += data.responseJSON[datos]+'\n';
+            }
+            alert(errors);
+        }
+    });
+});
+
+$('.car-viewer').click(function(){
+    var url = $(this).data('url');
+    var lat = $(this).data('lat');
+    var long = $(this).data('long');
+    var request = $.ajax({
+        url: url,
+        type: "POST",           
+        data: {
+            "_token": $('meta[name="csrf-token"]').attr('content'),
+        },
+        contentType: false,       
+        cache: false,      
+        processData:false,       
+        beforeSend: function(data){
+            showLoading();
+            $('.delicacy-modal').html('');
+        },
+        success: function(data){
+            setTimeout(function(){
+                $('.delicacy-modal').html(request.responseText);
+                reloadMap(lat, long);
+                hideLoading();
             }, 500);
         },
         error: function(data){
