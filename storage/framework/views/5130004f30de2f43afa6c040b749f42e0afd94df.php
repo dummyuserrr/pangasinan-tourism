@@ -30,7 +30,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $mvs->where('category', 'place'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch" data-lat="<?php echo e($mv->lat); ?>" data-long="<?php echo e($mv->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -60,37 +60,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $mvs->where('category', 'cafe'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4><?php echo e($mv->name); ?></h4>
-				</div>
-			</div>
-			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-		</div>
-		<button class="load-more">SEE MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-		<div id="scroll-point"></div>
-	</div>
-</section>
-
-<section class="portfoliooo" id="delicacies">
-	<div class="container row-parent">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Most Visited Beaches</h2>
-				<h3 class="section-subheading text-muted">Edit this description.</h3>
-			</div>
-		</div>
-		<div class="row">
-			<?php $__currentLoopData = $mvs->where('category', 'beaches'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch" data-lat="<?php echo e($mv->lat); ?>" data-long="<?php echo e($mv->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -120,7 +90,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $mvs->where('category', 'delicacies'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch" data-lat="<?php echo e($mv->lat); ?>" data-long="<?php echo e($mv->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -150,7 +120,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $mvs->where('category', 'restaurant'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch" data-lat="<?php echo e($mv->lat); ?>" data-long="<?php echo e($mv->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -211,7 +181,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 mx-auto">
-						<div class="modal-body delicacy-modal">
+						<div class="modal-body mv-modal">
 							
 						</div>
 					</div>
@@ -238,6 +208,21 @@
 	        me.addClass('load-more-disabled')
 	    }, 300);
 	});
+
+	function reloadMap(lat, long) {
+		var target = {lat: lat, lng: long};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: target
+		});
+		var marker = new google.maps.Marker({
+			position: target,
+			map: map
+		});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8">
 </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('templates.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

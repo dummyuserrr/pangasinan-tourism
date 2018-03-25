@@ -18,6 +18,8 @@ class CreateMostVisitedsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->text('category');
+            $table->string('long')->nullable();
+            $table->string('lat')->nullable();
             $table->timestamps();
         });
     }

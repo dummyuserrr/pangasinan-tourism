@@ -4,7 +4,7 @@
 		<title>Pangasinan Tourism - Admin Panel</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="csrf_token" content="{{ csrf_token() }}">
+		<meta name="csrf_token" content="<?php echo e(csrf_token()); ?>">
 		<link rel="stylesheet" type="text/css" href="/adminpanel/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/less" href="/adminpanel/css/cms.less">
 		<link rel="stylesheet" type="text/less" href="/adminpanel/tippyjs-master/dist/tippy.css">
@@ -20,37 +20,37 @@
 			</div>
 			<div class="main">
 				<div class="options">
-					<a href="/admin-panel/dashboard" class="option {{ adminSetActive('admin-panel/dashboard*') }}">Dashboard</a>
-					<a href="/admin-panel/users" class="option {{ adminSetActive('admin-panel/users*') }}">Users</a>
-					<div class="mydropdown {{ adminSetActive2('admin-panel/the-province*') }}">
+					<a href="/admin-panel/dashboard" class="option <?php echo e(adminSetActive('admin-panel/dashboard*')); ?>">Dashboard</a>
+					<a href="/admin-panel/users" class="option <?php echo e(adminSetActive('admin-panel/users*')); ?>">Users</a>
+					<div class="mydropdown <?php echo e(adminSetActive2('admin-panel/the-province*')); ?>">
 						<span>The Province</span>
 						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_province"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
 						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_province"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
-						<div id="dd_province" class="collapse targets {{ adminSetActiveDropdown('admin-panel/the-province*') }}">
+						<div id="dd_province" class="collapse targets <?php echo e(adminSetActiveDropdown('admin-panel/the-province*')); ?>">
 							<div class="options">
-								<a href="/admin-panel/the-province/cities-and-municipalities" class="option {{ adminSetActive('admin-panel/the-province/cities-and-municipalities*') }}"><i class="fa fa-map-marker"></i> Cities and Municipalities</a>
-								<a href="/admin-panel/the-province/festivals" class="option {{ adminSetActive('admin-panel/the-province/festivals*') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Festivals</a>
-								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}"><i class="fa fa-picture-o"></i> Photo Gallery</a>
-								{{-- <a href="/admin-panel/the-province/videos" class="option {{ adminSetActive('admin-panel/the-province/videos*') }}"><i class="fa fa-youtube-play"></i> Videos</a> --}}
+								<a href="/admin-panel/the-province/cities-and-municipalities" class="option <?php echo e(adminSetActive('admin-panel/the-province/cities-and-municipalities*')); ?>"><i class="fa fa-map-marker"></i> Cities and Municipalities</a>
+								<a href="/admin-panel/the-province/festivals" class="option <?php echo e(adminSetActive('admin-panel/the-province/festivals*')); ?>"><i class="fa fa-asterisk" aria-hidden="true"></i> Festivals</a>
+								<a href="/admin-panel/the-province/photo-gallery" class="option <?php echo e(adminSetActive('admin-panel/the-province/photo-gallery*')); ?>"><i class="fa fa-picture-o"></i> Photo Gallery</a>
+								
 							</div>
 						</div>
 					</div>
-					<div class="mydropdown {{ adminSetActive2('admin-panel/tourism*') }}">
+					<div class="mydropdown <?php echo e(adminSetActive2('admin-panel/tourism*')); ?>">
 						<span>Tourism</span>
 						<button class="dropdowntoggler" data-toggle="collapse" data-target="#dd_tourism"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
 						<button class="dropdowntoggler_active" data-toggle="collapse" data-target="#dd_tourism"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
-						<div id="dd_tourism" class="collapse targets {{ adminSetActiveDropdown('admin-panel/tourism*') }}">
+						<div id="dd_tourism" class="collapse targets <?php echo e(adminSetActiveDropdown('admin-panel/tourism*')); ?>">
 							<div class="options">
-								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}"><i class="fa fa-ship" aria-hidden="true"></i> Tourist Attractions</a>
-								<a href="/admin-panel/tourism/delicacies" class="option {{ adminSetActive('admin-panel/tourism/delicacies*') }}"><i class="fa fa-spoon"></i> Delicacies</a>
-								<a href="/admin-panel/tourism/cafe-and-restaurants" class="option {{ adminSetActive('admin-panel/tourism/cafe-and-restaurants*') }}"><i class="fa fa-coffee"></i> Cafe & Restaurants</a>
-								<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Events</a>
+								<a href="/admin-panel/tourism/tourist-attractions" class="option <?php echo e(adminSetActive('admin-panel/tourism/tourist-attractions*')); ?>"><i class="fa fa-ship" aria-hidden="true"></i> Tourist Attractions</a>
+								<a href="/admin-panel/tourism/delicacies" class="option <?php echo e(adminSetActive('admin-panel/tourism/delicacies*')); ?>"><i class="fa fa-spoon"></i> Delicacies</a>
+								<a href="/admin-panel/tourism/cafe-and-restaurants" class="option <?php echo e(adminSetActive('admin-panel/tourism/cafe-and-restaurants*')); ?>"><i class="fa fa-coffee"></i> Cafe & Restaurants</a>
+								<a href="/admin-panel/tourism/events" class="option <?php echo e(adminSetActive('admin-panel/tourism/events*')); ?>"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Events</a>
 							</div>
 						</div>
 					</div>
-					<a href="/admin-panel/most-visiteds" class="option {{ adminSetActive('admin-panel/most-visiteds*') }}">Most Visited/Popular</a>
-					<a href="/admin-panel/upcoming-events" class="option {{ adminSetActive('admin-panel/upcoming-events*') }}">Upcoming Events</a>
-					<a href="/admin-panel/contact-us-messages" class="option {{ adminSetActive('admin-panel/contact-us-messages*') }}">"Contact Us" Messages</a>
+					<a href="/admin-panel/most-visiteds" class="option <?php echo e(adminSetActive('admin-panel/most-visiteds*')); ?>">Most Visited/Popular</a>
+					<a href="/admin-panel/upcoming-events" class="option <?php echo e(adminSetActive('admin-panel/upcoming-events*')); ?>">Upcoming Events</a>
+					<a href="/admin-panel/contact-us-messages" class="option <?php echo e(adminSetActive('admin-panel/contact-us-messages*')); ?>">"Contact Us" Messages</a>
 					<a href="/" target="_blank" class="option" style="border-top: 1px solid #fff;"><i class="fa fa-television" aria-hidden="true"></i> Open Website in New Tab</a>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 		<div class="maincontainer">
 			<div class="top">
 				<button class="leftnavShower" title="Show Left Navigation"><i class="fa fa-bars" aria-hidden="true"></i></button>
-				<h3><i class="{{ $fontawesome }}" aria-hidden="true"></i> {{ $title }}</h3>
+				<h3><i class="<?php echo e($fontawesome); ?>" aria-hidden="true"></i> <?php echo e($title); ?></h3>
 				<div class="userbutton">
 					<button class="btn_userbutton"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
 					<div class="menu" id="usermenu">
@@ -69,30 +69,31 @@
 				</div>
 			</div>
 			<div class="main">
-				@if(session()->has('action'))
-				@if(session('action') == 'updated')
+				<?php if(session()->has('action')): ?>
+				<?php if(session('action') == 'updated'): ?>
 				<div class="alert alert-success alert-dismissable fade in text-center">
 				    <a href="#" class="close text-center" data-dismiss="alert" aria-label="close">&times;</a>
 				    <strong>Success!</strong> Data has been updated.
 				</div>
-				@elseif(session('action') == 'added')
+				<?php elseif(session('action') == 'added'): ?>
 				<div class="alert alert-success alert-dismissable fade in text-center">
 				    <a href="#" class="close text-center" data-dismiss="alert" aria-label="close">&times;</a>
 				    <strong>Success!</strong> Data has been added.
 				</div>
-				@elseif(session('action') == 'deleted')
+				<?php elseif(session('action') == 'deleted'): ?>
 				<div class="alert alert-success alert-dismissable fade in text-center">
 				    <a href="#" class="close text-center" data-dismiss="alert" aria-label="close">&times;</a>
 				    <strong>Success!</strong> Data has been deleted.
 				</div>
-				@endif
-				@endif
-				@yield('content')
+				<?php endif; ?>
+				<?php endif; ?>
+				<?php echo $__env->yieldContent('content'); ?>
 			</div>
 		</div>
-		@if(session()->has('status'))
+		<?php if(session()->has('status')): ?>
 		<form id="logoutForm" method="post" action="/admin-panel/logout">
-			{{ csrf_field() }}
+			<?php echo e(csrf_field()); ?>
+
 		</form>
 		<div id="accountSettingsModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -103,8 +104,10 @@
 					</div>
 					<div class="modal-body">
 						<form method="post" action="/account-settings">
-							{{ csrf_field() }}
-							{{ method_field('patch') }}
+							<?php echo e(csrf_field()); ?>
+
+							<?php echo e(method_field('patch')); ?>
+
 							<div class="form-group">
 								<label for="username">Username: </label>
 								<input type="text" class="form-control" id="username" disabled>
@@ -126,7 +129,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
+		<?php endif; ?>
 		<div class="loading_modal">
 			<div class="loading_container">
 				<img src="/adminpanel/img/loading.svg">

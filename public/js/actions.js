@@ -34,6 +34,40 @@ $(document).ready(function(){
 
 // wew
 
+$('.mv-viewer').click(function(){
+    var url = $(this).data('url');
+    var lat = $(this).data('lat');
+    var long = $(this).data('long');
+    var request = $.ajax({
+        url: url,
+        type: "POST",           
+        data: {
+            "_token": $('meta[name="csrf-token"]').attr('content'),
+        },
+        contentType: false,       
+        cache: false,      
+        processData:false,       
+        beforeSend: function(data){
+            showLoading();
+            $('.mv-modal').html('');
+        },
+        success: function(data){
+            setTimeout(function(){
+                $('.mv-modal').html(request.responseText);
+                reloadMap(lat, long);
+                hideLoading();
+            }, 500);
+        },
+        error: function(data){
+            var errors = "";
+            for(datos in data.responseJSON){
+                errors += data.responseJSON[datos]+'\n';
+            }
+            alert(errors);
+        }
+    });
+});
+
 $('.tourism-viewer').click(function(){
     var url = $(this).data('url');
     var request = $.ajax({

@@ -207,7 +207,7 @@ class AdminPagesController extends Controller
 
     public function mostVisited(){
         $fontawesome = 'fa fa-coffee';
-        $title = 'Most Visited';
+        $title = 'Most Visited/Popular';
         $car = new MostVisited;
         $cars = $car->orderBy('created_at', 'desc')->get();
         return view('adminpanel.mostVisited', compact('title', 'fontawesome', 'cars'));
@@ -215,13 +215,13 @@ class AdminPagesController extends Controller
 
     public function mostVisited_new(){
         $fontawesome = 'fa fa-coffee';
-        $title = 'New Most Visited';
+        $title = 'New Most Visited/Popular';
         return view('adminpanel.mostVisited_new', compact('title', 'fontawesome'));
     }
 
     public function mostVisited_view(MostVisited $item){
         $fontawesome = 'fa fa-coffee';
-        $title = 'View Most Visited';
+        $title = 'View Most Visited/Popular';
         $mv = $item;
         return view('adminpanel.mostVisited_view', compact('title', 'fontawesome', 'mv'));
     }

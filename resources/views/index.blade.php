@@ -31,7 +31,7 @@
 		<div class="row">
 			@foreach($mvs->where('category', 'place') as $mv)
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch" data-lat="{{ $mv->lat }}" data-long="{{ $mv->long }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -61,7 +61,7 @@
 		<div class="row">
 			@foreach($mvs->where('category', 'cafe') as $mv)
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch" data-lat="{{ $mv->lat }}" data-long="{{ $mv->long }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -91,7 +91,7 @@
 		<div class="row">
 			@foreach($mvs->where('category', 'delicacies') as $mv)
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch" data-lat="{{ $mv->lat }}" data-long="{{ $mv->long }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -121,7 +121,7 @@
 		<div class="row">
 			@foreach($mvs->where('category', 'restaurant') as $mv)
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch" data-lat="{{ $mv->lat }}" data-long="{{ $mv->long }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -182,7 +182,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 mx-auto">
-						<div class="modal-body delicacy-modal">
+						<div class="modal-body mv-modal">
 							
 						</div>
 					</div>
@@ -209,5 +209,20 @@
 	        me.addClass('load-more-disabled')
 	    }, 300);
 	});
+
+	function reloadMap(lat, long) {
+		var target = {lat: lat, lng: long};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: target
+		});
+		var marker = new google.maps.Marker({
+			position: target,
+			map: map
+		});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8">
 </script>
 @stop

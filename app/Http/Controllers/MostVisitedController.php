@@ -20,7 +20,9 @@ class MostVisitedController extends Controller
     	$d = new MostVisited;
     	$d->name = $r->name;
         $d->category = $r->category;
-    	$d->description = $r->description;
+        $d->description = $r->description;
+        $d->lat = $r->latitude;
+    	$d->long = $r->longitude;
     	$d->save();
 
     	foreach($r->image as $i){
@@ -47,7 +49,9 @@ class MostVisitedController extends Controller
         $item->update([
             'name' => $r->name,
             'description' => $r->description,
-            'category' => $r->category
+            'category' => $r->category,
+            'lat' => $r->latitude,
+            'long' => $r->longitude
         ]);
 
         if($r->image){
@@ -78,7 +82,7 @@ class MostVisitedController extends Controller
     }
 
     public function fetch(MostVisited $item){
-        $delicacy = $item;
-        return view('includes.delicacies-modal', compact('delicacy'));
+        $mv = $item;
+        return view('includes.mv-modal', compact('mv'));
     }
 }
