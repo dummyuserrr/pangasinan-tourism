@@ -152,8 +152,6 @@
 			<div class="pgc">
 				<button class="gallery_photo_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
 				<button class="gallery_photo_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-				<img class="image_view" src="/<?php echo e($photos->first()->image); ?>">
-				<h4 class="photo-description"><?php echo e($photos->first()->name); ?></h3>
 				<div class="photoGallery_container owl-carousel owl-theme">
 					<?php $__currentLoopData = $photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $photo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 					<div class="image_selector <?php if($loop->first): ?> image_selector_active <?php endif; ?>" style="background-image: url('/<?php echo e($photo->image); ?>');" data-path="/<?php echo e($photo->image); ?>" data-name="<?php echo e($photo->name); ?>"><div class="overlayer"></div></div>
