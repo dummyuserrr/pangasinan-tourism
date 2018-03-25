@@ -1,5 +1,4 @@
-@extends('templates.template')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- Header -->
 <header class="masthead">
 	<div class="container">
@@ -96,21 +95,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($citymuns as $citymun)
+			<?php $__currentLoopData = $citymuns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $citymun): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item">
-				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/{{ $citymun->id }}/fetch" data-lat="{{ $citymun->lat }}" data-long="{{ $citymun->long }}">
+				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/<?php echo e($citymun->id); ?>/fetch" data-lat="<?php echo e($citymun->lat); ?>" data-long="<?php echo e($citymun->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $citymun->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($citymun->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>{{ $citymun->name }}</h4>
+					<h4><?php echo e($citymun->name); ?></h4>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 	</div>
 </section>
@@ -123,21 +122,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($festivals as $festival)
+			<?php $__currentLoopData = $festivals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $festival): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/the-province/festivals/{{ $festival->id }}/fetch">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/the-province/festivals/<?php echo e($festival->id); ?>/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $festival->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($festival->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>{{ $festival->name }}</h4>
+					<h4><?php echo e($festival->name); ?></h4>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 	</div>
 </section>
@@ -153,44 +152,18 @@
 			<div class="pgc">
 				<button class="gallery_photo_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
 				<button class="gallery_photo_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-				<img class="image_view" src="/{{ $photos->first()->image }}">
-				<h4 class="photo-description">{{ $photos->first()->name }}</h3>
+				<img class="image_view" src="/<?php echo e($photos->first()->image); ?>">
+				<h4 class="photo-description"><?php echo e($photos->first()->name); ?></h3>
 				<div class="photoGallery_container owl-carousel owl-theme">
-					@foreach($photos as $photo)
-					<div class="image_selector @if($loop->first) image_selector_active @endif" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}" data-name="{{ $photo->name }}"><div class="overlayer"></div></div>
-					@endforeach
+					<?php $__currentLoopData = $photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $photo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+					<div class="image_selector <?php if($loop->first): ?> image_selector_active <?php endif; ?>" style="background-image: url('/<?php echo e($photo->image); ?>');" data-path="/<?php echo e($photo->image); ?>" data-name="<?php echo e($photo->name); ?>"><div class="overlayer"></div></div>
+					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-{{-- <section class="portfoliooo" id="videos">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Videos</h2>
-				<h3 class="section-subheading text-muted">Watch these videos.</h3>
-			</div>
-		</div>
-		<div class="row">
-			@foreach($videos as $video)
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link viewVideo" data-toggle="modal" data-target="#videoModal" href="javascript:void(0);" data-youtubeid="{{ $video->youtubeid }}" data-title="{{ $video->title }}">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-youtube-play fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('http://img.youtube.com/vi/{{ $video->youtubeid }}/0.jpg')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $video->title }}</h4>
-				</div>
-			</div>
-			@endforeach
-		</div>
-	</div>
-</section> --}}
+
 <div class="portfolio-modal modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -244,7 +217,7 @@
 				<div class="row">
 					<div class="col-lg-12 mx-auto">
 						<div class="modal-body citymun-modal">
-							{{-- content appends here --}}
+							
 						</div>
 					</div>
 				</div>
@@ -280,4 +253,5 @@
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8&callback=initMap">
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templates.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

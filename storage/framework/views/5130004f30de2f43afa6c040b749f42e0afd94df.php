@@ -1,5 +1,4 @@
-@extends('templates.template')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- Header -->
 <header class="masthead">
 	<div class="container">
@@ -29,21 +28,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($mvs->where('category', 'place') as $mv)
+			<?php $__currentLoopData = $mvs->where('category', 'place'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
+					<h4><?php echo e($mv->name); ?></h4>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 		<button class="load-more">SEE MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 		<div id="scroll-point"></div>
@@ -59,21 +58,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($mvs->where('category', 'cafe') as $mv)
+			<?php $__currentLoopData = $mvs->where('category', 'cafe'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
+					<h4><?php echo e($mv->name); ?></h4>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 		<button class="load-more">SEE MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 		<div id="scroll-point"></div>
@@ -89,21 +88,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($mvs->where('category', 'beaches') as $mv)
+			<?php $__currentLoopData = $mvs->where('category', 'beaches'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
+					<h4><?php echo e($mv->name); ?></h4>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 		<button class="load-more">SEE MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 		<div id="scroll-point"></div>
@@ -119,21 +118,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($mvs->where('category', 'delicacies') as $mv)
+			<?php $__currentLoopData = $mvs->where('category', 'delicacies'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
+					<h4><?php echo e($mv->name); ?></h4>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 		<button class="load-more">SEE MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 		<div id="scroll-point"></div>
@@ -149,21 +148,21 @@
 			</div>
 		</div>
 		<div class="row">
-			@foreach($mvs->where('category', 'restaurant') as $mv)
+			<?php $__currentLoopData = $mvs->where('category', 'restaurant'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
+				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/<?php echo e($mv->id); ?>/fetch">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
+					<div class="img-preview" style="background-image: url('/<?php echo e($mv->images()->first()->path); ?>')"></div>
 				</a>
 				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
+					<h4><?php echo e($mv->name); ?></h4>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 		<button class="load-more">SEE MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
 		<div id="scroll-point"></div>
@@ -188,13 +187,13 @@
 			        </tr>
 			    </thead>
 			    <tbody>
-			    	@foreach($ues as $ue)
+			    	<?php $__currentLoopData = $ues; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ue): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			        <tr>
-			            <td>{{ $ue->what }}</td>
-			            <td>{{ $ue->where }}</td>
-			            <td>{{ $ue->date }}</td>
+			            <td><?php echo e($ue->what); ?></td>
+			            <td><?php echo e($ue->where); ?></td>
+			            <td><?php echo e($ue->date); ?></td>
 			        </tr>
-			        @endforeach
+			        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 			    </tbody>
 			</table>
 		</div>
@@ -240,4 +239,5 @@
 	    }, 300);
 	});
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templates.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
