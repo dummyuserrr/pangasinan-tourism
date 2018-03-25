@@ -97,7 +97,7 @@
 		<div class="row">
 			<?php $__currentLoopData = $citymuns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $citymun): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-3 col-sm-6 portfolio-item">
-				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/<?php echo e($citymun->id); ?>/fetch">
+				<a class="portfolio-link citymun-viewer" data-toggle="modal" href="#citymunModal" data-url="/the-province/cities-and-municipalities/<?php echo e($citymun->id); ?>/fetch" data-lat="<?php echo e($citymun->lat); ?>" data-long="<?php echo e($citymun->long); ?>">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -156,7 +156,7 @@
 				<h4 class="photo-description"><?php echo e($photos->first()->name); ?></h3>
 				<div class="photoGallery_container owl-carousel owl-theme">
 					<?php $__currentLoopData = $photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $photo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-						<div class="image_selector <?php if($loop->first): ?> image_selector_active <?php endif; ?>" style="background-image: url('/<?php echo e($photo->image); ?>');" data-path="/<?php echo e($photo->image); ?>" data-name="<?php echo e($photo->name); ?>"><div class="overlayer"></div></div>
+					<div class="image_selector <?php if($loop->first): ?> image_selector_active <?php endif; ?>" style="background-image: url('/<?php echo e($photo->image); ?>');" data-path="/<?php echo e($photo->image); ?>" data-name="<?php echo e($photo->name); ?>"><div class="overlayer"></div></div>
 					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				</div>
 			</div>
@@ -211,26 +211,6 @@
 		</div>
 	</div>
 </div>
-<div class="portfolio-modal modal fade" id="citymunModal" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 mx-auto">
-						<div class="modal-body citymun-modal">
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 <div class="portfolio-modal modal fade" id="tourismModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -251,5 +231,53 @@
 		</div>
 	</div>
 </div>
+<div class="portfolio-modal modal fade" id="citymunModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 mx-auto">
+						<div class="modal-body citymun-modal">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function initMap() {
+		var uluru = {lat: 16.0355673, lng: 120.3281712};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: uluru
+		});
+		var marker = new google.maps.Marker({
+			position: uluru,
+			map: map
+		});
+	}
+
+	function reloadMap(lat, long) {
+		var target = {lat: lat, lng: long};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: target
+		});
+		var marker = new google.maps.Marker({
+			position: target,
+			map: map
+		});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8&callback=initMap">
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('templates.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

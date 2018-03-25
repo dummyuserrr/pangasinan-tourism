@@ -23,8 +23,8 @@
 	<div class="container row-parent">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Most Visited Places</h2>
-				<h3 class="section-subheading text-muted">Edit this description.</h3>
+				<h2 class="section-heading text-uppercase">Most Visited City</h2>
+				<h3 class="section-subheading text-muted">This Month.</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -54,7 +54,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Most Visited Cafe</h2>
-				<h3 class="section-subheading text-muted">Edit this description.</h3>
+				<h3 class="section-subheading text-muted"></h3>
 			</div>
 		</div>
 		<div class="row">
@@ -84,7 +84,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Most Visited Beaches</h2>
-				<h3 class="section-subheading text-muted">Edit this description.</h3>
+				<h3 class="section-subheading text-muted">This Month.</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -114,7 +114,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Most Popular Delicacies</h2>
-				<h3 class="section-subheading text-muted">Edit this description.</h3>
+				<h3 class="section-subheading text-muted">This Month.</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -144,7 +144,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Most Visited Restaurants</h2>
-				<h3 class="section-subheading text-muted">Edit this description.</h3>
+				<h3 class="section-subheading text-muted">This Month.</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -174,7 +174,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Upcoming Events</h2>
-				<h3 class="section-subheading text-muted">Edit this description.</h3>
+				<h3 class="section-subheading text-muted">This Month.</h3>
 			</div>
 		</div>
 		<div class="row">
