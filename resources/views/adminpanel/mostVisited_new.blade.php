@@ -15,7 +15,6 @@
 					<select type="text" class="form-control" id="category" name="category">
 						<option value="place">Place</option>
 						<option value="cafe">Cafe</option>
-						<option value="beaches">Beaches</option>
 						<option value="delicacies">Delicacies</option>
 						<option value="restaurant">Restaurant</option>
 					</select>
