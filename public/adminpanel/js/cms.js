@@ -52,15 +52,31 @@ $(document).ready(function(){
 	    readURL(this);
 	});
 
-	$('#postTags').tagsInput({
-		'width': '100%',
-		'defaultText':'Add a tag',
-		'delimiter': [';'],
-		'autocomplete': { 'option1': 'value1', 'option2': 'value2'},
-	});
+	// $('#postTags').tagsInput({
+	// 	'width': '100%',
+	// 	'defaultText':'Add a tag',
+	// 	'delimiter': [';'],
+	// 	'autocomplete': { 'option1': 'value1', 'option2': 'value2'},
+	// });
+
+    var selectedCategory = $('#category').find(':selected').val()
+    if(selectedCategory == 'delicacies'){
+    	$('.longlatform').css('display', 'none')
+    }else{
+    	$('.longlatform').css('display', 'block')	
+    }
 });
 
 // wew
+
+$('#category').change(function(){
+    var selected = $(this).find(':selected').val()
+    if(selected == 'delicacies'){
+    	$('.longlatform').css('display', 'none')
+    }else{
+    	$('.longlatform').css('display', 'block')	
+    }
+});
 
 $('.btnEditUE').click(function(){
 	var what = $(this).data('what')

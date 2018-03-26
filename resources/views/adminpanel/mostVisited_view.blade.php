@@ -16,14 +16,21 @@
 					<select type="text" class="form-control" id="category" name="category">
 						<option {{ ($mv->category == 'place') ? 'selected' : ''}} value="place">Place</option>
 						<option {{ ($mv->category == 'cafe') ? 'selected' : ''}} value="cafe">Cafe</option>
-						<option {{ ($mv->category == 'beaches') ? 'selected' : ''}} value="beaches">Beaches</option>
-						<option {{ ($mv->category == 'delicacies') ? 'selected' : ''}} value="delicacies">Delicacies</option>
 						<option {{ ($mv->category == 'restaurant') ? 'selected' : ''}} value="restaurant">Restaurant</option>
+						<option {{ ($mv->category == 'delicacies') ? 'selected' : ''}} value="delicacies">Delicacies</option>
 					</select>
 				</div>
 				<div class="form-group">
 					<label for="content">Description:</label>
 					<textarea type="text" class="form-control" rows="5" name="description">{{ $mv->description }}</textarea>
+				</div>
+				<div class="form-group longlatform">
+					<label for="latitude">Latitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="latitude" value="{{ $mv->lat }}" name="latitude">
+				</div>
+				<div class="form-group longlatform">
+					<label for="longitude">Longitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="longitude" value="{{ $mv->long }}" name="longitude">
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>

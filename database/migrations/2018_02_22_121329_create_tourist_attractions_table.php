@@ -17,6 +17,9 @@ class CreateTouristAttractionsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
+            $table->integer('mv')->default(0);
             $table->timestamps();
         });
     }

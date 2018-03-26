@@ -18,7 +18,9 @@ class TouristAttractionsController extends Controller
 
     	$d = new TouristAttraction;
     	$d->name = $r->name;
-    	$d->description = $r->description;
+        $d->description = $r->description;
+        $d->lat = $r->lat;
+    	$d->long = $r->long;
     	$d->save();
 
     	foreach($r->image as $i){
@@ -44,6 +46,8 @@ class TouristAttractionsController extends Controller
         $item->update([
             'name' => $r->name,
             'description' => $r->description,
+            'lat' => $r->lat,
+            'long' => $r->long,
         ]);
 
         if($r->image){

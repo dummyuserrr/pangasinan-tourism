@@ -39,7 +39,7 @@
                                 <a class="nav-link js-scroll-trigger" href="/the-province#cities-and-municipalities">Cities and Municipalities</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#festivals">Festivals</a>
                                 <a class="nav-link js-scroll-trigger" href="/the-province#photo-gallery">Photo Gallery</a>
-                                <a class="nav-link js-scroll-trigger" href="/the-province#videos">Videos</a>
+                                {{-- <a class="nav-link js-scroll-trigger" href="/the-province#videos">Videos</a> --}}
                             </div>
                         </li>
                         <li class="nav-item">

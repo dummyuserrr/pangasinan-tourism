@@ -15,6 +15,14 @@
 					<label for="content">Description:</label>
 					<textarea type="text" class="form-control" rows="5" name="description">{{ $car->description }}</textarea>
 				</div>
+				<div class="form-group longlatform">
+					<label for="latitude">Latitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="latitude" value="{{ $car->lat }}" name="lat">
+				</div>
+				<div class="form-group longlatform">
+					<label for="longitude">Longitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="longitude" value="{{ $car->long }}" name="long">
+				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
 			<div class="col-lg-4">

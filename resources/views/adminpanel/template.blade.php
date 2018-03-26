@@ -31,7 +31,7 @@
 								<a href="/admin-panel/the-province/cities-and-municipalities" class="option {{ adminSetActive('admin-panel/the-province/cities-and-municipalities*') }}"><i class="fa fa-map-marker"></i> Cities and Municipalities</a>
 								<a href="/admin-panel/the-province/festivals" class="option {{ adminSetActive('admin-panel/the-province/festivals*') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Festivals</a>
 								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}"><i class="fa fa-picture-o"></i> Photo Gallery</a>
-								<a href="/admin-panel/the-province/videos" class="option {{ adminSetActive('admin-panel/the-province/videos*') }}"><i class="fa fa-youtube-play"></i> Videos</a>
+								{{-- <a href="/admin-panel/the-province/videos" class="option {{ adminSetActive('admin-panel/the-province/videos*') }}"><i class="fa fa-youtube-play"></i> Videos</a> --}}
 							</div>
 						</div>
 					</div>
@@ -48,7 +48,7 @@
 							</div>
 						</div>
 					</div>
-					<a href="/admin-panel/most-visiteds" class="option {{ adminSetActive('admin-panel/most-visiteds*') }}">Most Visited</a>
+					<a href="/admin-panel/most-visiteds" class="option {{ adminSetActive('admin-panel/most-visiteds*') }}">Most Visited/Popular</a>
 					<a href="/admin-panel/upcoming-events" class="option {{ adminSetActive('admin-panel/upcoming-events*') }}">Upcoming Events</a>
 					<a href="/admin-panel/contact-us-messages" class="option {{ adminSetActive('admin-panel/contact-us-messages*') }}">"Contact Us" Messages</a>
 					<a href="/" target="_blank" class="option" style="border-top: 1px solid #fff;"><i class="fa fa-television" aria-hidden="true"></i> Open Website in New Tab</a>

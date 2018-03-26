@@ -18,7 +18,9 @@ class CafeAndRestaurantsController extends Controller
 
     	$d = new CafeAndRestaurant;
     	$d->name = $r->name;
-    	$d->description = $r->description;
+        $d->description = $r->description;
+        $d->lat = $r->lat;
+    	$d->long = $r->long;
     	$d->save();
 
     	foreach($r->image as $i){
@@ -44,6 +46,8 @@ class CafeAndRestaurantsController extends Controller
         $item->update([
             'name' => $r->name,
             'description' => $r->description,
+            'lat' => $r->lat,
+            'long' => $r->long,
         ]);
 
         if($r->image){
@@ -74,7 +78,6 @@ class CafeAndRestaurantsController extends Controller
     }
 
     public function fetch(CafeAndRestaurant $item){
-        $delicacy = $item;
-        return view('includes.delicacies-modal', compact('delicacy'));
+        return view('includes.car-modal', compact('item'));
     }
 }

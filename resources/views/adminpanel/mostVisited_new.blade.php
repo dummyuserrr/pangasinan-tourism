@@ -15,14 +15,21 @@
 					<select type="text" class="form-control" id="category" name="category">
 						<option value="place">Place</option>
 						<option value="cafe">Cafe</option>
-						<option value="beaches">Beaches</option>
-						<option value="delicacies">Delicacies</option>
 						<option value="restaurant">Restaurant</option>
+						<option value="delicacies">Delicacies</option>
 					</select>
 				</div>
 				<div class="form-group">
 					<label for="content">Description:</label>
 					<textarea type="text" class="form-control" rows="5" name="description"></textarea>
+				</div>
+				<div class="form-group longlatform">
+					<label for="latitude">Latitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="latitude" value="0" name="latitude">
+				</div>
+				<div class="form-group longlatform">
+					<label for="longitude">Longitude: <span class="req">*</span></label>
+					<input type="text" class="form-control" id="longitude" value="0" name="longitude">
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>

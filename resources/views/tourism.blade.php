@@ -20,7 +20,7 @@
 		<div class="row">
 			@foreach($touristAttractions as $ta)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/tourist-attractions/{{ $ta->id }}/fetch">
+				<a class="portfolio-link tourism-viewer" data-toggle="modal" href="#tourismModal" data-url="/tourism/tourist-attractions/{{ $ta->id }}/fetch" data-lat="{{ $ta->lat }}" data-long="{{ $ta->long }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -74,7 +74,7 @@
 		<div class="row">
 			@foreach($cars as $car)
 			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a class="portfolio-link delicacy-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/tourism/cafe-and-restaurants/{{ $car->id }}/fetch">
+				<a class="portfolio-link car-viewer" data-toggle="modal" href="#delicaciesModal" data-url="/tourism/cafe-and-restaurants/{{ $car->id }}/fetch" data-lat="{{ $car->lat }}" data-long="{{ $car->long }}">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>
@@ -157,4 +157,20 @@
 		</div>
 	</div>
 </div>
+<script>
+	function reloadMap(lat, long) {
+		var target = {lat: lat, lng: long};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: target
+		});
+		var marker = new google.maps.Marker({
+			position: target,
+			map: map
+		});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8tcOsujX6U_xsuM5gqd2aXVc-bstKJp8">
+</script>
  @stop
