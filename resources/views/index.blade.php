@@ -24,7 +24,7 @@
 	<div class="container row-parent">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Most Visited City</h2>
+				<h2 class="section-heading text-uppercase">Most Visited Place</h2>
 				<h3 class="section-subheading text-muted">This Month.</h3>
 			</div>
 		</div>
@@ -85,36 +85,6 @@
 	<div class="container row-parent">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Most Visited Beaches</h2>
-				<h3 class="section-subheading text-muted">This Month.</h3>
-			</div>
-		</div>
-		<div class="row">
-			@foreach($mvs->where('category', 'beaches') as $mv)
-			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link delicacy-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-eye fa-3x"></i>
-						</div>
-					</div>
-					<div class="img-preview" style="background-image: url('/{{ $mv->images()->first()->path }}')"></div>
-				</a>
-				<div class="portfolio-caption">
-					<h4>{{ $mv->name }}</h4>
-				</div>
-			</div>
-			@endforeach
-		</div>
-		<button class="load-more">SEE MORE &nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-		<div id="scroll-point"></div>
-	</div>
-</section>
-
-<section class="portfoliooo" id="delicacies">
-	<div class="container row-parent">
-		<div class="row">
-			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Most Popular Delicacies</h2>
 				<h3 class="section-subheading text-muted">This Month.</h3>
 			</div>
@@ -122,7 +92,7 @@
 		<div class="row">
 			@foreach($mvs->where('category', 'delicacies') as $mv)
 			<div class="col-md-3 col-sm-6 portfolio-item home-box">
-				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch" data-lat="{{ $mv->lat }}" data-long="{{ $mv->long }}">
+				<a class="portfolio-link mv-viewer mini-box" data-toggle="modal" href="#delicaciesModal" data-url="/fetch-most-visiteds/{{ $mv->id }}/fetch" data-lat="0" data-long="0">
 					<div class="portfolio-hover">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-eye fa-3x"></i>

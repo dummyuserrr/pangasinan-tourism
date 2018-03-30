@@ -18,8 +18,8 @@ class CreateCitymunsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('youtubeid');
-            $table->string('long');
-            $table->string('lat');
+            $table->string('long')->default(0);
+            $table->string('lat')->default(0);
             $table->timestamps();
         });
     }

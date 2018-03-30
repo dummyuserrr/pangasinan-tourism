@@ -5,13 +5,11 @@
 		<p><?php echo e($mv->description); ?></p>
 	</div>
 </div>
-<?php if($mv->category != 'delicacies'): ?>
-<div class="row">
+<div class="row" style="display: <?php echo e(($mv->category == 'delicacies') ? 'none' : 'block'); ?>">
 	<div class="col-lg-12">
 		<div id="map" class="cmMap"></div>
 	</div>
 </div>
-<?php endif; ?>
 <div class="row">
 	<div class="col-lg-12">
 		<h3 class="text-uppercase mt">Photo Gallery</h3>

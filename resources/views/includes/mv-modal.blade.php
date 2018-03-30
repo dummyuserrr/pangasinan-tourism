@@ -5,13 +5,11 @@
 		<p>{{ $mv->description }}</p>
 	</div>
 </div>
-@if($mv->category != 'delicacies')
-<div class="row">
+<div class="row" style="display: {{ ($mv->category == 'delicacies') ? 'none' : 'block' }}">
 	<div class="col-lg-12">
 		<div id="map" class="cmMap"></div>
 	</div>
 </div>
-@endif
 <div class="row">
 	<div class="col-lg-12">
 		<h3 class="text-uppercase mt">Photo Gallery</h3>
