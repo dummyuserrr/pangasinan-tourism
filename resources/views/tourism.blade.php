@@ -95,7 +95,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading text-uppercase">Events</h2>
-				<h3 class="section-subheading text-muted">Take a look at these.</h3>
+				<h3 class="section-subheading text-muted">Upcoming Events.</h3>
 			</div>
 		</div>
 		<div class="row">
