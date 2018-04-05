@@ -29,7 +29,7 @@
 						<div id="dd_province" class="collapse targets {{ adminSetActiveDropdown('admin-panel/the-province*') }}">
 							<div class="options">
 								<a href="/admin-panel/the-province/cities-and-municipalities" class="option {{ adminSetActive('admin-panel/the-province/cities-and-municipalities*') }}"><i class="fa fa-map-marker"></i> Cities and Municipalities</a>
-								<a href="/admin-panel/the-province/festivals" class="option {{ adminSetActive('admin-panel/the-province/festivals*') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Festivals</a>
+								<a href="/admin-panel/the-province/festivals" class="option {{ adminSetActive('admin-panel/the-province/festivals*') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Festivals/Events</a>
 								<a href="/admin-panel/the-province/photo-gallery" class="option {{ adminSetActive('admin-panel/the-province/photo-gallery*') }}"><i class="fa fa-picture-o"></i> Photo Gallery</a>
 								{{-- <a href="/admin-panel/the-province/videos" class="option {{ adminSetActive('admin-panel/the-province/videos*') }}"><i class="fa fa-youtube-play"></i> Videos</a> --}}
 							</div>
@@ -44,7 +44,7 @@
 								<a href="/admin-panel/tourism/tourist-attractions" class="option {{ adminSetActive('admin-panel/tourism/tourist-attractions*') }}"><i class="fa fa-ship" aria-hidden="true"></i> Tourist Attractions</a>
 								<a href="/admin-panel/tourism/delicacies" class="option {{ adminSetActive('admin-panel/tourism/delicacies*') }}"><i class="fa fa-spoon"></i> Delicacies</a>
 								<a href="/admin-panel/tourism/cafe-and-restaurants" class="option {{ adminSetActive('admin-panel/tourism/cafe-and-restaurants*') }}"><i class="fa fa-coffee"></i> Cafe & Restaurants</a>
-								<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Events</a>
+								{{--<a href="/admin-panel/tourism/events" class="option {{ adminSetActive('admin-panel/tourism/events*') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Events</a>--}}
 							</div>
 						</div>
 					</div>

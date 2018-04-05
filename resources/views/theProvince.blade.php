@@ -118,7 +118,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading text-uppercase">Festivals</h2>
+				<h2 class="section-heading text-uppercase">Festivals/Events</h2>
 				<h3 class="section-subheading text-muted">Take a look at these.</h3>
 			</div>
 		</div>

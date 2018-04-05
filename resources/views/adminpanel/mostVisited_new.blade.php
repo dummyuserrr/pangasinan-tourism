@@ -14,8 +14,7 @@
 					<label for="category">Category: <span class="req">*</span></label>
 					<select type="text" class="form-control" id="category" name="category">
 						<option value="place">Place</option>
-						<option value="cafe">Cafe</option>
-						<option value="restaurant">Restaurant</option>
+						<option value="cafe">Cafe & Restaurant</option>
 						<option value="delicacies">Delicacies</option>
 					</select>
 				</div>

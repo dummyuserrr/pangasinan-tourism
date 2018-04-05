@@ -90,7 +90,7 @@
 		</div>
 	</div>
 </section>
-<section class="bg-light portfoliooo" id="events">
+{{--<section class="bg-light portfoliooo" id="events">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -116,7 +116,7 @@
 			@endforeach
 		</div>
 	</div>
-</section>
+</section>--}}
 <div class="portfolio-modal modal fade" id="tourismModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">

@@ -17,6 +17,8 @@
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
+
+			
 			<div class="col-lg-4">
 				<div class="form-group">
 					<label for="otherDetails">Images:</label>

@@ -15,8 +15,8 @@
 					<label for="category">Category: <span class="req">*</span></label>
 					<select type="text" class="form-control" id="category" name="category">
 						<option {{ ($mv->category == 'place') ? 'selected' : ''}} value="place">Place</option>
-						<option {{ ($mv->category == 'cafe') ? 'selected' : ''}} value="cafe">Cafe</option>
-						<option {{ ($mv->category == 'restaurant') ? 'selected' : ''}} value="restaurant">Restaurant</option>
+						<option {{ ($mv->category == 'cafe') ? 'selected' : ''}} value="cafe">Cafe & Restaurant</option>
+						
 						<option {{ ($mv->category == 'delicacies') ? 'selected' : ''}} value="delicacies">Delicacies</option>
 					</select>
 				</div>
