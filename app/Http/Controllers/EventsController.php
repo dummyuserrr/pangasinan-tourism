@@ -74,6 +74,7 @@ class EventsController extends Controller
     }
 
     public function fetch(Event $item){
-        return view('includes.tourism-modal', compact('item'));
+        $nomap = 1;
+        return view('includes.tourism-modal', compact('item', 'nomap'));
     }
 }
