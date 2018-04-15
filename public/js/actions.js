@@ -36,9 +36,46 @@ $(document).ready(function(){
     $('.gallery_photo_right').click(function(){
         pgc.trigger('next.owl.carousel');
     });
+    getLocation()
 });
 
 // wew
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    var request = $.ajax({
+        url: '/store-location',
+        type: "POST",           
+        data: {
+            "_token": $('meta[name="csrf-token"]').attr('content'),
+            "lat": lat,
+            "long": long
+        },    
+        beforeSend: function(data){
+            //
+        },
+        success: function(data){
+            $('.lat').data('value', request.responseJSON.lat)
+            $('.long').data('value', request.responseJSON.long)
+        },
+        error: function(data){
+            var errors = "";
+            for(datos in data.responseJSON){
+                errors += data.responseJSON[datos]+'\n';
+            }
+            alert(errors);
+        }
+    });
+}
 
 $('.backtotop').click(function(){
     $("html, body").animate({scrollTop: 0}, 300);

@@ -134,6 +134,8 @@
             </div>
         </footer>
         <div class="loadingModal"></div>
+        <div class="lat" data-value=""></div>
+        <div class="long" data-value=""></div>
         <!-- Modal 1 -->
         <!-- Bootstrap core JavaScript -->
         <script src="/vendor/jquery/jquery.min.js"></script>
