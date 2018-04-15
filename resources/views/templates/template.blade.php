@@ -23,6 +23,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation -->
+        <div class="backtotop"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></div>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="/">Pangasinan Tourism</a>

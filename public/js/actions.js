@@ -1,9 +1,15 @@
+var scrollposition = $(window).scrollTop();
 $(document).ready(function(){
 	$.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    if(scrollposition > 150){
+        $('.backtotop').fadeIn();
+    }else{
+        $('.backtotop').fadeOut();
+    }
 
     var pgc = $('.photoGallery_container').owlCarousel({
         margin: 10,
@@ -33,6 +39,21 @@ $(document).ready(function(){
 });
 
 // wew
+
+$('.backtotop').click(function(){
+    $("html, body").animate({scrollTop: 0}, 300);
+});
+
+$(document).scroll(function(){
+    scrollposition = $(window).scrollTop();
+    if(scrollposition > 150){
+        $('.backtotop').fadeIn();
+        $('nav').addClass('minified_nav');
+    }else{
+        $('.backtotop').fadeOut();
+        $('nav').removeClass('minified_nav');
+    }
+});
 
 $('.mv-viewer').click(function(){
     var url = $(this).data('url');
