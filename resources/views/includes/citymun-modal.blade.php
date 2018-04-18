@@ -11,6 +11,7 @@
 	</div>
 	<div class="col-lg-6">
 		<div id="map" class="cmMap"></div>
+		<a href="https://maps.google.com/?saddr=Current+Location&daddr={{ $citymun->lat }},{{ $citymun->long }}" target="_blank" class="directionsGet">Get Directions</a>
 	</div>
 </div>
 <div class="row">
