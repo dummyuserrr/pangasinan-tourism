@@ -145,8 +145,8 @@ $('.mv-viewer').click(function(){
 
 $('.tourism-viewer').click(function(){
     var url = $(this).data('url');
-    var lat = $(this).data('lat');
-    var long = $(this).data('long');
+    var lat = parseFloat($(this).data('lat'));
+    var long = parseFloat($(this).data('long'));
     var request = $.ajax({
         url: url,
         type: "POST",           

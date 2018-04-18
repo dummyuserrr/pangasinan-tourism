@@ -16,6 +16,7 @@ Route::post('contact-us', 'PagesController@contactUsSubmit');
 
 Route::get('admin-panel/auth/login', 'AdminPagesController@login')->middleware('checksessionreversed');
 Route::post('admin-panel/auth/login', 'UserController@login')->middleware('checksessionreversed');
+
 Route::middleware('checksession')->group(function () {
 	Route::post('admin-panel/logout', 'UserController@logout');
 		Route::get('admin-panel', 'AdminPagesController@index');
