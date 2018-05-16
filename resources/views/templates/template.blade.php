@@ -148,7 +148,7 @@
         <script src="/js/contact_me.js"></script>
         <!-- Custom scripts for this template -->
         <script src="/js/agency.min.js"></script>
-       {{--  <script type="text/javascript"> 
+        <script type="text/javascript"> 
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -158,7 +158,7 @@
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
         })();
-        </script> --}}
+        </script>
         <script src="/js/actions.js"></script>
     </body>
 </html>
