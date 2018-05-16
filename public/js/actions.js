@@ -39,6 +39,24 @@ $(document).ready(function(){
     getLocation()
 });
 
+$('.map-selector').change(function(){
+    var selected = $(this).find(':selected').val()
+    switch(selected){
+        case '1': // our location
+            // ajax
+        break
+        case '2': // cities and municipalities
+            // ajax
+        break   
+        case '3': // tourist attractions
+            // ajax
+        break   
+        case '4': // cafe and restaurants
+            // ajax
+        break   
+    }
+})
+
 // wew
 
 function getLocation() {

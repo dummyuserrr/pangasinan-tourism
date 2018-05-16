@@ -8,9 +8,15 @@
 		</div>
 	</div>
 </header>
-<div class="mapcontainer" id="map">
-	
+<div class="search-container">
+	<select class="map-selector">
+		<option value="1">Our Location</option>
+		<option value="2">Cities and Municipalities</option>
+		<option value="3">Tourist Attractions</option>
+		<option value="4">Cafe & Restaurants</option>
+	</select>
 </div>
+<div class="mapcontainer" id="map"></div>
 <script>
 	function initMap() {
 		var uluru = {lat: 16.0355673, lng: 120.3281712};
