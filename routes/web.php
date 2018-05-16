@@ -125,3 +125,5 @@ Route::middleware('checksession')->group(function () {
 	Route::delete('admin-panel/upcoming-events/{item}/delete', 'UpcomingEventController@destroy');
 });
 Route::post('store-location', 'UserController@storeLocation');
+
+Route::post('reload-map/category/{category}', 'PagesController@reloadMap');

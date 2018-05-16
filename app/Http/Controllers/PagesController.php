@@ -18,6 +18,26 @@ use App\UpcomingEvent;
 
 class PagesController extends Controller
 {
+    public function reloadMap($category){
+        $locations = '';
+        switch($category){
+            case 1: // our location
+                return '1';
+                exit();
+                break;
+            case 2: // cities and municipalities
+                $locations = Citymun::all();
+                break;
+            case 3: // tourist attractions
+                $locations = TouristAttraction::all();
+                break;
+            case 4: // cafe and restaurants
+                $locations = CafeAndRestaurant::all();
+                break;
+        }
+        return $locations;
+    }
+
     public function index(){
         $title = 'Pangasinan Tourism';
         $mv = new MostVisited;

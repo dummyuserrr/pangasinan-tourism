@@ -11,9 +11,9 @@
 <div class="search-container">
 	<select class="map-selector">
 		<option value="1">Our Location</option>
-		<option value="2">Cities and Municipalities</option>
-		<option value="3">Tourist Attractions</option>
-		<option value="4">Cafe & Restaurants</option>
+		<option value="2">Show All Cities and Municipalities</option>
+		<option value="3">Show All Tourist Attractions</option>
+		<option value="4">Show All Cafe & Restaurants</option>
 	</select>
 </div>
 <div class="mapcontainer" id="map"></div>
