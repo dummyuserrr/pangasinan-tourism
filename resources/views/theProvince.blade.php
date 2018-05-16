@@ -153,8 +153,10 @@
 			<div class="pgc">
 				<button class="gallery_photo_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
 				<button class="gallery_photo_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				@if(count($photos) > 0)
 				<img class="image_view" src="/{{ $photos->first()->image }}">
 				<h4 class="photo-description">{{ $photos->first()->name }}</h3>
+				@endif
 				<div class="photoGallery_container owl-carousel owl-theme">
 					@foreach($photos as $photo)
 					<div class="image_selector @if($loop->first) image_selector_active @endif" style="background-image: url('/{{ $photo->image }}');" data-path="/{{ $photo->image }}" data-name="{{ $photo->name }}"><div class="overlayer"></div></div>
