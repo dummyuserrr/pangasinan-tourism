@@ -5,7 +5,7 @@
 		<p>{{ $item->description }}</p>
 	</div>
 </div>
-<div class="row" style="display: {{ ($nomap == 1) ? 'none' : 'block' }}">
+<div class="row">
 	<div class="col-lg-12">
 		<div id="map" class="cmMap"></div>
 	</div>
