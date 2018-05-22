@@ -89,4 +89,16 @@ class UserController extends Controller
         session()->flash('action', 'updated');
         return back();
     }
+
+    public function storeLocation(Request $r){
+        session()->put('lat', $r->lat);
+        session()->put('long', $r->long);
+
+        $loc = [
+            'lat' => session('lat'),
+            'long' => session('long'),
+        ];
+
+        return $loc;
+    }
 }

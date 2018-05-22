@@ -8,6 +8,7 @@
 <div class="row" style="display: {{ ($mv->category == 'delicacies') ? 'none' : 'block' }}">
 	<div class="col-lg-12">
 		<div id="map" class="cmMap"></div>
+		<a href="https://maps.google.com/?saddr=Current+Location&daddr={{ $mv->lat }},{{ $mv->long }}" target="_blank" class="directionsGet">Get Directions</a>
 	</div>
 </div>
 <div class="row">

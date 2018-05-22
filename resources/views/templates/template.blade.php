@@ -23,6 +23,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation -->
+        <div class="backtotop"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></div>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="/">Pangasinan Tourism</a>
@@ -133,6 +134,8 @@
             </div>
         </footer>
         <div class="loadingModal"></div>
+        <div class="lat" data-value=""></div>
+        <div class="long" data-value=""></div>
         <!-- Modal 1 -->
         <!-- Bootstrap core JavaScript -->
         <script src="/vendor/jquery/jquery.min.js"></script>
@@ -145,7 +148,11 @@
         <script src="/js/contact_me.js"></script>
         <!-- Custom scripts for this template -->
         <script src="/js/agency.min.js"></script>
+<<<<<<< HEAD
          <script type="text/javascript"> 
+=======
+        <script type="text/javascript"> 
+>>>>>>> f41137b4fb60ff83f527bb2e4c94effe6de9876a
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];

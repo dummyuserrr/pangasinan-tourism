@@ -1,9 +1,15 @@
+var scrollposition = $(window).scrollTop()
 $(document).ready(function(){
 	$.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    });
+    })
+    if(scrollposition > 150){
+        $('.backtotop').fadeIn()
+    }else{
+        $('.backtotop').fadeOut()
+    }
 
     var pgc = $('.photoGallery_container').owlCarousel({
         margin: 10,
@@ -23,21 +29,90 @@ $(document).ready(function(){
                 items: 6,
             }
         }
-    });
+    })
     $('.gallery_photo_left').click(function(){
-        pgc.trigger('prev.owl.carousel');
-    });
+        pgc.trigger('prev.owl.carousel')
+    })
     $('.gallery_photo_right').click(function(){
-        pgc.trigger('next.owl.carousel');
-    });
-});
+        pgc.trigger('next.owl.carousel')
+    })
+    getLocation()
+})
 
 // wew
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError)
+    } else { 
+        alert("Geolocation is not supported by this browser.")
+    }
+}
+
+function showPosition(position) {
+    var lat = position.coords.latitude
+    var long = position.coords.longitude
+    var request = $.ajax({
+        url: '/store-location',
+        type: "POST",           
+        data: {
+            "_token": $('meta[name="csrf-token"]').attr('content'),
+            "lat": lat,
+            "long": long
+        },    
+        beforeSend: function(data){
+            //
+        },
+        success: function(data){
+            $('.lat').data('value', request.responseJSON.lat)
+            $('.long').data('value', request.responseJSON.long)
+        },
+        error: function(data){
+            var errors = ""
+            for(datos in data.responseJSON){
+                errors += data.responseJSON[datos]+'\n'
+            }
+            alert(errors)
+        }
+    })
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+           alert("User denied the request for Geolocation.")
+            break
+        case error.POSITION_UNAVAILABLE:
+           alert("Location information is unavailable.")
+            break
+        case error.TIMEOUT:
+           alert("The request to get user location timed out.")
+            break
+        case error.UNKNOWN_ERROR:
+           alert("An unknown error occurred.")
+            break
+    }
+}
+
+$('.backtotop').click(function(){
+    $("html, body").animate({scrollTop: 0}, 300)
+})
+
+$(document).scroll(function(){
+    scrollposition = $(window).scrollTop()
+    if(scrollposition > 150){
+        $('.backtotop').fadeIn()
+        $('nav').addClass('minified_nav')
+    }else{
+        $('.backtotop').fadeOut()
+        $('nav').removeClass('minified_nav')
+    }
+})
+
 $('.mv-viewer').click(function(){
-    var url = $(this).data('url');
-    var lat = $(this).data('lat');
-    var long = $(this).data('long');
+    var url = $(this).data('url')
+    var lat = $(this).data('lat')
+    var long = $(this).data('long')
     var request = $.ajax({
         url: url,
         type: "POST",           
@@ -48,30 +123,30 @@ $('.mv-viewer').click(function(){
         cache: false,      
         processData:false,       
         beforeSend: function(data){
-            showLoading();
-            $('.mv-modal').html('');
+            showLoading()
+            $('.mv-modal').html('')
         },
         success: function(data){
             setTimeout(function(){
-                $('.mv-modal').html(request.responseText);
-                reloadMap(lat, long);
-                hideLoading();
-            }, 500);
+                $('.mv-modal').html(request.responseText)
+                reloadMap(lat, long)
+                hideLoading()
+            }, 500)
         },
         error: function(data){
-            var errors = "";
+            var errors = ""
             for(datos in data.responseJSON){
-                errors += data.responseJSON[datos]+'\n';
+                errors += data.responseJSON[datos]+'\n'
             }
-            alert(errors);
+            alert(errors)
         }
-    });
-});
+    })
+})
 
 $('.tourism-viewer').click(function(){
-    var url = $(this).data('url');
-    var lat = $(this).data('lat');
-    var long = $(this).data('long');
+    var url = $(this).data('url')
+    var lat = parseFloat($(this).data('lat'))
+    var long = parseFloat($(this).data('long'))
     var request = $.ajax({
         url: url,
         type: "POST",           
@@ -82,58 +157,58 @@ $('.tourism-viewer').click(function(){
         cache: false,      
         processData:false,       
         beforeSend: function(data){
-            showLoading();
-            $('.tourism-modal').html('');
+            showLoading()
+            $('.tourism-modal').html('')
         },
         success: function(data){
             setTimeout(function(){
-                $('.tourism-modal').html(request.responseText);
+                $('.tourism-modal').html(request.responseText)
                 reloadMap(lat, long)
-                hideLoading();
-            }, 500);
+                hideLoading()
+            }, 500)
         },
         error: function(data){
-            var errors = "";
+            var errors = ""
             for(datos in data.responseJSON){
-                errors += data.responseJSON[datos]+'\n';
+                errors += data.responseJSON[datos]+'\n'
             }
-            alert(errors);
+            alert(errors)
         }
-    });
-});
+    })
+})
 
 $('.image_selector').click(function(){
-    $('.image_selector').removeClass('image_selector_active');
-    $(this).addClass('image_selector_active');
-    var path = $(this).data('path');
-    var name = $(this).data('name');
-    $('.image_view').attr('src', path);
-    $('.photo-description').html(name);
-});
+    $('.image_selector').removeClass('image_selector_active')
+    $(this).addClass('image_selector_active')
+    var path = $(this).data('path')
+    var name = $(this).data('name')
+    $('.image_view').attr('src', path)
+    $('.photo-description').html(name)
+})
 
 $('.viewVideo').click(function(){
-    var youtubeid = $(this).data('youtubeid');
-    var title = $(this).data('title');
-    var url = "https://www.youtube.com/embed/"+youtubeid+"?rel=0&enablejsapi=1";
-    $('#videoModal').find('h3').html(title);
-    $('#videoModal').find('iframe').attr('src', url);
-});
+    var youtubeid = $(this).data('youtubeid')
+    var title = $(this).data('title')
+    var url = "https://www.youtube.com/embed/"+youtubeid+"?rel=0&enablejsapi=1"
+    $('#videoModal').find('h3').html(title)
+    $('#videoModal').find('iframe').attr('src', url)
+})
 
 $('#videoModal').on('hidden.bs.modal', function(){
-    $('#videoModal').find('iframe').attr('src', '');
-});
+    $('#videoModal').find('iframe').attr('src', '')
+})
 
 $('.galleryPhotoPreview').click(function(){
-    var name = $(this).data('name');
-    var description = $(this).data('description');
-    var image = $(this).data('image');
-    $('#photoGalleryModal').find('h3').html(name);
-    $('#photoGalleryModal').find('p').html(description);
-    $('#photoGalleryModal').find('img').attr('src', image);
-});
+    var name = $(this).data('name')
+    var description = $(this).data('description')
+    var image = $(this).data('image')
+    $('#photoGalleryModal').find('h3').html(name)
+    $('#photoGalleryModal').find('p').html(description)
+    $('#photoGalleryModal').find('img').attr('src', image)
+})
 
 $('.delicacy-viewer').click(function(){
-	var url	= $(this).data('url');
+	var url	= $(this).data('url')
 	var request = $.ajax({
         url: url,
         type: "POST",           
@@ -144,29 +219,29 @@ $('.delicacy-viewer').click(function(){
         cache: false,      
         processData:false,       
         beforeSend: function(data){
-        	showLoading();
-        	$('.delicacy-modal').html('');
+        	showLoading()
+        	$('.delicacy-modal').html('')
         },
         success: function(data){
             setTimeout(function(){
-            	$('.delicacy-modal').html(request.responseText);
-            	hideLoading();
-            }, 500);
+            	$('.delicacy-modal').html(request.responseText)
+            	hideLoading()
+            }, 500)
         },
         error: function(data){
-            var errors = "";
+            var errors = ""
             for(datos in data.responseJSON){
-                errors += data.responseJSON[datos]+'\n';
+                errors += data.responseJSON[datos]+'\n'
             }
-            alert(errors);
+            alert(errors)
         }
-    });
-});
+    })
+})
 
 $('.car-viewer').click(function(){
-    var url = $(this).data('url');
-    var lat = $(this).data('lat');
-    var long = $(this).data('long');
+    var url = $(this).data('url')
+    var lat = $(this).data('lat')
+    var long = $(this).data('long')
     var request = $.ajax({
         url: url,
         type: "POST",           
@@ -177,30 +252,30 @@ $('.car-viewer').click(function(){
         cache: false,      
         processData:false,       
         beforeSend: function(data){
-            showLoading();
-            $('.delicacy-modal').html('');
+            showLoading()
+            $('.delicacy-modal').html('')
         },
         success: function(data){
             setTimeout(function(){
-                $('.delicacy-modal').html(request.responseText);
-                reloadMap(lat, long);
-                hideLoading();
-            }, 500);
+                $('.delicacy-modal').html(request.responseText)
+                reloadMap(lat, long)
+                hideLoading()
+            }, 500)
         },
         error: function(data){
-            var errors = "";
+            var errors = ""
             for(datos in data.responseJSON){
-                errors += data.responseJSON[datos]+'\n';
+                errors += data.responseJSON[datos]+'\n'
             }
-            alert(errors);
+            alert(errors)
         }
-    });
-});
+    })
+})
 
 $('.citymun-viewer').click(function(){
-    var url = $(this).data('url');
-    var lat = $(this).data('lat');
-    var long = $(this).data('long');
+    var url = $(this).data('url')
+    var lat = $(this).data('lat')
+    var long = $(this).data('long')
     var request = $.ajax({
         url: url,
         type: "POST",           
@@ -211,33 +286,33 @@ $('.citymun-viewer').click(function(){
         cache: false,      
         processData:false,       
         beforeSend: function(data){
-            showLoading();
-            $('.citymun-modal').html('');
+            showLoading()
+            $('.citymun-modal').html('')
         },
         success: function(data){
             setTimeout(function(){
-                $('.citymun-modal').html(request.responseText);
-                reloadMap(lat, long);
-                hideLoading();
-            }, 500);
+                $('.citymun-modal').html(request.responseText)
+                reloadMap(lat, long)
+                hideLoading()
+            }, 500)
         },
         error: function(data){
-            var errors = "";
+            var errors = ""
             for(datos in data.responseJSON){
-                errors += data.responseJSON[datos]+'\n';
+                errors += data.responseJSON[datos]+'\n'
             }
-            alert(errors);
+            alert(errors)
         }
-    });
-});
+    })
+})
 
 $('.close-modal').click(function(){
-    $('#citymunVid').attr('src', '');
-});
+    $('#citymunVid').attr('src', '')
+})
 
 function showLoading(){
-    $('.loadingModal').fadeIn();
+    $('.loadingModal').fadeIn()
 }
 function hideLoading(){
-    $('.loadingModal').fadeOut();
+    $('.loadingModal').fadeOut()
 }

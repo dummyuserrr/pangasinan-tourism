@@ -16,8 +16,8 @@ Route::post('contact-us', 'PagesController@contactUsSubmit');
 
 Route::get('admin-panel/auth/login', 'AdminPagesController@login')->middleware('checksessionreversed');
 Route::post('admin-panel/auth/login', 'UserController@login')->middleware('checksessionreversed');
-Route::middleware('checksession')->group(function () {
 
+Route::middleware('checksession')->group(function () {
 	Route::post('admin-panel/logout', 'UserController@logout');
 		Route::get('admin-panel', 'AdminPagesController@index');
 	Route::get('admin-panel/dashboard', 'AdminPagesController@index');
@@ -124,3 +124,6 @@ Route::middleware('checksession')->group(function () {
 	Route::patch('admin-panel/upcoming-events/{item}/update', 'UpcomingEventController@patch');
 	Route::delete('admin-panel/upcoming-events/{item}/delete', 'UpcomingEventController@destroy');
 });
+Route::post('store-location', 'UserController@storeLocation');
+
+Route::post('reload-map/category/{category}', 'PagesController@reloadMap');
