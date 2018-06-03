@@ -13,6 +13,9 @@ function initMap() {
 		position: ourLocation,
 		map: map
 	})
+	google.maps.event.addListener(marker, 'click', function(){
+		alert('This is our location')
+	})
 }
 
 function reloadMap(category){
@@ -36,6 +39,9 @@ function reloadMap(category){
 					position: ourLocation,
 					map: map
 				})
+				google.maps.event.addListener(marker, 'click', function(){
+					alert('This is our location')
+				})
         	}else{
         		var firstLocation = {lat: parseFloat(data[0].lat), lng: parseFloat(data[0].long)}
 	        	var map = new google.maps.Map(document.getElementById('map'), {
@@ -47,9 +53,16 @@ function reloadMap(category){
 					var location = {lat: parseFloat(data[index].lat), lng: parseFloat(data[index].long)}
 	        		var marker = new google.maps.Marker({
 						position: location,
-						map: map
+						map: map,
+						// name: data[index].name,
+						// description: data[index].description,
 					})
-					console.log(location)
+					var name = data[index].name
+					var description = data[index].description
+
+					google.maps.event.addListener(marker, 'click', function(marker, i){
+						alert('Name: '+name+'\nDescription: '+description)
+					})
 	        	})
         	}
 
