@@ -256,27 +256,27 @@
 </div>
 <script>
 	function initMap() {
-		var uluru = {lat: 16.0355673, lng: 120.3281712};
+		var uluru = {lat: 16.0355673, lng: 120.3281712}
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: uluru
-		});
+		})
 		var marker = new google.maps.Marker({
 			position: uluru,
 			map: map
-		});
+		})
 	}
 
 	function reloadMap(lat, long) {
-		var target = {lat: lat, lng: long};
+		var target = {lat: lat, lng: long}
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: target
-		});
+		})
 		var marker = new google.maps.Marker({
 			position: target,
 			map: map
-		});
+		})
 	}
 </script>
 <script async defer

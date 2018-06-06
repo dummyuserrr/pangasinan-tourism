@@ -161,7 +161,7 @@
 	function reloadMap(lat, long) {
 		var target = {lat: lat, lng: long};
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: target
 		});
 		var marker = new google.maps.Marker({
